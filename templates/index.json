@@ -28,12 +28,19 @@
             "button_link_2": "",
             "button_style_secondary_2": false
           }
+        },
+        "d0339237-51ed-4951-a011-96d0f12acfc2": {
+          "type": "big_logo",
+          "settings": {
+            "big_logo_image": "shopify:\/\/shop_images\/roche.png"
+          }
         }
       },
       "block_order": [
         "heading",
         "text",
-        "button"
+        "button",
+        "d0339237-51ed-4951-a011-96d0f12acfc2"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/IMG_9998_1.jpg",
