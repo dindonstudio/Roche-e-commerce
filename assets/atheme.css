@@ -1,0 +1,7 @@
+* {
+  --creme: #fff5e6;
+}
+
+header {
+  background-color: var(--creme);
+}
