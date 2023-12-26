@@ -62,13 +62,25 @@
         "27d3b5f9-6eea-491e-867f-6b4de0893e12": {
           "type": "collection_block",
           "settings": {
-            "title": "Collection Title",
-            "collection": ""
+            "image": "shopify:\/\/shop_images\/KIROUCOOL-CCOCT19-4_1.jpg",
+            "title": "APPAREL",
+            "title_color": "blue",
+            "collection": "apparel"
+          }
+        },
+        "d6fb94ec-5853-4494-949e-ab22d5cffdcf": {
+          "type": "collection_block",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/000089770031-768x1158_1.jpg",
+            "title": "MUSIQUE",
+            "title_color": "white",
+            "collection": "musique"
           }
         }
       },
       "block_order": [
-        "27d3b5f9-6eea-491e-867f-6b4de0893e12"
+        "27d3b5f9-6eea-491e-867f-6b4de0893e12",
+        "d6fb94ec-5853-4494-949e-ab22d5cffdcf"
       ],
       "settings": {
         "title": "Decouvez nos <strong>derniers produits<\/strong>"
