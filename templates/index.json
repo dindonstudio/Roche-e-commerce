@@ -110,11 +110,47 @@
             "limited_edition_text": "Limited Edition",
             "product_link": "shopify:\/\/products\/slipmat-darius-oasis"
           }
+        },
+        "568508b8-d23a-46ed-96e0-f857e96662ba": {
+          "type": "product",
+          "settings": {
+            "is_limited_edition": true,
+            "limited_edition_text": "Limited Edition",
+            "product_link": "shopify:\/\/products\/tote-bag-roche"
+          }
+        },
+        "b1408e82-2a4f-4c56-8f52-b44d012c777d": {
+          "type": "product",
+          "settings": {
+            "is_limited_edition": false,
+            "limited_edition_text": "Limited Edition",
+            "product_link": "shopify:\/\/products\/t-shirt-roche-varsity"
+          }
+        },
+        "6c80f132-0549-47b9-a979-74db6aa8793c": {
+          "type": "product",
+          "settings": {
+            "is_limited_edition": false,
+            "limited_edition_text": "Limited Edition",
+            "product_link": "shopify:\/\/products\/zimmer-zimmer-remixes-vinyl-12-ep"
+          }
+        },
+        "4bbca670-ee02-4bbd-bb3e-56f0177ffc4c": {
+          "type": "product",
+          "settings": {
+            "is_limited_edition": false,
+            "limited_edition_text": "Limited Edition",
+            "product_link": "shopify:\/\/products\/camera-darius-x-lomography"
+          }
         }
       },
       "block_order": [
         "fb14bfae-ae0c-4207-bda4-089ae1c9b1d7",
-        "df65c011-ab84-4aea-94ea-cce112478673"
+        "df65c011-ab84-4aea-94ea-cce112478673",
+        "568508b8-d23a-46ed-96e0-f857e96662ba",
+        "b1408e82-2a4f-4c56-8f52-b44d012c777d",
+        "6c80f132-0549-47b9-a979-74db6aa8793c",
+        "4bbca670-ee02-4bbd-bb3e-56f0177ffc4c"
       ],
       "settings": {
       }
