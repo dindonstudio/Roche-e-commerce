@@ -11,13 +11,13 @@
   ],
   "blocks": [
     {
+      "type": "collection_block",
       "name": "Collection Block",
       "settings": [
         {
           "type": "image_picker",
           "label": "Image",
-          "id": "image",
-          "default": "placeholder-image.png"
+          "id": "image"
         },
         {
           "type": "text",
@@ -45,7 +45,10 @@
     <div class="collection-blocks">
       {% for block in section.blocks %}
         <div class="collection-block">
-          <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.title }}">
+          <img
+            src="{{ block.settings.image | img_url: 'medium' | default: 'default-image.jpg' }}"
+            alt="{{ block.settings.title }}"
+          >
           <h2>{{ block.settings.title }}</h2>
           <a href="{{ block.settings.collection_url }}" class="btn">Shop Now</a>
         </div>
