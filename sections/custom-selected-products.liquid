@@ -15,6 +15,11 @@
       "name": "Product",
       "settings": [
         {
+          "type": "product_picker",
+          "id": "product_id",
+          "label": "Select Product"
+        },
+        {
           "type": "checkbox",
           "id": "is_limited_edition",
           "label": "Is this a limited edition product?",
@@ -32,11 +37,6 @@
           "id": "product_link",
           "label": "Product Link"
         }
-        {
-          "type": "product",
-          "id": "product",
-          "label": "Product"
-        }
       ]
     }
   ],
@@ -48,6 +48,7 @@
   ]
 }
 {% endschema %}
+
 <div class="best-sellers-container">
   <div class="best-sellers-scrollable">
     {% for block in section.blocks %}
