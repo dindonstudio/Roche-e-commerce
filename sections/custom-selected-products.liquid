@@ -19,6 +19,11 @@
           "label": "Limited Edition Text",
           "default": "Limited Edition",
           "info": "Only applies if the product is marked as limited edition."
+        },
+        {
+          "type": "url",
+          "id": "product_link",
+          "label": "Product Link"
         }
       ]
     }
@@ -31,21 +36,22 @@
   ]
 }
 {% endschema %}
-
 <div class="best-sellers-container">
   <div class="best-sellers-scrollable">
     {% for block in section.blocks %}
       {% if block.type == 'product' %}
         <div class="{% if block.settings.is_limited_edition %}limited-edition-product{% else %}product{% endif %}">
-          {% if block.settings.is_limited_edition %}
-            <h4>{{ block.settings.limited_edition_text }}</h4>
-          {% endif %}
-          <img
-            src="{{ block.settings.product.image.src | img_url: 'medium' }}"
-            alt="{{ block.settings.product.title }}"
-          >
-          <h3>{{ block.settings.product.title }}</h3>
-          <p>{{ block.settings.product.price }}</p>
+          <a href="{{ block.settings.product_link }}">
+            {% if block.settings.is_limited_edition %}
+              <h4>{{ block.settings.limited_edition_text }}</h4>
+            {% endif %}
+            <img
+              src="{{ block.settings.product.image.src | img_url: 'medium' }}"
+              alt="{{ block.settings.product.title }}"
+            >
+            <h3>{{ block.settings.product.title }}</h3>
+            <p>{{ block.settings.product.price }}</p>
+          </a>
         </div>
       {% endif %}
     {% endfor %}
