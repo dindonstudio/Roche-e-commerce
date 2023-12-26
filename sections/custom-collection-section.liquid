@@ -26,6 +26,26 @@
           "default": "Collection Title"
         },
         {
+          "type": "select",
+          "label": "Title Color",
+          "id": "title_color",
+          "default": "blue",
+          "options": [
+            {
+              "value": "white",
+              "label": "White"
+            },
+            {
+              "value": "black",
+              "label": "Black"
+            },
+            {
+              "value": "blue",
+              "label": "Blue (#264A99)"
+            }
+          ]
+        },
+        {
           "type": "collection",
           "label": "Select Collection",
           "id": "collection"
@@ -45,17 +65,27 @@
 <div class="custom-collection-section">
   <div class="container">
     <div class="section-title">
-      {{ section.settings.title | rich_text }}
+      <h1>{{ section.settings.title | rich_text }}</h1>
     </div>
 
     <div class="collection-blocks">
       {% for block in section.blocks %}
         <div class="collection-block">
-          <img
-            src="{{ block.settings.image | img_url: 'medium' | default: 'default-image.jpg' }}"
-            alt="{{ block.settings.title }}"
+          <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.title }}">
+          <h2
+            style="
+              color:
+              {% if block.settings.title_color == 'white' %}
+                white
+              {% elsif block.settings.title_color == 'black' %}
+                black
+              {% else %}
+                #264A99
+              {% endif %}
+            "
           >
-          <h2>{{ block.settings.title }}</h2>
+            {{ block.settings.title }}
+          </h2>
           <a href="{{ block.settings.collection_url }}" class="btn">Shop Now</a>
         </div>
       {% endfor %}
