@@ -1,10 +1,15 @@
-* {
+*,
+html {
   --creme: #fff5e6;
   --blue: #264a99;
+  font-size: 62.5%;
 }
 
 header {
   background-color: var(--creme);
+}
+body {
+  background-color: #fcf9f5;
 }
 .button.blueButton {
   background-color: var(--blue);

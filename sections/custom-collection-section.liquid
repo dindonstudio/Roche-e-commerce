@@ -65,16 +65,21 @@
 {% endschema %}
 
 <div class="custom-collection-section">
-  <div class="container">
-    <div class="section-title">
-      <h1>{{ section.settings.title | rich_text }}</h1>
+  <div class="container__collection">
+    <div class="container__title">
+        <div class="section-title">
+            <div class="collection__section__title">{{ section.settings.title | rich_text }}</div>
+          </div>
     </div>
+  
 
     <div class="collection-blocks">
       {% for block in section.blocks %}
-        <div class="collection-block">
-          <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.title }}">
-          <h2
+      {% assign collection = collections[block.settings.collection] %}
+
+      <a href="{{ collection.url }}" class="collection-block">
+          <img src="{{ block.settings.image | image_url: height: 1400 }}" alt="{{ block.settings.title }}">
+          <div class="  collection-title "
             style="
               color:
               {% if block.settings.title_color == 'white' %}
@@ -87,9 +92,8 @@
             "
           >
             {{ block.settings.title }}
-          </h2>
-          <a href="{{ block.settings.collection_url }}" class="btn">Shop Now</a>
-        </div>
+          </div>
+        </a>
       {% endfor %}
     </div>
   </div>
@@ -98,21 +102,61 @@
 <style>
   /* Add your custom CSS styles here */
   .custom-collection-section {
-    /* Define section styles */
-  }
+    padding: 5rem 3rem;
+    width: 100%;
 
+    display: flex;
+    justify-content: center;
+  }
+.container__collection{
+    max-width: 1400px;
+}
   .section-title {
     /* Define title styles */
+    
   }
 
   .collection-blocks {
     display: flex;
-    justify-content: space-between;
+    padding-top: 4rem;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
     /* Add styles for block container */
   }
 
   .collection-block {
     flex: 1;
-    /* Add styles for each block */
+    flex: 1;
+    position: relative;
+  /* max-width: 700px ; */
   }
+  .collection-block img{
+    width: 100%;
+    height: auto;
+    z-index: 0;
+  }
+  .collection-title {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    text-align: center;
+    z-index: 2;
+    font-size: 9.6rem;
+    font-weight: bold;
+  }
+   .section-title{
+    display: flex;
+    justify-content: flex-end;
+
+   }
+   .collection__section__title{
+    text-align: right;
+    max-width: 15ch;
+    font-size: 50px;
+    line-height: 100%;
+   }
+   
 </style>

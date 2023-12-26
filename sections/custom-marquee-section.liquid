@@ -1,0 +1,17 @@
+{ "name": "Marquee Text Section", "settings": [ { "type": "text", "label": "Marquee Text", "id": "marquee_text",
+"default": "This is your marquee text. Edit this text as needed." } ], "presets": [ { "name": "Default", "category":
+"Marquee Text", "settings": { "marquee_text": "This is the preset marquee text." } } ] }
+
+<div class="marquee-container">
+  <div id="marquee" class="vanilla-marquee">{{ section.settings.marquee_text }}</div>
+</div>
+
+<script defer src="https://cdn.jsdelivr.net/npm/vanilla-marquee/dist/vanilla-marquee.js"></script>
+<script>
+  var marqueeText = document.getElementById('marquee');
+  var marquee = new VanillaMarquee(marqueeText, {
+    direction: 'left',
+    scrollAmount: 2,
+    pauseOnHover: true,
+  });
+</script>
