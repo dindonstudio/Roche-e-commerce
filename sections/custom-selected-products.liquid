@@ -1,0 +1,93 @@
+{% schema %}
+{
+  "name": "Best Sellers Section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "product",
+      "name": "Product",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "is_limited_edition",
+          "label": "Is this a limited edition product?",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "limited_edition_text",
+          "label": "Limited Edition Text",
+          "default": "Limited Edition",
+          "info": "Only applies if the product is marked as limited edition."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "section",
+      "name": "Selection de produits"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="best-sellers-container">
+  <div class="best-sellers-scrollable">
+    {% for block in section.blocks %}
+      {% if block.type == 'product' %}
+        <div class="{% if block.settings.is_limited_edition %}limited-edition-product{% else %}product{% endif %}">
+          {% if block.settings.is_limited_edition %}
+            <h4>{{ block.settings.limited_edition_text }}</h4>
+          {% endif %}
+          <img
+            src="{{ block.settings.product.image.src | img_url: 'medium' }}"
+            alt="{{ block.settings.product.title }}"
+          >
+          <h3>{{ block.settings.product.title }}</h3>
+          <p>{{ block.settings.product.price }}</p>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  .best-sellers-container {
+    overflow: hidden;
+  }
+
+  .best-sellers-scrollable {
+    display: flex;
+    flex-direction: row;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch; /* For iOS smooth scrolling */
+  }
+
+  .best-seller-product {
+    display: inline-block;
+    flex: 0 0 auto;
+    margin-right: 20px;
+    scroll-snap-align: start;
+  }
+
+  .product,
+  .limited-edition-product {
+    text-align: center;
+  }
+
+  .limited-edition-product {
+    height: 250px;
+  }
+
+  .limited-edition-product h4 {
+    background-color: #ffd700;
+    padding: 5px;
+    margin-bottom: 10px;
+  }
+
+  .limited-edition-product h3 {
+    font-size: 1.5rem;
+  }
+</style>

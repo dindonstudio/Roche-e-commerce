@@ -20,16 +20,31 @@
   ]
 }
 {% endschema %}
-<div class="marquee-container">
-  <div id="marquee" class="vanilla-marquee">{{ section.settings.marquee_text }}</div>
-</div>
 
-<script defer src="https://cdn.jsdelivr.net/npm/vanilla-marquee/dist/vanilla-marquee.js"></script>
-<script>
-  var marqueeText = document.getElementById('marquee');
-  var marquee = new VanillaMarquee(marqueeText, {
-    direction: 'left',
-    scrollAmount: 2,
-    pauseOnHover: true,
-  });
-</script>
+<div class="marquee-container">
+    <div id="marquee" class="vanilla-marquee">{{ section.settings.marquee_text }}</div>
+  </div>
+  
+  <script type="module">
+import marquee from 'https://cdn.jsdelivr.net/npm/vanilla-marquee/dist/vanilla-marquee.js';
+
+    new marquee( document.getElementById( 'marquee' ), {
+  gap:        100,
+  speed:      150,
+});
+  </script>
+<style>
+    .marquee-container {
+      overflow: hidden;
+      white-space: nowrap;
+      background-color: #264a99;
+      color: #fff;
+      font-weight: bold;
+      font-size: 4rem;
+    }
+  
+    .vanilla-marquee div {
+      font-size: 4rem;
+    }
+
+  </style>
