@@ -91,11 +91,39 @@
       "settings": {
         "marquee_text": "CHRISTMAS OFFER !! Free Shipping until 24th of DECEMBER"
       }
+    },
+    "a0f31116-f917-4b18-92fc-51e466a025b1": {
+      "type": "custom-selected-products",
+      "blocks": {
+        "fb14bfae-ae0c-4207-bda4-089ae1c9b1d7": {
+          "type": "product",
+          "settings": {
+            "is_limited_edition": false,
+            "limited_edition_text": "Limited Edition",
+            "product_link": "shopify:\/\/products\/camera-darius-x-lomography"
+          }
+        },
+        "df65c011-ab84-4aea-94ea-cce112478673": {
+          "type": "product",
+          "settings": {
+            "is_limited_edition": false,
+            "limited_edition_text": "Limited Edition",
+            "product_link": "shopify:\/\/products\/slipmat-darius-oasis"
+          }
+        }
+      },
+      "block_order": [
+        "fb14bfae-ae0c-4207-bda4-089ae1c9b1d7",
+        "df65c011-ab84-4aea-94ea-cce112478673"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
     "image_banner",
     "b423c175-ca80-4069-9d4b-6363035339f9",
-    "c5005365-9569-4932-9a0a-f9f67ac49eed"
+    "c5005365-9569-4932-9a0a-f9f67ac49eed",
+    "a0f31116-f917-4b18-92fc-51e466a025b1"
   ]
 }
