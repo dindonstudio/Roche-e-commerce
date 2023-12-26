@@ -139,6 +139,24 @@
             "limited_edition_text": "Limited Edition",
             "product_link": ""
           }
+        },
+        "02c34cf8-7796-46c8-bb63-0a4df8814451": {
+          "type": "blocks",
+          "settings": {
+            "product": "hoodie-roche-varsity",
+            "is_limited_edition": false,
+            "limited_edition_text": "Limited Edition",
+            "product_link": ""
+          }
+        },
+        "1ba8a592-a8a8-4d0f-b22f-516e41ddb350": {
+          "type": "blocks",
+          "settings": {
+            "product": "slipmat-darius-oasis",
+            "is_limited_edition": false,
+            "limited_edition_text": "Limited Edition",
+            "product_link": ""
+          }
         }
       },
       "block_order": [
@@ -146,7 +164,9 @@
         "fb41f26c-08bf-4167-9e50-81e29867ab6e",
         "aa506f8f-73df-4258-ad1d-018c0cdeeb37",
         "478cee41-7053-40a2-9b0e-acfc3b158baa",
-        "243c9634-de31-42af-ab0f-87fe64423610"
+        "243c9634-de31-42af-ab0f-87fe64423610",
+        "02c34cf8-7796-46c8-bb63-0a4df8814451",
+        "1ba8a592-a8a8-4d0f-b22f-516e41ddb350"
       ],
       "settings": {
         "section_text": "Our Best Sellers"
