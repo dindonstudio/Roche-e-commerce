@@ -1,7 +1,25 @@
-{ "name": "Marquee Text Section", "settings": [ { "type": "text", "label": "Marquee Text", "id": "marquee_text",
-"default": "This is your marquee text. Edit this text as needed." } ], "presets": [ { "name": "Default", "category":
-"Marquee Text", "settings": { "marquee_text": "This is the preset marquee text." } } ] }
-
+{% schema %}
+{
+  "name": "Marquee Text Section",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Marquee Text",
+      "id": "marquee_text",
+      "default": "This is your marquee text. Edit this text as needed."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Marquee Text",
+      "settings": {
+        "marquee_text": "This is the preset marquee text."
+      }
+    }
+  ]
+}
+{% endschema %}
 <div class="marquee-container">
   <div id="marquee" class="vanilla-marquee">{{ section.settings.marquee_text }}</div>
 </div>
