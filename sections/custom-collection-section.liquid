@@ -1,0 +1,77 @@
+{% schema %}
+{
+  "name": "Custom Collection Section",
+  "settings": [
+    {
+      "type": "text",
+      "label": "Title",
+      "id": "title",
+      "default": "Featured Collections"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Collection Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "image",
+          "default": "placeholder-image.png"
+        },
+        {
+          "type": "text",
+          "label": "Title",
+          "id": "title",
+          "default": "Collection Title"
+        },
+        {
+          "type": "collection",
+          "label": "Select Collection",
+          "id": "collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+
+<div class="custom-collection-section">
+  <div class="container">
+    <div class="section-title">
+      {{ section.settings.title | rich_text }}
+    </div>
+
+    <div class="collection-blocks">
+      {% for block in section.blocks %}
+        <div class="collection-block">
+          <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.title }}">
+          <h2>{{ block.settings.title }}</h2>
+          <a href="{{ block.settings.collection_url }}" class="btn">Shop Now</a>
+        </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Add your custom CSS styles here */
+  .custom-collection-section {
+    /* Define section styles */
+  }
+
+  .section-title {
+    /* Define title styles */
+  }
+
+  .collection-blocks {
+    display: flex;
+    justify-content: space-between;
+    /* Add styles for block container */
+  }
+
+  .collection-block {
+    flex: 1;
+    /* Add styles for each block */
+  }
+</style>
