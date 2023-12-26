@@ -58,6 +58,18 @@
     },
     "b423c175-ca80-4069-9d4b-6363035339f9": {
       "type": "custom-collection-section",
+      "blocks": {
+        "27d3b5f9-6eea-491e-867f-6b4de0893e12": {
+          "type": "collection_block",
+          "settings": {
+            "title": "Collection Title",
+            "collection": ""
+          }
+        }
+      },
+      "block_order": [
+        "27d3b5f9-6eea-491e-867f-6b4de0893e12"
+      ],
       "settings": {
         "title": "Decouvez nos <strong>derniers produits<\/strong>"
       }
