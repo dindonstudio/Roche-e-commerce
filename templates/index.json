@@ -100,8 +100,7 @@
           "settings": {
             "product": "camera-darius-x-lomography",
             "is_limited_edition": false,
-            "limited_edition_text": "Limited Edition",
-            "product_link": ""
+            "limited_edition_text": "Limited Edition"
           }
         },
         "fb41f26c-08bf-4167-9e50-81e29867ab6e": {
@@ -109,8 +108,7 @@
           "settings": {
             "product": "hoodie-roche-varsity",
             "is_limited_edition": false,
-            "limited_edition_text": "Limited Edition",
-            "product_link": ""
+            "limited_edition_text": "Limited Edition"
           }
         },
         "aa506f8f-73df-4258-ad1d-018c0cdeeb37": {
@@ -118,8 +116,7 @@
           "settings": {
             "product": "slipmat-darius-oasis",
             "is_limited_edition": true,
-            "limited_edition_text": "Limited Edition",
-            "product_link": ""
+            "limited_edition_text": "Limited Edition"
           }
         },
         "478cee41-7053-40a2-9b0e-acfc3b158baa": {
@@ -127,8 +124,7 @@
           "settings": {
             "product": "zimmer-zimmer-remixes-vinyl-12-ep",
             "is_limited_edition": false,
-            "limited_edition_text": "Limited Edition",
-            "product_link": ""
+            "limited_edition_text": "Limited Edition"
           }
         },
         "243c9634-de31-42af-ab0f-87fe64423610": {
@@ -136,8 +132,7 @@
           "settings": {
             "product": "tote-bag-roche",
             "is_limited_edition": false,
-            "limited_edition_text": "Limited Edition",
-            "product_link": ""
+            "limited_edition_text": "Limited Edition"
           }
         },
         "02c34cf8-7796-46c8-bb63-0a4df8814451": {
@@ -145,8 +140,7 @@
           "settings": {
             "product": "hoodie-roche-varsity",
             "is_limited_edition": false,
-            "limited_edition_text": "Limited Edition",
-            "product_link": ""
+            "limited_edition_text": "Limited Edition"
           }
         },
         "1ba8a592-a8a8-4d0f-b22f-516e41ddb350": {
@@ -154,8 +148,7 @@
           "settings": {
             "product": "slipmat-darius-oasis",
             "is_limited_edition": false,
-            "limited_edition_text": "Limited Edition",
-            "product_link": ""
+            "limited_edition_text": "Limited Edition"
           }
         }
       },
@@ -171,12 +164,22 @@
       "settings": {
         "section_text": "Our Best Sellers"
       }
+    },
+    "4d0b19e1-9024-41bd-af3c-abd7b080a519": {
+      "type": "custom-image-and-text",
+      "settings": {
+        "image": "shopify:\/\/shop_images\/BANNER-ROCHEVARSITY-1-copie_1.jpg",
+        "text": "Aeroclub si ispira agli sport dell’aria per creare una comunità forte e un lifestyle dinamico e coinvolgente che, attraverso stimoli creativi, abbatte gli stereotipi odierni per volare alto.",
+        "button_url": "shopify:\/\/pages\/contact",
+        "button_text": "LOOKBOOK"
+      }
     }
   },
   "order": [
     "image_banner",
     "b423c175-ca80-4069-9d4b-6363035339f9",
     "c5005365-9569-4932-9a0a-f9f67ac49eed",
-    "a0f31116-f917-4b18-92fc-51e466a025b1"
+    "a0f31116-f917-4b18-92fc-51e466a025b1",
+    "4d0b19e1-9024-41bd-af3c-abd7b080a519"
   ]
 }
