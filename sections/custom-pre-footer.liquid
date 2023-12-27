@@ -1,0 +1,141 @@
+{% schema %}
+{
+  "name": "Pre-footer Section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "instagram_url",
+      "label": "Instagram URL",
+      "default": "http://instagram.com"
+    },
+    {
+      "type": "text",
+      "id": "spotify_url",
+      "label": "Spotify URL",
+      "default": "http://spotify.com"
+    },
+    {
+      "type": "text",
+      "id": "youtube_url",
+      "label": "YouTube URL",
+      "default": "http://youtube.com"
+    },
+    {
+      "type": "text",
+      "id": "newsletter_text",
+      "label": "Newsletter Text",
+      "default": "SIGN UP TO OUR NEWSLETTER AND GET 10% OFF YOUR FIRST ORDER"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pre-footer Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="pre-footer">
+  <div class="social-links">
+    <a href="{{ section.settings.instagram_url }}" class="social-link">
+      <img src="{{ 'instagram-icon.svg' | asset_url }}" alt="Instagram">
+    </a>
+    <a href="{{ section.settings.spotify_url }}" class="social-link">
+      <img src="{{ 'spotify-icon.svg' | asset_url }}" alt="Spotify">
+    </a>
+    <a href="{{ section.settings.youtube_url }}" class="social-link">
+      <img src="{{ 'youtube-icon.svg' | asset_url }}" alt="YouTube">
+    </a>
+  </div>
+  <div class="newsletter-signup">
+    <p class="signup-text">{{ section.settings.newsletter_text }}</p>
+    <form action="/contact#contact_form" method="post" id="contact_form" accept-charset="UTF-8" class="contact-form">
+      <input type="email" name="contact[email]" placeholder="enter email here..." required>
+      <input type="hidden" name="form_type" value="customer">
+      <input type="hidden" name="utf8" value="✓">
+      <button type="submit" class="subscribe-button">SUBSCRIBE</button>
+    </form>
+  </div>
+</div>
+
+<!-- Add the corresponding CSS from the previous response here to style the section -->
+<style>
+  .pre-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4; /* Match this to the background color of your image */
+    border-top: 1px solid #ccc; /* Match this to the border color in your image */
+  }
+
+  .social-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-link {
+    margin: 0 10px;
+  }
+
+  .social-link img {
+    width: 24px; /* Adjust the size as necessary */
+    height: auto;
+  }
+
+  .newsletter-signup {
+    display: flex;
+    align-items: center;
+  }
+
+  .signup-text {
+    margin-right: 20px;
+    font-weight: bold;
+  }
+
+  .newsletter-signup form {
+    display: flex;
+    align-items: center;
+  }
+
+  .newsletter-signup input {
+    padding: 5px 10px;
+    margin-right: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .subscribe-button {
+    padding: 5px 15px;
+    background-color: #000; /* Match this to the button color in your image */
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .pre-footer {
+      flex-direction: column;
+    }
+
+    .newsletter-signup {
+      flex-direction: column;
+    }
+
+    .newsletter-signup form {
+      flex-direction: column;
+    }
+
+    .signup-text {
+      margin-bottom: 10px;
+    }
+
+    .newsletter-signup input {
+      margin-bottom: 10px;
+    }
+  }
+</style>

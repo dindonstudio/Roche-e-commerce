@@ -40,7 +40,7 @@
   </div>
   <div class="custom-section-content">
     <p>{{ section.settings.text }}</p>
-    <a href="{{ section.settings.button_url }}" class="custom-button">
+    <a href="{{ section.settings.button_url }}" class="custom-button button blueButton">
       {{ section.settings.button_text }}
     </a>
   </div>
@@ -51,7 +51,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 20px 0;
+
+    border: 1px solid black;
+    height: 40vw;
+    overflow: hidden;
   }
 
   .custom-section-image {
@@ -61,18 +64,26 @@
 
   .custom-section-content {
     flex-basis: 50%;
-    padding: 20px;
-  }
+ padding: 0 2rem;
+    height: 100%;
 
+  }
+  .custom-section-content p{
+    font-size: 32px;
+    line-height: 100%;
+}
   .custom-button {
-    display: inline-block;
-    padding: 10px 20px;
+
+
     background-color: #007bff;
     color: white;
     text-decoration: none;
     border-radius: 5px;
   }
-
+.custom-section-image img{
+    width: 100%;
+    height: auto;
+}
   @media (max-width: 768px) {
     .custom-section {
       flex-direction: column;
