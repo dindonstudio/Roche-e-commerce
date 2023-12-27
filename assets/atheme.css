@@ -25,3 +25,10 @@ body {
   border: 1px solid var(--blue);
   transition: 0.3s ease all;
 }
+a {
+  text-decoration: none;
+}
+
+h3 {
+  margin: 0;
+}

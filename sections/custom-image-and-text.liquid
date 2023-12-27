@@ -1,0 +1,87 @@
+{% schema %}
+{
+  "name": "Custom Section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Your custom text here"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text",
+      "default": "Click Here"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Custom",
+      "name": "Custom Section image and text"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="custom-section">
+  <div class="custom-section-image">
+    <img src="{{ section.settings.image | img_url: 'large' }}" alt="">
+  </div>
+  <div class="custom-section-content">
+    <p>{{ section.settings.text }}</p>
+    <a href="{{ section.settings.button_url }}" class="custom-button">
+      {{ section.settings.button_text }}
+    </a>
+  </div>
+</div>
+
+<style>
+  .custom-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 0;
+  }
+
+  .custom-section-image {
+    flex-basis: 50%;
+    max-width: 50%;
+  }
+
+  .custom-section-content {
+    flex-basis: 50%;
+    padding: 20px;
+  }
+
+  .custom-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+
+  @media (max-width: 768px) {
+    .custom-section {
+      flex-direction: column;
+    }
+
+    .custom-section-image,
+    .custom-section-content {
+      flex-basis: 100%;
+      max-width: 100%;
+    }
+  }
+</style>

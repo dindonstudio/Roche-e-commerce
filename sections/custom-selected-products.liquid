@@ -31,11 +31,6 @@
           "label": "Limited Edition Text",
           "default": "Limited Edition",
           "info": "Only applies if the product is marked as limited edition."
-        },
-        {
-          "type": "url",
-          "id": "product_link",
-          "label": "Product Link"
         }
       ]
     }
@@ -51,19 +46,28 @@
 
 <div class="best-sellers-container">
   <div class="best-sellers-scrollable">
+    <div class="title__flip">
+        <h2><div>
+            {{ section.settings.section_text }}
+        </div></h2>
+    </div>
     {% for block in section.blocks %}
-      {% if block.type == 'product' %}
+      {% if block.type == 'blocks' %}
+        {% assign product = all_products[block.settings.product] %}
         <div class="{% if block.settings.is_limited_edition %}limited-edition-product{% else %}product{% endif %}">
-          <a href="{{ block.settings.product_link }}">
+          <a class="product__link" href="{{ product.url }}">
             {% if block.settings.is_limited_edition %}
-              <h4>{{ block.settings.limited_edition_text }}</h4>
+              <h4 class="limited__text">{{ block.settings.limited_edition_text }}</h4>
             {% endif %}
             <img
-              src="{{ block.settings.product.image.src | img_url: 'medium' }}"
-              alt="{{ block.settings.product.title }}"
+              src="{{ product.featured_image | img_url: 'medium' }}"
+              alt="{{ product.title }}"
             >
-            <h3>{{ block.settings.product.title }}</h3>
-            <p>{{ block.settings.product.price }}</p>
+            <div class="product__details">
+                <h3>{{ product.title }}</h3>
+                <h3>{{ product.price | money }}</h3>
+            </div>
+    
           </a>
         </div>
       {% endif %}
@@ -74,6 +78,7 @@
 <style>
   .best-sellers-container {
     overflow: hidden;
+    padding: 8rem 0;
   }
 
   .best-sellers-scrollable {
@@ -82,6 +87,8 @@
     overflow-x: auto;
     scroll-snap-type: x mandatory;
     -webkit-overflow-scrolling: touch; /* For iOS smooth scrolling */
+    flex-wrap: nowrap;
+    overflow-y: hidden;
   }
 
   .best-seller-product {
@@ -93,11 +100,20 @@
 
   .product,
   .limited-edition-product {
-    text-align: center;
-  }
 
+ /* height: 40vw; */
+border: 1px solid black;
+
+  }
+.product img,  .limited-edition-product img{
+    height: 30vw;
+    width: auto;
+    border-bottom: 1px solid black;
+}
   .limited-edition-product {
-    height: 250px;
+    /* height: 43vw;
+    transform: translateY(-3vw); */
+
   }
 
   .limited-edition-product h4 {
@@ -109,4 +125,37 @@
   .limited-edition-product h3 {
     font-size: 1.5rem;
   }
+  .product h3, .limited-edition-product h3{
+    text-decoration: none;
+  }
+  .title__flip{
+    width: 200px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .title__flip h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+font-size: 56px;
+font-weight: 600;
+  }
+  .title__flip h2 div{
+    transform: rotate(-90deg);
+
+}
+
+.product__details{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 2rem;
+}
+.limited__text{
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+}
 </style>
