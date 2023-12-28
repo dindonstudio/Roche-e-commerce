@@ -147,7 +147,7 @@
           "type": "blocks",
           "settings": {
             "product": "slipmat-darius-oasis",
-            "is_limited_edition": false,
+            "is_limited_edition": true,
             "limited_edition_text": "Limited Edition"
           }
         }
