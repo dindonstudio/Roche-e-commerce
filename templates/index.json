@@ -123,7 +123,7 @@
           "type": "blocks",
           "settings": {
             "product": "zimmer-zimmer-remixes-vinyl-12-ep",
-            "is_limited_edition": false,
+            "is_limited_edition": true,
             "limited_edition_text": "Limited Edition"
           }
         },
