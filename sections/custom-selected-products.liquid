@@ -45,6 +45,8 @@
 {% endschema %}
 
 <div class="best-sellers-container">
+    <div class="scroll-arrow left-arrow"><span>←</span></div> <!-- Left arrow -->
+    <div class="scroll-arrow right-arrow"><span>→</span></div> <!-- Right arrow -->
   <div class="best-sellers-scrollable">
     <div class="title__flip">
         <h2><div>
@@ -55,17 +57,18 @@
       {% if block.type == 'blocks' %}
         {% assign product = all_products[block.settings.product] %}
         <div class="{% if block.settings.is_limited_edition %}limited-edition-product{% else %}product{% endif %}">
+            <h4 class="limited__text">{{ block.settings.limited_edition_text }}</h4>
+
           <a class="product__link" href="{{ product.url }}">
             {% if block.settings.is_limited_edition %}
-              <h4 class="limited__text">{{ block.settings.limited_edition_text }}</h4>
             {% endif %}
             <img
-              src="{{ product.featured_image | img_url: 'medium' }}"
+              src="{{ product.featured_image | img_url: 'x1024' }}"
               alt="{{ product.title }}"
             >
             <div class="product__details">
                 <h3>{{ product.title }}</h3>
-                <h3>{{ product.price | money }}</h3>
+                <h3 class="price">{{ product.price | money }}</h3>
             </div>
     
           </a>
@@ -76,9 +79,37 @@
 </div>
 
 <style>
+    .scroll-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    z-index: 10;
+    font-size: 20px;
+    background-color: black;
+  border-radius: 50%;
+    padding: 2px 10px;
+    color: white;
+}
+.scroll-arrow span{
+    font-size: 20px;
+    position: relative;
+    top: 0.2rem;
+}
+.left-arrow {
+    left: 10px;
+}
+
+.right-arrow {
+    right: 10px;
+}
+
+/* Existing styles remain unchanged */
+
   .best-sellers-container {
     overflow: hidden;
-    padding: 8rem 0;
+    position: relative;
+    padding: 12rem 0;
   }
 
   .best-sellers-scrollable {
@@ -89,6 +120,8 @@
     -webkit-overflow-scrolling: touch; /* For iOS smooth scrolling */
     flex-wrap: nowrap;
     overflow-y: hidden;
+    transition: scroll-left 0.3s ease;
+
   }
 
   .best-seller-product {
@@ -113,20 +146,33 @@ border: 1px solid black;
   .limited-edition-product {
     /* height: 43vw;
     transform: translateY(-3vw); */
-
+position: relative;
+background-color: #264a99;
   }
-
+.price{
+    font-family: 'CustomFont-Light';
+}
   .limited-edition-product h4 {
-    background-color: #ffd700;
+    background-color: #E55041;
     padding: 5px;
     margin-bottom: 10px;
+    text-align: center;
+    color: white;
+    display: block
   }
 
   .limited-edition-product h3 {
     font-size: 1.5rem;
-  }
-  .product h3, .limited-edition-product h3{
+    color: white;
     text-decoration: none;
+  }
+  .product h3{
+    text-decoration: none;
+    color: black;
+    font-size: 1.5rem;
+  }
+  .product h4{
+    display: none;
   }
   .title__flip{
     width: 200px;
@@ -144,6 +190,8 @@ font-weight: 600;
   }
   .title__flip h2 div{
     transform: rotate(-90deg);
+    white-space: nowrap;
+    color: black;
 
 }
 
@@ -155,7 +203,36 @@ font-weight: 600;
 }
 .limited__text{
     position: absolute;
-    top: 1rem;
-    right: 2rem;
+    top: -2rem;
+    right: 0rem;
+    width: 100%;
+    text-transform: uppercase;
+    font-family: 'CustomFont-Regular';
 }
+
 </style>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const scrollContainer = document.querySelector('.best-sellers-scrollable');
+        const scrollAmount = 300; // Change this value based on desired scroll amount
+    
+        function smoothScroll(amount) {
+            scrollContainer.style.scrollBehavior = 'smooth';
+            scrollContainer.scrollLeft += amount;
+            setTimeout(() => {
+                scrollContainer.style.scrollBehavior = 'auto';
+            }, 300); // Duration should match the CSS transition time
+        }
+    
+        document.querySelector('.left-arrow').addEventListener('click', function() {
+            smoothScroll(-scrollAmount);
+        });
+    
+        document.querySelector('.right-arrow').addEventListener('click', function() {
+            smoothScroll(scrollAmount);
+        });
+    });
+    </script>
+    

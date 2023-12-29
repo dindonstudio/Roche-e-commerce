@@ -1,3 +1,6 @@
+{{ 'section-email-signup-banner.css' | asset_url | stylesheet_tag }}
+
+
 {% schema %}
 {
   "name": "Pre-footer Section",
@@ -48,53 +51,124 @@
       <img src="{{ 'Youtube.svg' | asset_url }}" alt="YouTube">
     </a>
   </div>
-  <div class="newsletter-signup">
-    <p class="signup-text">{{ section.settings.newsletter_text }}</p>
-    <form action="/contact#contact_form" method="post" id="contact_form" accept-charset="UTF-8" class="contact-form">
-      <input type="email" name="contact[email]" placeholder="enter email here..." required>
-      <input type="hidden" name="form_type" value="customer">
-      <input type="hidden" name="utf8" value="✓">
-      <button type="submit" class="subscribe-button">SUBSCRIBE</button>
-    </form>
+  <div class="newsletter__container">
+    <div class="signup-container">    <h3 class="signup-text">{{ section.settings.newsletter_text }}</h3></div>
+
+    <div class="newsletter-signup">
+  
+      {% form 'customer', class: 'newsletter-form' %}
+        <input type="hidden" name="contact[tags]" value="newsletter">
+        <div class="newsletter-form__field-wrapper">
+          <div class="">
+            <input
+              id="NewsletterForm--{{ section.id }}"
+              type="email"
+              name="contact[email]"
+              class="field__input"
+              value="{{ form.email }}"
+              aria-required="true"
+              autocorrect="off"
+              autocapitalize="off"
+              autocomplete="email"
+              {% if form.errors %}
+                autofocus
+                aria-invalid="true"
+                aria-describedby="Newsletter-error--{{ section.id }}"
+              {% elsif form.posted_successfully? %}
+                aria-describedby="Newsletter-success--{{ section.id }}"
+              {% endif %}
+              placeholder="{{ 'newsletter.label' | t }}"
+              required
+            >
+            <label class="field__label" for="NewsletterForm--{{ section.id }}">
+              {{ 'newsletter.label' | t }}
+            </label>
+            <button
+              type="submit"
+              class="newsletter-form__button field__button"
+              name="commit"
+              id="Subscribe"
+              aria-label="{{ 'newsletter.button_label' | t }}"
+            >
+              {% render 'icon-arrow' %}
+            </button>
+          </div>
+          {%- if form.errors -%}
+            <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">
+              {%- render 'icon-error' -%}
+              {{- form.errors.translated_fields.email | capitalize }}
+              {{ form.errors.messages.email -}}
+            </small>
+          {%- endif -%}
+        </div>
+        {%- if form.posted_successfully? -%}
+          <h3
+            class="newsletter-form__message newsletter-form__message--success form__message"
+            id="Newsletter-success--{{ section.id }}"
+            tabindex="-1"
+            autofocus
+          >
+            {% render 'icon-success' -%}
+            {{- 'newsletter.success' | t }}
+          </h3>
+        {%- endif -%}
+      {% endform %}
+    </div>
   </div>
+
 </div>
 
 <!-- Add the corresponding CSS from the previous response here to style the section -->
 <style>
   .pre-footer {
+    margin-top: 8rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
-    background-color: #f4f4f4; /* Match this to the background color of your image */
-    border-top: 1px solid #ccc; /* Match this to the border color in your image */
+    height: 6rem;
+    border-top: 1px solid black; /* Match this to the border color in your image */
+    border-bottom: 1px solid black; /* Match this to the border color in your image */
   }
 
   .social-links {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%;
   }
 
   .social-link {
-    margin: 0 10px;
+    padding: 0 10px;
+    height: 100%;
+    border-right: 1px solid black;
+    display: flex;
+    align-items: center;
   }
 
   .social-link img {
-    width: 24px; /* Adjust the size as necessary */
+    width: 32px; /* Adjust the size as necessary */
     height: auto;
   }
 
   .newsletter-signup {
     display: flex;
     align-items: center;
+    height: 100%;
   }
 
   .signup-text {
-    margin-right: 20px;
+    padding-right: 2rem;
     font-weight: bold;
+    padding-left: 2rem;
+    display: flex;
+    align-items: center;
+    height: 100%;
   }
-
+.signup-container{
+    height: 100%;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
   .newsletter-signup form {
     display: flex;
     align-items: center;
@@ -103,8 +177,8 @@
   .newsletter-signup input {
     padding: 5px 10px;
     margin-right: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border-bottom: 1px solid black;
+
   }
 
   .subscribe-button {
@@ -115,7 +189,12 @@
     border-radius: 4px;
     cursor: pointer;
   }
-
+.newsletter__container{
+    display: flex;
+    height: 100%;
+    gap: 2rem;
+    padding-right: 2rem;
+}
   /* Responsive adjustments */
   @media (max-width: 768px) {
     .pre-footer {
