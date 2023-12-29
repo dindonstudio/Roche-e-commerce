@@ -29,44 +29,93 @@
   ]
 }
 {% endschema %}
-
-<div class="custom-footer">
-  <div class="footer-blocks">
-    {% for block in section.blocks %}
-      {% if block.type == 'footer-block' %}
-        <div class="footer-block">
-          <h4>{{ block.settings.title }}</h4>
-          <ul class="menu-links">
-            {% for link in block.settings.menu.links %}
-              <li>
-                <a href="{{ link.url }}">{{ link.label }}</a>
-              </li>
-            {% endfor %}
-          </ul>
+<footer>
+    <div class="custom-footer">
+        <div class="line"></div>
+        <div class="footer-blocks">
+          {% for block in section.blocks %}
+            {% if block.type == 'footer-block' %}
+              <div class="footer-block">
+                <h3 class="footer-title">{{ block.settings.title }}</h3>
+                <div class="menu-links">
+                  {% for link in block.settings.menu.links %}
+                    <h3>
+                      <a href="{{ link.url }}">{{ link.title }}</a>
+                    </h3>
+                  {% endfor %}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+          <div class="branding">
+            <h3 class="branding-sentence"> “SPREAD THE GROOVE”</h3>
+            <img class='logo-footer' src="{{ 'big-logo.png' | asset_url }}" alt="Roche Logo">
+      
+              </div>
         </div>
-      {% endif %}
-    {% endfor %}
-  </div>
-</div>
+ 
+      </div>
+</footer>
+
 
 <style>
+    footer{
+        background-color: #FFF5E6;
+        position: relative;
+    }
+    .line{
+        width: 100%;
+        display: block;
+        position: absolute;
+        top: 5rem;
+        left: 0;
+        background-color: black;
+        height: 1px;
+    }
   .custom-footer {
-    /* Your footer styling here */
+    padding: 1rem 3rem 1rem;
+    display: flex;
+  }
+  .custom-footer h3{
+    color: black;
   }
 
   .footer-blocks {
-    /* Styling for the footer blocks container */
+width: 100%;
+display: flex;
+justify-content: space-between;
   }
 
   .footer-block {
-    /* Styling for each footer block */
+ flex: 1;
+  }
+.branding{
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+  .footer-title {
+    font-family: 'CustomFont-Regular';
+    font-size: 1.8rem;
   }
 
-  h4 {
-    /* Styling for the block title */
+  .menu-links{
+    padding-top: 2rem;
   }
-
-  .menu-links {
-    /* Styling for the menu links */
+  .menu-links a {
+    font-family: 'CustomFont-Light';
+    font-size: 1.7rem;
+    color: black;
+  }
+  .branding-sentence{
+font-size: 2.5rem;
+white-space: nowrap;
+position: relative;
+    top: -0.7rem;
+    font-family: 'CustomFont-Bold';
+  }
+  .logo-footer{
+    width: 200px;
   }
 </style>

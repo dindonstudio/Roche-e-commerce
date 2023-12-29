@@ -2,6 +2,7 @@
 html {
   --creme: #fff5e6;
   --blue: #264a99;
+  --red: #e55041;
   font-size: 62.5%;
 }
 
@@ -44,7 +45,13 @@ h3 {
   height: 26px;
   width: 26px;
 }
-
+#HeaderMenu-shop.shop-active {
+  background-color: var(--red);
+  color: white;
+}
+nav.header__inline-menu #HeaderMenu-shop.shop-active span {
+  color: white;
+}
 /* HERO */
 .banner__heading {
   color: var(--creme);

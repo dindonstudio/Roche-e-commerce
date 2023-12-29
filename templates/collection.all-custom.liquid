@@ -1,0 +1,47 @@
+{% layout none %}
+
+<div class="collection-all-custom">
+  <div class="left-column">
+    <!-- Left Big Item (Row 1) -->
+    {% if collections.all.products.size > 0 %}
+      <div class="big-item">
+        <a href="{{ collections.all.products.first.url }}">
+          <img
+            src="{{ collections.all.products.first.featured_image.src | img_url: 'large' }}"
+            alt="{{ collections.all.products.first.title }}"
+          >
+          <h3>{{ collections.all.products.first.title }}</h3>
+          <p>{{ collections.all.products.first.price | money }}</p>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+
+  <div class="right-column">
+    <!-- Right Big Item (Row 2) -->
+    {% if collections.all.products.size > 1 %}
+      <div class="big-item">
+        <a href="{{ collections.all.products[1].url }}">
+          <img
+            src="{{ collections.all.products[1].featured_image.src | img_url: 'large' }}"
+            alt="{{ collections.all.products[1].title }}"
+          >
+          <h3>{{ collections.all.products[1].title }}</h3>
+          <p>{{ collections.all.products[1].price | money }}</p>
+        </a>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<div class="grid-items">
+  {% for product in collections.all.products offset: 2 %}
+    <div class="small-item">
+      <a href="{{ product.url }}">
+        <img src="{{ product.featured_image.src | img_url: 'medium' }}" alt="{{ product.title }}">
+        <h3>{{ product.title }}</h3>
+        <p>{{ product.price | money }}</p>
+      </a>
+    </div>
+  {% endfor %}
+</div>
