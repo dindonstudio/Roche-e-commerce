@@ -1,0 +1,49 @@
+{% schema %}
+{
+  "name": "Breadcrumbs Apparel",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Breadcrumbs Apparel",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<nav aria-label="Breadcrumb" class="breadcrumbs-apparel">
+  <ol class="breadcrumb-list">
+    <li class="breadcrumb-item">
+      <a href="/collections/all">Tous les produits</a>
+    </li>
+    {% if collection.handle == 'apparel' %}
+      <li class="breadcrumb-item">
+        <span>Apparel</span>
+      </li>
+    {% elsif collection %}
+      <li class="breadcrumb-item">
+        <a href="/collections/apparel">Apparel</a>
+      </li>
+      <li class="breadcrumb-item">
+        <span>{{ collection.title }}</span>
+      </li>
+    {% endif %}
+  </ol>
+</nav>
+
+<style>
+  .breadcrumbs-apparel .breadcrumb-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .breadcrumbs-apparel .breadcrumb-item {
+    display: inline;
+    margin-right: 5px;
+  }
+
+  .breadcrumbs-apparel .breadcrumb-item + .breadcrumb-item::before {
+    content: '>';
+    margin-right: 5px;
+  }
+</style>

@@ -24,17 +24,10 @@
   {% if selected_menu.links != blank %}
     <ul class="menu">
       {% for link in selected_menu.links %}
-        <li class="menu-item{% if link.active %} active{% endif %}">
-          <a
-            href="{{ link.url }}"
-            {% if link.active %}
-              aria-current="page"
-            {% endif %}
-          >
-            {{- link.title -}}
-          </a>
+  
+      
           {% if link.links != blank %}
-            <ul class="submenu">
+            <div class="submenu">
               {% for sublink in link.links %}
                 <li class="submenu-item{% if sublink.active %} active{% endif %}">
                   <a
@@ -43,13 +36,15 @@
                       aria-current="page"
                     {% endif %}
                   >
-                    {{- sublink.title -}}
+                    <h2>  {{- sublink.title -}}</h2>
+
+                  
                   </a>
                 </li>
               {% endfor %}
-            </ul>
+            </div>
           {% endif %}
-        </li>
+      
       {% endfor %}
     </ul>
   {% endif %}
@@ -58,23 +53,33 @@
 <style>
   .custom-menu-with-submenu .menu {
     list-style: none;
-    padding: 0;
+    padding: 0 2rem;
+    border-bottom: 1px solid black;
+    border-top: 1px solid black;
+    margin: 0;
+    margin-bottom: 4rem;
+    
   }
-
+.submenu li{}
   .custom-menu-with-submenu .menu-item {
     margin-bottom: 10px;
   }
-
+.submenu{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+ 
+}
   .custom-menu-with-submenu .submenu {
     list-style: none;
     padding: 0;
-    margin-top: 5px;
-    margin-left: 20px;
+ 
   }
 
   .custom-menu-with-submenu .menu-item.active > a,
-  .custom-menu-with-submenu .submenu-item.active > a {
-    font-weight: bold;
-    color: #333;
+  .custom-menu-with-submenu .submenu-item.active > a h2 {
+    font-family: 'CustomFont-Bold';
+    
+
   }
 </style>
