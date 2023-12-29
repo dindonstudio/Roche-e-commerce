@@ -22,20 +22,25 @@
                   </div><!-- Close the row-grid div -->
                 {% endunless %}
                 <div class="row-grid"><!-- Open a new row-grid div for every 1st product in the set of 5 -->
-                  <div class="big-product product">
+                  <a href="{{ product.url }}" class="big-product product">
                     <!-- Big product layout -->
                     <img src="{{ product.featured_image | img_url: '1024x1024' }}" alt="{{ product.title }}">
-                    <h3>{{ product.title }}</h3>
-                    <p class="price">{{ product.price | money }}</p>
-                  </div>
+                    <div class="product-details">
+                        <h3>{{ product.title }}</h3>
+                        <h3 class="price">{{ product.price | money }}</h3>
+                      </div>
+                  </a>
                   <div class="small-products-wrapper"><!-- Open a new div for small products -->
               {% else %}
-                <div class="small-product product">
+                <a href="{{ product.url }}" class="small-product product">
                   <!-- Small product layout -->
                   <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
-                  <h3>{{ product.title }}</h3>
-                  <p class="price">{{ product.price | money }}</p>
-                </div>
+                  <div class="product-details">
+                    <h3>{{ product.title }}</h3>
+                    <h3 class="price">{{ product.price | money }}</h3>
+                  </div>
+                
+                </a>
               {% endif %}
               
               {% if forloop.last %}
@@ -51,7 +56,7 @@
     <style>
     .big-custom-product-grid-section {
         width: 100%;
-        padding: 20px 0;
+     
     }
 
     .container {
@@ -63,15 +68,23 @@
     .product-grid {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px;
+
     }
 
     .product {
-        border: 1px solid #ccc;
-        padding: 10px;
+        border: 1px solid black;
+     
         box-sizing: border-box;
     }
+.product-details{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid black;
+    
+    padding: 1rem 1rem;
 
+}
     .big-product {
    flex: 1;
     }
@@ -87,13 +100,13 @@
     }
 
     .price {
-        font-weight: bold;
+
     }
     .row-grid {
         display: flex;
         flex-wrap: nowrap;
         justify-content: start;
-        gap: 10px;
+
     }
     .small-products-wrapper{
         display: grid;

@@ -35,10 +35,9 @@
 <div class="custom-collection-links-section">
   {% for block in section.blocks %}
     <div class="collection-link-block">
-      <h2>{{ block.settings.title }}</h2>
       {% if block.settings.collection != blank %}
         <a href="{{ block.settings.collection.url }}" title="{{ block.settings.title }}">
-          {{ block.settings.collection.title }}
+          <h2>{{ block.settings.title }}</h2>
         </a>
       {% endif %}
     </div>
@@ -55,9 +54,27 @@
 
   .collection-link-block {
     text-align: center;
+    flex: 1;
   }
 
   .collection-link-block h2 {
-    margin-bottom: 10px;
+    font-family: 'CustomFont-Bold';
+font-size: 4rem;
+  }
+  .custom-collection-links-section .collection-link-block:nth-child(1){
+    background-color: #E55041;
+
+  }
+  .custom-collection-links-section .collection-link-block:nth-child(1) h2{
+    color: #FFF5E6;
+
+  }
+  .custom-collection-links-section .collection-link-block:nth-child(2){
+    background-color: #1E1E1E;
+
+  }
+  .custom-collection-links-section .collection-link-block:nth-child(2) h2{
+    color: #FFF5E6;
+
   }
 </style>
