@@ -2,6 +2,15 @@
   "name": "t:sections.footer.name",
   "type": "footer",
   "sections": {
+    "82c828ee-b164-4cf7-990d-310e29e064eb": {
+      "type": "custom-pre-footer",
+      "settings": {
+        "instagram_url": "http:\/\/instagram.com",
+        "spotify_url": "http:\/\/spotify.com",
+        "youtube_url": "http:\/\/youtube.com",
+        "newsletter_text": "SIGN UP TO OUR NEWSLETTER AND GET 10% OFF YOUR FIRST ORDER"
+      }
+    },
     "95275bbc-9ad7-4d60-b50b-3208c241335d": {
       "type": "custom-footer",
       "blocks": {
@@ -91,6 +100,7 @@
     }
   },
   "order": [
+    "82c828ee-b164-4cf7-990d-310e29e064eb",
     "95275bbc-9ad7-4d60-b50b-3208c241335d",
     "footer"
   ]

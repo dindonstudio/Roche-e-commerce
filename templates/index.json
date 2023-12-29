@@ -164,15 +164,6 @@
         "button_url": "shopify:\/\/pages\/contact",
         "button_text": "LOOKBOOK"
       }
-    },
-    "57860cd2-55b5-4462-854c-8c369c62c8e3": {
-      "type": "custom-pre-footer",
-      "settings": {
-        "instagram_url": "http:\/\/instagram.com",
-        "spotify_url": "http:\/\/spotify.com",
-        "youtube_url": "http:\/\/youtube.com",
-        "newsletter_text": "SIGN UP TO OUR NEWSLETTER AND GET 10% OFF YOUR FIRST ORDER"
-      }
     }
   },
   "order": [
@@ -180,7 +171,6 @@
     "b423c175-ca80-4069-9d4b-6363035339f9",
     "c5005365-9569-4932-9a0a-f9f67ac49eed",
     "a0f31116-f917-4b18-92fc-51e466a025b1",
-    "4d0b19e1-9024-41bd-af3c-abd7b080a519",
-    "57860cd2-55b5-4462-854c-8c369c62c8e3"
+    "4d0b19e1-9024-41bd-af3c-abd7b080a519"
   ]
 }
