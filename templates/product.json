@@ -1,6 +1,6 @@
 {
   "sections": {
-    "9db0fe5c-dfa7-447a-bec9-0e7d56ba4941": {
+    "d81fe030-fa90-48bf-a68e-473893b97e95": {
       "type": "product-bread",
       "settings": {
       }
@@ -72,7 +72,7 @@
         "media_size": "large",
         "constrain_to_viewport": true,
         "media_fit": "contain",
-        "gallery_layout": "thumbnail_slider",
+        "gallery_layout": "thumbnail",
         "media_position": "left",
         "image_zoom": "none",
         "mobile_thumbnails": "show",
@@ -146,7 +146,7 @@
     }
   },
   "order": [
-    "9db0fe5c-dfa7-447a-bec9-0e7d56ba4941",
+    "d81fe030-fa90-48bf-a68e-473893b97e95",
     "main",
     "multicolumn",
     "related-products"
