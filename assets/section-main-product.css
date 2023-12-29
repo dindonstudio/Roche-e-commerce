@@ -53,7 +53,7 @@
 }
 
 @media screen and (min-width: 990px) {
-  .product--large:not(.product--no-media) .product__media-wrapper {
+  /* .product--large:not(.product--no-media) .product__media-wrapper {
     max-width: 65%;
     width: calc(65% - var(--grid-desktop-horizontal-spacing) / 2);
   }
@@ -62,23 +62,23 @@
     padding: 0 0 0 4rem;
     max-width: 35%;
     width: calc(35% - var(--grid-desktop-horizontal-spacing) / 2);
-  }
+  } */
 
   .product--large:not(.product--no-media).product--right .product__info-wrapper {
     padding: 0 4rem 0 0;
   }
 
-  .product--medium:not(.product--no-media) .product__media-wrapper,
+  /* .product--medium:not(.product--no-media) .product__media-wrapper,
   .product--small:not(.product--no-media) .product__info-wrapper {
     max-width: 55%;
     width: calc(55% - var(--grid-desktop-horizontal-spacing) / 2);
-  }
+  } */
 
-  .product--medium:not(.product--no-media) .product__info-wrapper,
+  /* .product--medium:not(.product--no-media) .product__info-wrapper,
   .product--small:not(.product--no-media) .product__media-wrapper {
     max-width: 45%;
     width: calc(45% - var(--grid-desktop-horizontal-spacing) / 2);
-  }
+  } */
 }
 
 /* Dynamic checkout */
@@ -1409,10 +1409,10 @@ a.product__text {
   margin-left: auto;
 }
 
-.product-media-container.constrain-height.media-fit-contain {
+/* .product-media-container.constrain-height.media-fit-contain {
   --contained-width: calc(var(--constrained-height) * var(--aspect-ratio));
   width: min(var(--contained-width), 100%);
-}
+} */
 
 .product-media-container .media {
   padding-top: var(--ratio-percent);
@@ -1597,4 +1597,28 @@ a.product__text {
   .recipient-form > input[type='checkbox']:checked + label .icon-checkmark {
     border: none;
   }
+}
+.breadcrumbs-apparel .breadcrumb-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  padding: 1rem 2rem;
+  gap: 1rem;
+  background-color: #fff5e6;
+  margin: 0;
+  border-top: 1px solid black;
+}
+.breadcrumb-list {
+  text-transform: uppercase;
+}
+.breadcrumbs-apparel .breadcrumb-item {
+  display: inline;
+  margin-right: 5px;
+}
+ol a {
+  display: none;
+}
+ol li a {
+  display: block;
 }

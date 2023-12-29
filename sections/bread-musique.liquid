@@ -16,13 +16,13 @@
     <li class="breadcrumb-item">
       <a href="/collections/all"><h3>Tous les produits</h3></a>
     </li>
-    {% if collection.handle == 'apparel' %}
+    {% if collection.handle == 'musique' %}
       <li class="breadcrumb-item">
         <h3>> Musique</h3>
       </li>
     {% elsif collection %}
       <li class="breadcrumb-item">
-        <a href="/collections/apparel"><h3>> Musique</h3></a>
+        <a href="/collections/musique"><h3>> Musique</h3></a>
       </li>
       <li class="breadcrumb-item">
         <h3>> {{ collection.title }}</h3>

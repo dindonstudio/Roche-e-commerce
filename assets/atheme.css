@@ -61,3 +61,9 @@ nav.header__inline-menu #HeaderMenu-shop.shop-active span {
   font-style: italic;
   line-height: 120%;
 }
+
+/* //PRODUCT  */
+.product .grid__item,
+.product .product__info-wrapper {
+  flex: 1;
+}

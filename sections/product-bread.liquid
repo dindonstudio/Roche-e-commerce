@@ -1,0 +1,45 @@
+<div class="breadcrumbs-apparel">
+    <ol class="breadcrumb-list">
+        <li class="breadcrumb-item">
+            <a href="/collections/all"><h3>Tous les produits</h3></a>
+        </li>
+        {% assign parent_collection_handle = '' %}
+        {% assign child_collection_handle = '' %}
+        {% assign parent_collection = null %}
+        {% assign child_collection = null %}
+
+        {% for collection in product.collections %}
+            {% if collection.handle == 'apparel' or collection.handle == 'musique' %}
+                {% assign parent_collection = collection %}
+            {% else %}
+                {% assign child_collection = collection %}
+            {% endif %}
+        {% endfor %}
+
+        {% if parent_collection %}
+            <li class="breadcrumb-item">
+                <a href="{{ parent_collection.url }}"><h3>> {{ parent_collection.title }}</h3</a>
+            </li>
+        {% endif %}
+
+        {% if child_collection %}
+            <li class="breadcrumb-item">
+                <a href="{{ child_collection.url }}"><h3>> {{ child_collection.title }}</h3</a>
+            </li>
+        {% endif %}
+    </ol>
+</div>
+
+{% schema %}
+{
+    "name": "Breadcrumb Navigation",
+    "class": "breadcrumbs-section",
+
+    "presets": [
+        {
+            "name": "Product Breadcrumbs",
+            "category": "Custom"
+        }
+    ]
+}
+{% endschema %}
