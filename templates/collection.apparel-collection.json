@@ -1,0 +1,70 @@
+{
+  "sections": {
+    "banner": {
+      "type": "main-collection-banner",
+      "disabled": true,
+      "settings": {
+        "show_collection_description": true,
+        "show_collection_image": false,
+        "color_scheme": "scheme-1"
+      }
+    },
+    "5c6eb7fe-41cb-45d8-8804-e8213d9ab9fe": {
+      "type": "custom-collection-links",
+      "blocks": {
+        "31867b9c-14d9-42be-8191-81e29e603170": {
+          "type": "collection_link",
+          "settings": {
+            "title": "APPAREL",
+            "collection": "apparel"
+          }
+        },
+        "2d61fcaf-a646-4621-b158-cb2f634578d3": {
+          "type": "collection_link",
+          "settings": {
+            "title": "MUSIQUE",
+            "collection": "musique"
+          }
+        }
+      },
+      "block_order": [
+        "31867b9c-14d9-42be-8191-81e29e603170",
+        "2d61fcaf-a646-4621-b158-cb2f634578d3"
+      ],
+      "settings": {
+      }
+    },
+    "44873f89-29f5-4c3c-94c4-54f6c22c7054": {
+      "type": "custom-big-product-grid",
+      "settings": {
+      }
+    },
+    "product-grid": {
+      "type": "main-collection-product-grid",
+      "disabled": true,
+      "settings": {
+        "products_per_page": 16,
+        "columns_desktop": 4,
+        "color_scheme": "",
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_quick_add": false,
+        "enable_filtering": true,
+        "filter_type": "horizontal",
+        "enable_sorting": true,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "banner",
+    "5c6eb7fe-41cb-45d8-8804-e8213d9ab9fe",
+    "44873f89-29f5-4c3c-94c4-54f6c22c7054",
+    "product-grid"
+  ]
+}
