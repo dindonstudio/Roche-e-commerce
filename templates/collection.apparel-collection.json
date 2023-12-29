@@ -9,6 +9,12 @@
         "color_scheme": "scheme-1"
       }
     },
+    "5106d918-ec04-4bc4-ab76-4af1bb52a739": {
+      "type": "custom-sub-menu",
+      "settings": {
+        "menu": "apparel"
+      }
+    },
     "44873f89-29f5-4c3c-94c4-54f6c22c7054": {
       "type": "custom-big-product-grid",
       "settings": {
@@ -38,6 +44,7 @@
   },
   "order": [
     "banner",
+    "5106d918-ec04-4bc4-ab76-4af1bb52a739",
     "44873f89-29f5-4c3c-94c4-54f6c22c7054",
     "product-grid"
   ]
