@@ -1,5 +1,10 @@
 {
   "sections": {
+    "9db0fe5c-dfa7-447a-bec9-0e7d56ba4941": {
+      "type": "product-bread",
+      "settings": {
+      }
+    },
     "main": {
       "type": "main-product",
       "blocks": {
@@ -141,6 +146,7 @@
     }
   },
   "order": [
+    "9db0fe5c-dfa7-447a-bec9-0e7d56ba4941",
     "main",
     "multicolumn",
     "related-products"
