@@ -9,28 +9,8 @@
         "color_scheme": "scheme-1"
       }
     },
-    "5c6eb7fe-41cb-45d8-8804-e8213d9ab9fe": {
-      "type": "custom-collection-links",
-      "blocks": {
-        "31867b9c-14d9-42be-8191-81e29e603170": {
-          "type": "collection_link",
-          "settings": {
-            "title": "APPAREL",
-            "collection": "apparel"
-          }
-        },
-        "2d61fcaf-a646-4621-b158-cb2f634578d3": {
-          "type": "collection_link",
-          "settings": {
-            "title": "MUSIQUE",
-            "collection": "musique"
-          }
-        }
-      },
-      "block_order": [
-        "31867b9c-14d9-42be-8191-81e29e603170",
-        "2d61fcaf-a646-4621-b158-cb2f634578d3"
-      ],
+    "cce47cf4-810a-4662-bfbc-ca2f764fc460": {
+      "type": "bread-musique",
       "settings": {
       }
     },
@@ -59,12 +39,19 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "78755270-8473-4cb8-95b0-495832923556": {
+      "type": "custom-sub-menu",
+      "settings": {
+        "menu": "musique"
+      }
     }
   },
   "order": [
     "banner",
-    "5c6eb7fe-41cb-45d8-8804-e8213d9ab9fe",
+    "cce47cf4-810a-4662-bfbc-ca2f764fc460",
     "44873f89-29f5-4c3c-94c4-54f6c22c7054",
-    "product-grid"
+    "product-grid",
+    "78755270-8473-4cb8-95b0-495832923556"
   ]
 }

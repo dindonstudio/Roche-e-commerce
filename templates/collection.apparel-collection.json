@@ -1,10 +1,5 @@
 {
   "sections": {
-    "63608834-55c5-4493-bd97-253bb039b43b": {
-      "type": "bread",
-      "settings": {
-      }
-    },
     "banner": {
       "type": "main-collection-banner",
       "disabled": true,
@@ -48,7 +43,6 @@
     }
   },
   "order": [
-    "63608834-55c5-4493-bd97-253bb039b43b",
     "banner",
     "5106d918-ec04-4bc4-ab76-4af1bb52a739",
     "44873f89-29f5-4c3c-94c4-54f6c22c7054",
