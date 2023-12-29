@@ -52,6 +52,9 @@ h3 {
 nav.header__inline-menu #HeaderMenu-shop.shop-active span {
   color: white;
 }
+.sticky-header {
+  margin: 0;
+}
 /* HERO */
 .banner__heading {
   color: var(--creme);

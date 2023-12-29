@@ -1,6 +1,6 @@
 {% schema %}
 {
-  "name": "Breadcrumbs Apparel",
+  "name": "Breadcrumbs Musique",
   "settings": [],
   "presets": [
     {
@@ -14,15 +14,15 @@
 <nav aria-label="Breadcrumb" class="breadcrumbs-apparel">
   <ol class="breadcrumb-list">
     <li class="breadcrumb-item">
-      <a href="/collections/all"> <h3>Tous les produits</h3></a>
+      <a href="/collections/all"><h3>Tous les produits</h3></a>
     </li>
     {% if collection.handle == 'apparel' %}
       <li class="breadcrumb-item">
-        <h3>> Apparel</h3>
+        <h3>> Musique</h3>
       </li>
     {% elsif collection %}
       <li class="breadcrumb-item">
-        <a href="/collections/apparel"><h3> > Apparel</h3></a>
+        <a href="/collections/apparel"><h3>> Musique</h3></a>
       </li>
       <li class="breadcrumb-item">
         <h3>> {{ collection.title }}</h3>
@@ -39,17 +39,15 @@
     align-items: center;
     padding: 1rem 2rem;
     gap: 1rem;
-    background-color: #FFF5E6;
+    background-color: #fff5e6;
     margin: 0;
     border-top: 1px solid black;
   }
-  .breadcrumb-list{
+  .breadcrumb-list {
     text-transform: uppercase;
   }
   .breadcrumbs-apparel .breadcrumb-item {
     display: inline;
     margin-right: 5px;
   }
-
-
 </style>
