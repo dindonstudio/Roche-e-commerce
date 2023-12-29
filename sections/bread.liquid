@@ -18,14 +18,14 @@
     </li>
     {% if collection.handle == 'apparel' %}
       <li class="breadcrumb-item">
-        <h3>Apparel</h3>
+        <span>Apparel</span>
       </li>
     {% elsif collection %}
       <li class="breadcrumb-item">
-        <a href="/collections/apparel"><h3>Apparel</h3></a>
+        <a href="/collections/apparel">Apparel</a>
       </li>
       <li class="breadcrumb-item">
-        <h3>{{ collection.title }}</h3>
+        <span>{{ collection.title }}</span>
       </li>
     {% endif %}
   </ol>
