@@ -1,0 +1,78 @@
+{% schema %}
+{
+  "name": "Big Custom Product Grid",
+  "settings": [],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Big Custom Product Grid - Collection Page",
+      "category": "Collection Page"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="big-custom-product-grid-section">
+  <div class="container">
+    <div class="product-grid">
+      {% for product in all_products %}
+        {% if forloop.index == 1 or forloop.index == 2 %}
+          <div class="big-product">
+            <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
+            <h3>{{ product.title }}</h3>
+            <p class="price">{{ product.price | money }}</p>
+          </div>
+        {% else %}
+          <div class="small-product">
+            <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
+            <h3>{{ product.title }}</h3>
+            <p class="price">{{ product.price | money }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Add your custom CSS styles here */
+  .big-custom-product-grid-section {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 20px 0;
+  }
+
+  .container {
+    max-width: 1400px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .big-product {
+    flex-basis: 50%;
+    padding: 10px;
+  }
+
+  .small-product {
+    flex-basis: calc(50% - 20px);
+    padding: 10px;
+  }
+
+  .big-product img,
+  .small-product img {
+    width: 100%;
+    height: auto;
+  }
+
+  .price {
+    font-weight: bold;
+  }
+</style>
