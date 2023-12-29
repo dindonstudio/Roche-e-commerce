@@ -1,0 +1,63 @@
+{% schema %}
+{
+  "name": "Collection Links Section",
+  "class": "custom-collection-links",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "collection_link",
+      "name": "Collection Link Block",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Collection Title"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ],
+  "max_blocks": 2,
+  "presets": [
+    {
+      "name": "Default",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="custom-collection-links-section">
+  {% for block in section.blocks %}
+    <div class="collection-link-block">
+      <h2>{{ block.settings.title }}</h2>
+      {% if block.settings.collection != blank %}
+        <a href="{{ block.settings.collection.url }}" title="{{ block.settings.title }}">
+          {{ block.settings.collection.title }}
+        </a>
+      {% endif %}
+    </div>
+  {% endfor %}
+</div>
+
+<!-- Add some basic styles for the section -->
+<style>
+  .custom-collection-links-section {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 20px;
+  }
+
+  .collection-link-block {
+    text-align: center;
+  }
+
+  .collection-link-block h2 {
+    margin-bottom: 10px;
+  }
+</style>

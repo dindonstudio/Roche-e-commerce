@@ -1,78 +1,104 @@
-{% schema %}
-{
-  "name": "Big Custom Product Grid",
-  "settings": [],
-  "blocks": [],
-  "presets": [
+    {% schema %}
     {
-      "name": "Big Custom Product Grid - Collection Page",
-      "category": "Collection Page"
+    "name": "Big Custom Product Grid",
+    "settings": [],
+    "blocks": [],
+    "presets": [
+        {
+        "name": "Big Custom Product Grid - Collection Page",
+        "category": "Collection Page"
+        }
+    ]
     }
-  ]
-}
-{% endschema %}
-
-<div class="big-custom-product-grid-section">
-  <div class="container">
-    <div class="product-grid">
-      {% for product in all_products %}
-        {% if forloop.index == 1 or forloop.index == 2 %}
-          <div class="big-product">
-            <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
-            <h3>{{ product.title }}</h3>
-            <p class="price">{{ product.price | money }}</p>
+    {% endschema %}
+    <div class="big-custom-product-grid-section">
+        <div class="container">
+          <div class="product-grid">
+            {% for product in collection.products %}
+              {% assign mod_result = forloop.index0 | modulo: 5 %}
+              {% if mod_result == 0 %}
+                {% unless forloop.first %}
+                  </div><!-- Close the small products wrapper div -->
+                  </div><!-- Close the row-grid div -->
+                {% endunless %}
+                <div class="row-grid"><!-- Open a new row-grid div for every 1st product in the set of 5 -->
+                  <div class="big-product product">
+                    <!-- Big product layout -->
+                    <img src="{{ product.featured_image | img_url: '1024x1024' }}" alt="{{ product.title }}">
+                    <h3>{{ product.title }}</h3>
+                    <p class="price">{{ product.price | money }}</p>
+                  </div>
+                  <div class="small-products-wrapper"><!-- Open a new div for small products -->
+              {% else %}
+                <div class="small-product product">
+                  <!-- Small product layout -->
+                  <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}">
+                  <h3>{{ product.title }}</h3>
+                  <p class="price">{{ product.price | money }}</p>
+                </div>
+              {% endif %}
+              
+              {% if forloop.last %}
+                  </div><!-- Close the small products wrapper div -->
+                </div><!-- Close the last row-grid div -->
+              {% endif %}
+            {% endfor %}
           </div>
-        {% else %}
-          <div class="small-product">
-            <img src="{{ product.featured_image | img_url: 'large' }}" alt="{{ product.title }}">
-            <h3>{{ product.title }}</h3>
-            <p class="price">{{ product.price | money }}</p>
-          </div>
-        {% endif %}
-      {% endfor %}
-    </div>
-  </div>
-</div>
+        </div>
+      </div>
+    
 
-<style>
-  /* Add your custom CSS styles here */
-  .big-custom-product-grid-section {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    padding: 20px 0;
-  }
+    <style>
+    .big-custom-product-grid-section {
+        width: 100%;
+        padding: 20px 0;
+    }
 
-  .container {
-    max-width: 1400px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 20px;
-  }
+    .container {
+    
+        margin: 0 auto;
+        padding: 0 15px;
+    }
 
-  .product-grid {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
+    .product-grid {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
 
-  .big-product {
-    flex-basis: 50%;
-    padding: 10px;
-  }
+    .product {
+        border: 1px solid #ccc;
+        padding: 10px;
+        box-sizing: border-box;
+    }
 
-  .small-product {
-    flex-basis: calc(50% - 20px);
-    padding: 10px;
-  }
+    .big-product {
+   flex: 1;
+    }
 
-  .big-product img,
-  .small-product img {
-    width: 100%;
-    height: auto;
-  }
+    .small-product {
+        flex: 1;
 
-  .price {
-    font-weight: bold;
-  }
-</style>
+    }
+
+    .product img {
+        width: 100%;
+        height: auto;
+    }
+
+    .price {
+        font-weight: bold;
+    }
+    .row-grid {
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: start;
+        gap: 10px;
+    }
+    .small-products-wrapper{
+        display: grid;
+        flex: 1;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+    }
+    </style>
