@@ -1,0 +1,80 @@
+{% schema %}
+{
+  "name": "Custom Menu with Submenu",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Select Menu",
+      "info": "Select a menu to display its links and submenus."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom Menu with Submenu",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<nav class="custom-menu-with-submenu">
+  {% assign selected_menu = linklists[section.settings.menu] %}
+
+  {% if selected_menu.links != blank %}
+    <ul class="menu">
+      {% for link in selected_menu.links %}
+        <li class="menu-item{% if link.active %} active{% endif %}">
+          <a
+            href="{{ link.url }}"
+            {% if link.active %}
+              aria-current="page"
+            {% endif %}
+          >
+            {{- link.title -}}
+          </a>
+          {% if link.links != blank %}
+            <ul class="submenu">
+              {% for sublink in link.links %}
+                <li class="submenu-item{% if sublink.active %} active{% endif %}">
+                  <a
+                    href="{{ sublink.url }}"
+                    {% if sublink.active %}
+                      aria-current="page"
+                    {% endif %}
+                  >
+                    {{- sublink.title -}}
+                  </a>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+        </li>
+      {% endfor %}
+    </ul>
+  {% endif %}
+</nav>
+
+<style>
+  .custom-menu-with-submenu .menu {
+    list-style: none;
+    padding: 0;
+  }
+
+  .custom-menu-with-submenu .menu-item {
+    margin-bottom: 10px;
+  }
+
+  .custom-menu-with-submenu .submenu {
+    list-style: none;
+    padding: 0;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+
+  .custom-menu-with-submenu .menu-item.active > a,
+  .custom-menu-with-submenu .submenu-item.active > a {
+    font-weight: bold;
+    color: #333;
+  }
+</style>
