@@ -1,0 +1,44 @@
+{% schema %}
+{
+  "name": "Product Recommendations",
+  "settings": [
+    // Add any customizable settings here
+  ],
+  "presets": [
+    {
+      "name": "Default Product Recommendations",
+      "category": "Product"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+  /* Add CSS here for styling the section, especially for discounted products */
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    /* Additional styling */
+  }
+
+  .discount-badge {
+    /* Styling for 'en solde' badge */
+  }
+{% endstylesheet %}
+
+{% javascript %}
+  // Optional: JavaScript for additional interactivity if needed
+{% endjavascript %}
+
+<div class="flex-container">
+  {% for product in collections.all.products %}
+    {% if product.metafields.custom.recommendation_de_produits %}
+      <div class="product-item">
+        <!-- Display product details here -->
+        {% if product.compare_at_price > product.price %}
+          <span class="discount-badge">En solde</span>
+        {% endif %}
+      </div>
+    {% endif %}
+  {% endfor %}
+</div>

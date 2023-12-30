@@ -306,3 +306,35 @@
     </slider-component>
   {%- endif -%}
 </media-gallery>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+  // Function to change the active slide in all galleries
+  function changeAllGalleriesTo(selectedMediaId) {
+    const galleries = document.querySelectorAll('media-gallery');
+
+    galleries.forEach(gallery => {
+      const slides = gallery.querySelectorAll('.product__media-item');
+      slides.forEach(slide => {
+        if (slide.getAttribute('data-media-id') === selectedMediaId) {
+          slide.classList.add('is-active');
+        } else {
+          slide.classList.remove('is-active');
+        }
+      });
+    });
+  }
+
+  // Add event listener to all thumbnails
+  const thumbnails = document.querySelectorAll('.thumbnail.global-media-settings.global-media-settings--no-shadow');
+
+  thumbnails.forEach(thumbnail => {
+    thumbnail.addEventListener('click', function() {
+      const selectedMediaId = thumbnail.closest('li').getAttribute('data-target');
+      changeAllGalleriesTo(selectedMediaId);
+    });
+  });
+});
+
+
+</script>

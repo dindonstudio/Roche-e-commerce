@@ -28,7 +28,7 @@ if (!customElements.get('media-gallery')) {
         this.setActiveThumbnail(thumbnail);
       }
 
-      setActiveMedia(mediaId, prepend) {
+      setActiveMedia(mediaId, prepend, isInternalCall = false) {
         const activeMedia = this.elements.viewer.querySelector(`[data-media-id="${mediaId}"]`);
         this.elements.viewer.querySelectorAll('[data-media-id]').forEach((element) => {
           element.classList.remove('is-active');
@@ -59,6 +59,15 @@ if (!customElements.get('media-gallery')) {
         const activeThumbnail = this.elements.thumbnails.querySelector(`[data-target="${mediaId}"]`);
         this.setActiveThumbnail(activeThumbnail);
         this.announceLiveRegion(activeMedia, activeThumbnail.dataset.mediaPosition);
+        if (!isInternalCall) {
+          const allGalleries = document.querySelectorAll('media-gallery');
+          allGalleries.forEach((gallery) => {
+            if (gallery !== this) {
+              // Check to avoid updating the same gallery
+              gallery.setActiveMedia(mediaId, prepend, true); // The true flag indicates an internal call
+            }
+          });
+        }
       }
 
       setActiveThumbnail(thumbnail) {
@@ -106,3 +115,34 @@ if (!customElements.get('media-gallery')) {
     }
   );
 }
+// JavaScript Example
+
+function synchronizeGalleries(selectedMediaId) {
+  const galleries = document.querySelectorAll('media-gallery');
+
+  galleries.forEach((gallery) => {
+    const mainImage = gallery.querySelector(`[data-media-id="${selectedMediaId}"]`);
+    const thumbnails = gallery.querySelectorAll('.thumbnail');
+
+    // Update main image display
+    mainImage.classList.add('is-active');
+
+    // Update thumbnails
+    thumbnails.forEach((thumb) => {
+      if (thumb.dataset.mediaId === selectedMediaId) {
+        thumb.classList.add('is-active');
+      } else {
+        thumb.classList.remove('is-active');
+      }
+    });
+  });
+}
+
+document.querySelectorAll('media-gallery').forEach((gallery) => {
+  gallery.querySelectorAll('.thumbnail').forEach((thumbnail) => {
+    thumbnail.addEventListener('click', () => {
+      const selectedMediaId = thumbnail.getAttribute('data-media-id');
+      synchronizeGalleries(selectedMediaId);
+    });
+  });
+});

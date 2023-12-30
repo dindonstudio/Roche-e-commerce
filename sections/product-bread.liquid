@@ -16,20 +16,23 @@
             {% endif %}
         {% endfor %}
 
+        {% assign parent_collection_url = parent_collection.url %}
+        {% assign child_collection_url = child_collection.url %}
+
         {% if parent_collection %}
             <li class="breadcrumb-item">
-                <a href="{{ parent_collection.url }}"><h3>> {{ parent_collection.title }}</h3</a>
+                <a href="{{ parent_collection_url }}"><h3>> {{ parent_collection.title }}</h3>  </a>
             </li>
         {% endif %}
 
         {% if child_collection %}
             <li class="breadcrumb-item">
-                <a href="{{ child_collection.url }}"><h3>> {{ child_collection.title }}</h3</a>
+                <a href="{{ child_collection_url }}"><h3>> {{ child_collection.title }}</h3></a>
+
             </li>
         {% endif %}
     </ol>
 </div>
-
 {% schema %}
 {
     "name": "Breadcrumb Navigation",
