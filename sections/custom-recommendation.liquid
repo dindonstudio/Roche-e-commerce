@@ -12,33 +12,136 @@
   ]
 }
 {% endschema %}
+<style>
+.flex-container {
+  display: flex;
 
-{% stylesheet %}
-  /* Add CSS here for styling the section, especially for discounted products */
-  .flex-container {
+  justify-content: center;
+  gap: 2rem;
+}
+
+.flex-container li {
+
+
+  list-style: none;
+  text-align: center;
+  position: relative; /* For positioning the discount badge */
+}
+.flex-container .image-container{
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    border-left: 1px solid black;
+}
+.flex-container li img {
+  max-width: 100%;
+  height: auto;
+}
+
+.flex-container li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+    .flex-container{
+        flex-direction: column;
+    }
+  .flex-container li {
+    flex-basis: 100%;
+  
+  }
+}
+
+.discount-badge {
+  position: absolute;
+  top: -2rem;
+  right: -1rem;
+  background-color: #E55041;
+  color: #fff5e6;
+  padding: 1rem     3rem;
+  text-transform: uppercase;
+
+}
+.product-details{
     display: flex;
-    flex-wrap: wrap;
-    /* Additional styling */
-  }
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid black;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 1rem 1rem;
 
-  .discount-badge {
-    /* Styling for 'en solde' badge */
-  }
-{% endstylesheet %}
+}
+
+.discounted-item {
+  border: 2px solid #E55041; /* Example styling for discounted items */
+}
+.featured-title{
+    font-size: 5rem; padding: 4rem 3rem;
+}
+.flex{
+    display: flex;
+}
+.compared{
+    padding-left: 2rem;
+}
+s{
+    font-size: 1.6rem;
+    font-family: 'CustomFont-Light';
+}
+.discounted-item .product-details, .discounted-item .image-container{
+    background-color: #E55041;
+    color: #fff5e6;
+    border: #E55041;
+}
+.discounted-item .product-details{
+    padding: 3rem 1rem;
+}
+.discounted-item{
+    position: relative;
+    top: -2rem;
+}
+.discounted-item .product-details h3{
+    color: #fff5e6;
+}
+</style>
 
 {% javascript %}
   // Optional: JavaScript for additional interactivity if needed
 {% endjavascript %}
 
-<div class="flex-container">
-  {% for product in collections.all.products %}
-    {% if product.metafields.custom.recommendation_de_produits %}
-      <div class="product-item">
-        <!-- Display product details here -->
-        {% if product.compare_at_price > product.price %}
-          <span class="discount-badge">En solde</span>
-        {% endif %}
-      </div>
+<div class="featured-title">Featured Products</div>
+<ul class="flex-container">
+  {% assign recommended_products = product.metafields.custom.recommendation_de_produits.value %}
+  {% for product in recommended_products %}
+    {% assign is_discounted = false %}
+    {% if product.compare_at_price_min > product.price %}
+      {% assign is_discounted = true %}
     {% endif %}
+
+    <li class="{% if is_discounted %}discounted-item{% endif %}">
+      <a href="{{ product.url }}">
+        <div class="image-container">
+            {{ product.featured_image | image_url: width: 400 | image_tag: loading: 'lazy' }}
+        </div>
+   
+        <div class="product-details">
+            <h3 >{{ product.title }}</h3>
+            <div class="flex">
+                <h3 class="price"> {{ product.price | money }}</h3>
+                {% if is_discounted %}
+                <h3  class="compared price"><s>{{ product.compare_at_price_min | money }}</s></h3>
+                {% endif %}
+            </div>
+          
+            {% if is_discounted %}
+              <h3 class="discount-badge">Sale</h3>
+       
+            {% endif %}
+        </div>
+       
+      </a>
+    </li>
   {% endfor %}
-</div>
+</ul>

@@ -147,3 +147,6 @@ product-info {
 .product-info-container {
   padding-left: 4rem;
 }
+.price {
+  font-family: 'CustomFont-Light';
+}

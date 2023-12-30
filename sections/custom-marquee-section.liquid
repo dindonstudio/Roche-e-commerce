@@ -4,9 +4,15 @@
   "settings": [
     {
       "type": "text",
-      "label": "Marquee Text",
       "id": "marquee_text",
+      "label": "Marquee Text",
       "default": "This is your marquee text. Edit this text as needed."
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background Color",
+      "default": "#264a99"
     }
   ],
   "presets": [
@@ -14,30 +20,32 @@
       "name": "Marquee",
       "category": "Marquee Text",
       "settings": {
-        "marquee_text": "This is the preset marquee text."
+        "marquee_text": "This is the preset marquee text.",
+        "background_color": "#264a99"
       }
     }
   ]
 }
 {% endschema %}
 
-<div class="marquee-container">
+
+<div class="marquee-container" style="background-color: {{ section.settings.background_color }};">
     <div id="marquee" class="vanilla-marquee">{{ section.settings.marquee_text }}</div>
-  </div>
-  
-  <script type="module">
+</div>
+
+<script type="module">
 import marquee from 'https://cdn.jsdelivr.net/npm/vanilla-marquee/dist/vanilla-marquee.js';
 
-    new marquee( document.getElementById( 'marquee' ), {
-  gap:        100,
-  speed:      150,
+    new marquee(document.getElementById('marquee'), {
+  gap: 100,
+  speed: 150,
 });
-  </script>
+</script>
+
 <style>
     .marquee-container {
       overflow: hidden;
       white-space: nowrap;
-      background-color: #264a99;
       color: #fff;
       font-weight: bold;
       font-size: 4rem;
@@ -46,5 +54,4 @@ import marquee from 'https://cdn.jsdelivr.net/npm/vanilla-marquee/dist/vanilla-m
     .vanilla-marquee div {
       font-size: 4rem;
     }
-
-  </style>
+</style>

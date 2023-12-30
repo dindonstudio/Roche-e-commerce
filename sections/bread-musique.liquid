@@ -14,15 +14,15 @@
 <nav aria-label="Breadcrumb" class="breadcrumbs-apparel">
   <ol class="breadcrumb-list">
     <li class="breadcrumb-item">
-      <a href="/collections/all"><h3>Tous les produits</h3></a>
+      <a href="/collections/all"><h3>All products</h3></a>
     </li>
     {% if collection.handle == 'musique' %}
       <li class="breadcrumb-item">
-        <h3>> Musique</h3>
+        <h3>> Music</h3>
       </li>
     {% elsif collection %}
       <li class="breadcrumb-item">
-        <a href="/collections/musique"><h3>> Musique</h3></a>
+        <a href="/collections/musique"><h3>> Music</h3></a>
       </li>
       <li class="breadcrumb-item">
         <h3>> {{ collection.title }}</h3>
