@@ -105,12 +105,20 @@
       "type": "custom-recommendation",
       "settings": {
       }
+    },
+    "3b98f112-b1ba-4d9b-914b-7887fb23b312": {
+      "type": "custom-marquee-section",
+      "settings": {
+        "marquee_text": "CHRISTMAS OFFER !! Free Shipping until 24th of DECEMBER",
+        "background_color": "#e55041"
+      }
     }
   },
   "order": [
     "d81fe030-fa90-48bf-a68e-473893b97e95",
     "main",
     "related-products",
-    "8c28fc5e-97ca-46cd-b846-0cef6e03c40d"
+    "8c28fc5e-97ca-46cd-b846-0cef6e03c40d",
+    "3b98f112-b1ba-4d9b-914b-7887fb23b312"
   ]
 }
