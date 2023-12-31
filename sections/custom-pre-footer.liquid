@@ -59,7 +59,7 @@
       {% form 'customer', class: 'newsletter-form' %}
         <input type="hidden" name="contact[tags]" value="newsletter">
         <div class="newsletter-form__field-wrapper">
-          <div class="">
+          <div class="field">
             <input
               id="NewsletterForm--{{ section.id }}"
               type="email"
@@ -177,7 +177,7 @@
   .newsletter-signup input {
     padding: 5px 10px;
     margin-right: 10px;
-    border-bottom: 1px solid black;
+    /* border-bottom: 1px solid black; */
 
   }
 
@@ -210,11 +210,29 @@
     }
 
     .signup-text {
-      margin-bottom: 10px;
+      padding-right: 0;
+      font-size: 1.3rem;
+      margin: 1rem 0;
+      padding-left: 1rem;
     }
 
     .newsletter-signup input {
-      margin-bottom: 10px;
+   
     }
+    .newsletter__container{
+        padding-right: 1rem;
+        align-items: center;
+    }
+    .pre-footer {
+
+    height: auto;
+  
+  }
+  .signup-container{
+    flex: 1.2;
+  }
+  .pre-footer .social-links{
+    display: none;
+  }
   }
 </style>

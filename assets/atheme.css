@@ -55,6 +55,16 @@ nav.header__inline-menu #HeaderMenu-shop.shop-active span {
 .sticky-header {
   margin: 0;
 }
+p {
+  font-size: 1.2rem;
+}
+.cart-container {
+  position: relative;
+}
+.menu-drawer__navigation {
+  padding: 3rem 0;
+  background: var(--creme);
+}
 /* HERO */
 .banner__heading {
   color: var(--creme);
@@ -149,4 +159,22 @@ product-info {
 }
 .price {
   font-family: 'CustomFont-Light';
+}
+
+/* FOOTER */
+.form__message {
+  padding-left: 1rem;
+}
+.field,
+.field input {
+  background-color: #fcf9f5;
+}
+
+@media (max-width: 768px) {
+  .product {
+    flex-direction: column;
+  }
+  .product-info-container {
+    padding: 0 2rem;
+  }
 }

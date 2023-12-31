@@ -114,4 +114,17 @@
         grid-template-columns: 1fr 1fr;
         grid-template-rows: 1fr 1fr;
     }
+    @media (max-width: 768px) {
+        .row-grid {
+            flex-direction: column;
+        } 
+        .row-grid h3{
+            font-size: 1.3rem;
+        }
+        .product-details {
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 0.5rem;
+        }
+    }
     </style>

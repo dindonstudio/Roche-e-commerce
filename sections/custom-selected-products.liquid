@@ -57,7 +57,7 @@
       {% if block.type == 'blocks' %}
         {% assign product = all_products[block.settings.product] %}
         <div class="{% if block.settings.is_limited_edition %}limited-edition-product{% else %}product{% endif %}">
-            <h4 class="limited__text">{{ block.settings.limited_edition_text }}</h4>
+            <h3 class="limited__text">{{ block.settings.limited_edition_text }}</h3>
 
           <a class="product__link" href="{{ product.url }}">
             {% if block.settings.is_limited_edition %}
@@ -152,7 +152,10 @@ background-color: #264a99;
 .price{
     font-family: 'CustomFont-Light';
 }
-  .limited-edition-product h4 {
+.product .limited__text{
+    display: none;
+}
+  .limited__text  {
     background-color: #E55041;
     padding: 5px;
     margin-bottom: 10px;
@@ -203,11 +206,29 @@ font-weight: 600;
 }
 .limited__text{
     position: absolute;
-    top: -2rem;
+    top: 0;
     right: 0rem;
     width: 100%;
     text-transform: uppercase;
     font-family: 'CustomFont-Regular';
+}
+@media screen and (max-width: 750px) {
+    .title__flip h2 {
+   
+    width: 120px;
+  
+}
+.product img, .limited-edition-product img {
+    height: 80vw;
+
+}
+.scroll-arrow{
+    display: none;
+}
+.best-sellers-container {
+ 
+    padding: 8rem 0;
+}
 }
 
 </style>
