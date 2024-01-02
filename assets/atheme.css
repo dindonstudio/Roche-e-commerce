@@ -160,7 +160,9 @@ product-info {
 .price {
   font-family: 'CustomFont-Light';
 }
-
+quantity-input {
+  background-color: #fcf9f5;
+}
 /* FOOTER */
 .form__message {
   padding-left: 1rem;
@@ -171,10 +173,18 @@ product-info {
 }
 
 @media (max-width: 768px) {
-  .product {
+  .product.product--thumbnail_slider {
     flex-direction: column;
+    overflow-x: hidden;
   }
   .product-info-container {
     padding: 0 2rem;
+  }
+  .product .grid__item,
+  .product .product__info-wrapper {
+    flex: none;
+  }
+  .grid--peek.slider .grid__item:first-of-type {
+    margin-left: 0rem;
   }
 }
