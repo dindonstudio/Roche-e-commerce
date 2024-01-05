@@ -25,7 +25,12 @@
                   <a href="{{ product.url }}" class="big-product product">
                     <!-- Big product layout -->
                     <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}" class="first-image">
-                    <img src="{{ product.images[1] | img_url: 'master' }}" alt="{{ product.title }}" class="second-image" >                    <div class="product-details">
+                    {% if product.images[1] %}
+                      <img src="{{ product.images[1] | img_url: 'master' }}" alt="{{ product.title }}" class="second-image">
+                    {% else %}
+                      <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}" class="second-image">
+                    {% endif %}
+                                     <div class="product-details">
                         <h3>{{ product.title }}</h3>
                         <h3 class="price">{{ product.price | money }}</h3>
                       </div>
@@ -35,7 +40,11 @@
                 <a href="{{ product.url }}" class="small-product product">
                   <!-- Small product layout -->
                   <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}" class="first-image">
-                  <img src="{{ product.images[1] | img_url: 'master' }}" alt="{{ product.title }}" class="second-image" >                  <div class="product-details">
+                  {% if product.images[1] %}
+                    <img src="{{ product.images[1] | img_url: 'master' }}" alt="{{ product.title }}" class="second-image">
+                  {% else %}
+                    <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}" class="second-image">
+                  {% endif %}                 <div class="product-details">
                     <h3>{{ product.title }}</h3>
                     <h3 class="price">{{ product.price | money }}</h3>
                   </div>
@@ -107,6 +116,9 @@
         flex-wrap: nowrap;
         justify-content: start;
 
+    }
+    .product-grid .row-grid:nth-child(even){
+      flex-direction: row-reverse;
     }
     .small-products-wrapper{
         display: grid;
