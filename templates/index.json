@@ -44,6 +44,7 @@
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/IMG_9998_1.jpg",
+        "video": "shopify:\/\/files\/videos\/Video echant.mp4",
         "image_overlay_opacity": 40,
         "image_height": "adapt",
         "desktop_content_position": "bottom-center",
@@ -89,7 +90,8 @@
     "c5005365-9569-4932-9a0a-f9f67ac49eed": {
       "type": "custom-marquee-section",
       "settings": {
-        "marquee_text": "CHRISTMAS OFFER !! Free Shipping until 24th of DECEMBER"
+        "marquee_text": "CHRISTMAS OFFER !! Free Shipping until 24th of DECEMBER",
+        "background_color": "#264a99"
       }
     },
     "a0f31116-f917-4b18-92fc-51e466a025b1": {
