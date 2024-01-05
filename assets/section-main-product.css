@@ -1104,7 +1104,7 @@ a.product__text {
   }
 
   .thumbnail-list.slider--tablet-up .thumbnail-list__item.slider__slide {
-    width: calc(25% - 0.8rem);
+    width: calc(50% - 0.8rem);
   }
 
   .product--thumbnail_slider .slider-mobile-gutter .slider-button {
@@ -1114,11 +1114,11 @@ a.product__text {
 
 @media screen and (min-width: 900px) {
   .product--small .thumbnail-list.slider--tablet-up .thumbnail-list__item.slider__slide {
-    width: calc(25% - 0.8rem);
+    width: calc(50% - 0.8rem);
   }
 
   .thumbnail-list.slider--tablet-up .thumbnail-list__item.slider__slide {
-    width: calc(25% - 0.8rem);
+    width: calc(50% - 0.8rem);
   }
 }
 
@@ -1402,7 +1402,7 @@ a.product__text {
 .product-media-container.constrain-height {
   /* arbitrary offset value based on average theme spacing and header height */
   --viewport-offset: 400px;
-  --constrained-min-height: 300px;
+  --constrained-min-height: 400px;
   --constrained-height: max(var(--constrained-min-height), calc(100vh - var(--viewport-offset)));
   margin-right: auto;
   margin-left: auto;

@@ -23,6 +23,12 @@
       "id": "button_text",
       "label": "Button Text",
       "default": "Click Here"
+    },
+    {
+      "type": "checkbox",
+      "id": "invert_layout",
+      "label": "Invert Image and Text",
+      "default": false
     }
   ],
   "presets": [
@@ -34,7 +40,7 @@
 }
 {% endschema %}
 
-<div class="custom-section">
+<div class="custom-section{% if section.settings.invert_layout %} row-reverse{% endif %}">
   <div class="custom-section-image">
     <img src="{{ section.settings.image | img_url: 'large' }}" alt="">
   </div>
@@ -54,7 +60,11 @@
 
     border: 1px solid black;
     height: 40vw;
+    min-height: 400px;
     overflow: hidden;
+  }
+  .custom-section.row-reverse {
+    flex-direction: row-reverse;
   }
 
   .custom-section-image {
