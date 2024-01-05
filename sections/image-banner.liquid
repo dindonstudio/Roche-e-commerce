@@ -110,10 +110,16 @@ mix-blend-mode: overlay;
   {%- elsif section.settings.image_2 == blank -%}
     <div class="banner__media media{% if section.settings.image == blank and section.settings.image_2 == blank %} placeholder{% endif %}{% if section.settings.image_2 != blank %} banner__media-half{% endif %}{% if section.settings.image_behavior != 'none' %} animate--{{ section.settings.image_behavior }}{% endif %}{% if settings.animations_reveal_on_scroll %} scroll-trigger animate--fade-in{% endif %}">
     <video autoplay loop playsinline muted>
-    <source src="{{ block.settings.video }}" type="video/mp4">
+    <source src="{{ section.settings.video.sources[0].url }}" type="video/mp4">
     Your browser does not support the video tag.
 </video>
-
+{%- for block in section.blocks -%}
+{% if block.settings.big_logo_image != blank %}
+  <div class="bigLogo">
+    <img src="{{ block.settings.big_logo_image | img_url: 'original' }}" alt="Big Logo">
+  </div>
+{% endif %}
+{%- endfor -%}
     </div>
   {%- endif -%}
   {%- if section.settings.image_2 != blank -%}
