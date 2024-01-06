@@ -1,0 +1,61 @@
+{{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+
+<div class="article-container">
+  <article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="article-title">
+      <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
+      {% if section.settings.show_publish_date %}
+        <p class="publish-date" itemprop="datePublished" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+          {{ article.published_at | date: '%B %d, %Y' }}
+        </p>
+      {% endif %}
+    </div>
+
+    <div class="article-template__content rte" itemprop="articleBody">
+      {{ article.content }}
+    </div>
+  </article>
+</div>
+
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{{ shop.url }}"
+    },
+    "headline": {{ article.title | json }},
+    "datePublished": {{ article.published_at | date: '%Y-%m-%dT%H:%M:%SZ' | json }},
+    "author": {
+      "@type": "Person",
+      "name": {{ article.author | json }}
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": {{ shop.name | json }}
+    },
+    "articleBody": {{ article.content | strip_html | json }}
+  }
+</script>
+
+{% schema %}
+{
+  "name": "Main Article Editorial",
+  "class": "main-article-editorial",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_publish_date",
+      "label": "Show Publish Date",
+      "default": true
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main Article Editorial",
+      "category": "Article"
+    }
+  ]
+}
+{% endschema %}
