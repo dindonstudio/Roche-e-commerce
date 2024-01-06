@@ -12,11 +12,14 @@
   display: flex;
   align-items: center;
 }
-.article-template h1 {
+.article-template h1,
+.article-template h1 span {
   margin: 0;
   font-size: 60px;
+  line-height: 110%;
 }
-.article-template p {
+.article-template p,
+.article-template span {
   font-size: 18px;
   line-height: 120%;
 }
@@ -34,14 +37,165 @@ table td {
 table td img {
   width: 100%;
 }
-.article-container h2 {
+.article-container h2,
+.article-container h2 span {
   font-size: 60px;
+  line-height: 100%;
+}
+.article-container h3 {
+  font-size: 40px;
   line-height: 100%;
 }
 .article-container a {
   color: var(--green);
   text-decoration: underline;
+  font-size: 18px;
+  line-height: 120%;
 }
+.article-template table tr {
+  display: flex;
+  gap: 3rem;
+  padding-bottom: 8rem;
+}
+.article-template.lookbook table tr {
+  display: flex;
+  gap: 1rem;
+  padding-bottom: 0rem;
+}
+.article-template.lookbook .rte table td {
+  padding: 0;
+  justify-content: center;
+}
+.article-template table td {
+  display: flex;
+  flex-direction: column;
+  position: sticky;
+
+  height: 100%;
+  top: 3rem;
+}
+.blank-bg {
+  padding: 2rem;
+  border: 2px solid black;
+  background-color: white;
+}
+.rte table td {
+  display: flex;
+  padding: 0;
+}
+.rte table tbody tr {
+  display: flex;
+}
+.rte img {
+  height: 100%;
+}
+.flex-container {
+  display: flex;
+
+  justify-content: center;
+  gap: 2rem;
+  padding-bottom: 8rem;
+}
+
+.flex-container li {
+  list-style: none;
+  text-align: center;
+  position: relative; /* For positioning the discount badge */
+}
+.flex-container .image-container {
+  border-top: 1px solid black;
+  border-right: 1px solid black;
+  border-left: 1px solid black;
+}
+.flex-container li img {
+  max-width: 100%;
+  height: auto;
+}
+
+.flex-container li a {
+  text-decoration: none;
+  color: inherit;
+}
+
+@media (max-width: 768px) {
+  .flex-container {
+    flex-direction: column;
+    padding: 0 3rem 4rem;
+  }
+  .flex-container li {
+    flex-basis: 100%;
+  }
+}
+
+.discount-badge {
+  position: absolute;
+  top: -2rem;
+  right: -1rem;
+  background-color: #e55041;
+  color: #fff5e6;
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+}
+.product-details {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid black;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  padding: 1rem 1rem;
+}
+
+.discounted-item {
+  border: 2px solid #e55041; /* Example styling for discounted items */
+}
+.featured-title {
+  font-size: 5rem;
+  padding: 0rem 3rem 2rem;
+  text-align: center;
+}
+.flex {
+  display: flex;
+}
+.compared {
+  padding-left: 2rem;
+}
+s {
+  font-size: 1.6rem;
+  font-family: 'CustomFont-Light';
+}
+.discounted-item .product-details,
+.discounted-item .image-container {
+  background-color: #e55041;
+  color: #fff5e6;
+  border: #e55041;
+}
+.discounted-item .product-details {
+  padding: 3rem 1rem;
+}
+.discounted-item {
+  position: relative;
+  top: -2rem;
+}
+.discounted-item .product-details h3 {
+  color: #fff5e6;
+}
+
+@media (max-width: 768px) {
+  .flex-container li.discounted-item {
+    margin-top: 4rem;
+  }
+  .flex-container li {
+    margin-top: 2rem;
+  }
+  .featured-title {
+    font-size: 4rem;
+    padding: 2rem 3rem;
+    text-align: center;
+  }
+}
+
 @media (max-width: 768px) {
   table td {
     width: 100% !important;

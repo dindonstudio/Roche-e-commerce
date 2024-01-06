@@ -3,12 +3,13 @@
 <div class="article-container editorial">
   <article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="article-title">
-      <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
-      {% if section.settings.show_publish_date %}
-        <p class="publish-date" itemprop="datePublished" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
-          {{ article.published_at | date: '%B %d, %Y' }}
-        </p>
-      {% endif %}
+      {% comment %}
+        {% if section.settings.show_publish_date %}
+          <p class="publish-date" itemprop="datePublished" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+            {{ article.published_at | date: '%B %d, %Y' }}
+          </p>
+        {% endif %}
+      {% endcomment %}
     </div>
 
     <div class="article-template__content rte" itemprop="articleBody">
@@ -16,7 +17,40 @@
     </div>
   </article>
 </div>
+<div class="featured-title">{{ article.metafields.custom.phrase_buy_the_look.value }}</div>
+<ul class="flex-container">
+  {% assign recommended_products = article.metafields.custom.selection_produit.value %}
+  {% for product in recommended_products %}
+    {% assign is_discounted = false %}
+    {% if product.compare_at_price_min > product.price %}
+      {% assign is_discounted = true %}
+    {% endif %}
 
+    <li class="{% if is_discounted %}discounted-item{% endif %}">
+      <a href="{{ product.url }}">
+        <div class="image-container">
+          {{ product.featured_image | image_url: width: 400 | image_tag: loading: 'lazy' }}
+        </div>
+
+        <div class="product-details">
+          <h3>{{ product.title }}</h3>
+          <div class="flex">
+            <h3 class="price">{{ product.price | money }}</h3>
+            {% if is_discounted %}
+              <h3 class="compared price">
+                <s>{{ product.compare_at_price_min | money }}</s>
+              </h3>
+            {% endif %}
+          </div>
+
+          {% if is_discounted %}
+            <h3 class="discount-badge">Sale</h3>
+          {% endif %}
+        </div>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
 <script type="application/ld+json">
   {
     "@context": "http://schema.org",
@@ -38,7 +72,17 @@
     "articleBody": {{ article.content | strip_html | json }}
   }
 </script>
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    var tableCells = document.querySelectorAll('.article-template__content td');
 
+    tableCells.forEach(function (cell) {
+      if (cell.querySelector('img')) {
+        cell.classList.add('blank-bg');
+      }
+    });
+  });
+</script>
 {% schema %}
 {
   "name": "Main Article Editorial",

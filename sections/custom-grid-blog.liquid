@@ -1,0 +1,48 @@
+{{ 'grid-all-blogs-section.css' | asset_url | stylesheet_tag }}
+
+<!-- Blog Menu -->
+<div class="blog-menu">
+  {% for blog in blogs %}
+    <a href="{{ blog.url }}">{{ blog.title }}</a>
+  {% endfor %}
+</div>
+
+<!-- Grid Section -->
+<div class="grid-all-section">
+  {% for blog in blogs %}
+    <div class="grid-blog">
+      <h2>{{ blog.title }}</h2>
+      <div class="grid">
+        {% for article in blog.articles %}
+          <div class="grid-item {{ blog.handle }}">
+            {% if article.image %}
+              <img src="{{ article.image.src | img_url: '300x300' }}" alt="{{ article.image.alt | escape }}">
+            {% endif %}
+            <h3>
+              <a href="{{ article.url }}">{{ article.title }}</a>
+            </h3>
+            <p class="grid-item-excerpt">{{ article.excerpt | truncate: 150, '...' }}</p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Grid All Blogs",
+  "class": "grid-all-blogs",
+  "max_blocks": 0,
+  "settings": [],
+  "presets": [
+    {
+      "name": "Grid All Blogs",
+      "category": "Custom",
+      "settings": {
+        // Add any default settings you want for this preset
+      }
+    }
+  ]
+}
+{% endschema %}
