@@ -3,6 +3,7 @@ html {
   --creme: #fff5e6;
   --blue: #264a99;
   --red: #e55041;
+  --green: #008150;
   font-size: 62.5%;
 }
 
@@ -218,6 +219,8 @@ button.thumbnail {
 .field input {
   background-color: #fcf9f5;
 }
+
+/* ARTICLE */
 
 @media (max-width: 768px) {
   .vague {

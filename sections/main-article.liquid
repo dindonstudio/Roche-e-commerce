@@ -1,17 +1,21 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+<div class="article-container">
+  <article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
+    <div class="article-title">
+      <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
+      {% comment %}
+        <p class="publish-date" itemprop="datePublished" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
+          {{ article.published_at | date: '%B %d, %Y' }}
+        </p>
+      {% endcomment %}
+    </div>
+  
+    <div class="article-template__content rte" itemprop="articleBody">
+      {{ article.content }}
+    </div>
+  </article>
+</div>
 
-<article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="article-template__header">
-    <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
-    <time class="publish-date" itemprop="datePublished" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
-      {{ article.published_at | date: '%B %d, %Y' }}
-    </time>
-  </header>
-
-  <div class="article-template__content rte" itemprop="articleBody">
-    {{ article.content }}
-  </div>
-</article>
 
 <script type="application/ld+json">
   {
