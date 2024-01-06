@@ -1,6 +1,6 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
-<div class="article-container editorial">
+<div class="article-container lookbook">
   <article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
     <div class="article-title">
       <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
@@ -41,8 +41,8 @@
 
 {% schema %}
 {
-  "name": "Main Article Editorial",
-  "class": "main-article-editorial",
+  "name": "Main Article lookbook",
+  "class": "main-article-lookbook",
   "settings": [
     {
       "type": "checkbox",
@@ -53,7 +53,7 @@
   ],
   "presets": [
     {
-      "name": "Main Article Editorial",
+      "name": "Main Article Lookbook",
       "category": "Article"
     }
   ]
