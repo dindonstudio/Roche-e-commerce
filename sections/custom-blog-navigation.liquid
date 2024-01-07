@@ -1,12 +1,19 @@
-{% if linklists['blog-navigation'] %}
-  <div class="blog-menu">
-    {% for link in linklists['blog-navigation'].links %}
-      <a href="{{ link.url }}" class="{% if link.active %}active{% endif %}"> <h3>
-        {{ link.title }}
-      </h3></a>
-    {% endfor %}
-  </div>
-{% endif %}
+<div class="blog-menu">
+    <!-- Link to all blog articles -->
+    <a href="{{ blog.url }}" class="{% if request.path == blog.url %}active{% endif %}">
+      <h3>All</h3>
+    </a>
+    {% for tag in blog.all_tags %}
+    {% assign handleized_tag = tag | handleize %}
+    {% assign tag_url = '/blogs/all-blogs/tagged/' | append: handleized_tag %}
+    <a href="{{ tag_url }}" class="{% if request.path contains handleized_tag %}active{% endif %}">
+        <h3>{{ tag }}</h3>
+    </a>
+{% endfor %}
+</div>
+
+  
+
 
 <!-- Add some basic styles for the section -->
 <style>
@@ -43,6 +50,20 @@ padding-left: 1rem;
 color: #FFF5E6;
 
   } 
+  @media screen and (max-width: 750px) {
+    .blog-menu a h3{
+font-size: 12px;
+
+  }
+  .blog-menu a.active{
+    transform: scale(1);
+    z-index: 0;
+    background-color: black;
+align-items: flex-end;
+justify-content: flex-start;
+transform-origin: left;
+  } 
+}
   </style>
   
 {% schema %}

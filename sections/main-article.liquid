@@ -49,7 +49,19 @@
     </li>
   {% endfor %}
 </ul>
+<script>
+  // Select all td elements
+  var tdElements = document.querySelectorAll('td');
 
+  // Loop through each td element
+  tdElements.forEach(function (td) {
+    // Check if the td contains an img element
+    if (td.querySelector('img')) {
+      // Apply height: auto style to the td
+      td.style.height = 'auto';
+    }
+  });
+</script>
 <script type="application/ld+json">
   {
       "@context": "http://schema.org",

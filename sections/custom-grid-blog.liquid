@@ -4,26 +4,185 @@
 
 <!-- Grid Section -->
 <div class="grid-all-section">
-  {% for link in linklists['blog-navigation'].links %}
-    {% assign blog = blogs[link.handle] %}
-    <div class="grid-blog">
-      <h2>{{ blog.title }}</h2>
-      <div class="grid">
+  {% assign blog = blogs['all-blogs'] %}
+  {% assign url_parts = request.path | split: '/' %}
+  {% assign current_tag = url_parts.last | handleize %}
+  {% assign capitalized_tag = current_tag | capitalize %}
+
+  <div class="grid-blog">
+    <div class="grid">
+      {% if current_tag == 'all-blogs' or current_tag == 'tagged' %}
+        <!-- Show all articles -->
         {% for article in blog.articles limit: 50 %}
-          <div class="grid-item {{ blog.handle }}">
-            {% if article.image %}
-              <img src="{{ article.image.src | img_url: '300x300' }}" alt="{{ article.image.alt | escape }}">
+        <div class="grid-item {{ article.tags}}">
+          <a href="{{ article.url }}">
+
+       <div class="flex">
+        <h2>
+          {{ article.title }}
+        <h3 class="published-time"> - {{ article.published_at | date: "%B %d, %Y " }}</h3>
+
+      </h2>
+       </div>
+               
+          {% if article.metafields.custom.video_thumbnail != blank %}
+              <video autoplay loop playsinline muted>
+
+                <source src="{{ article.metafields.custom.video_thumbnail  | metafield_tag }}" type="video/mp4">
+                Your browser does not support the video tag.
+              </video>
+              {% elsif article.metafields.custom.slider_thumbnail != blank %}
+              <div class="slider">
+                {% for image in article.metafields.custom.slider_thumbnail.value %}
+                  <img src="{{ image | img_url: '1000x' }}" alt="{{ article.title | escape }}" style="display: none;">
+                {% endfor %}
+                <button class="prev"><h3>←</h3></button>
+                <button class="next"><h3>→</h3></button>
+              </div>
+              
+            {% elsif article.image %}
+              <img src="{{ article.image.src |image_url: width: 1000 }}" alt="{{ article.image.alt | escape }}">
             {% endif %}
-            <h3>
               <a href="{{ article.url }}">{{ article.title }}</a>
             </h3>
-            <p class="grid-item-excerpt">{{ article.excerpt | truncate: 150, '...' }}</p>
+          </a>
           </div>
         {% endfor %}
-      </div>
+      {% else %}
+        <!-- Show articles for a specific tag -->
+        {% assign tagged_articles_found = false %}
+        {% for article in blog.articles %}
+          {% if article.tags contains capitalized_tag %}
+            {% assign tagged_articles_found = true %}
+            <div class="grid-item {{ article.tags}}">
+              <a href="{{ article.url }}">
+    
+           <div class="flex">
+            <h2>
+              {{ article.title }}
+            <h3 class="published-time"> - {{ article.published_at | date: "%B %d, %Y " }}</h3>
+    
+          </h2>
+           </div>
+                   
+              {% if article.metafields.custom.video_thumbnail != blank %}
+                  <video autoplay loop playsinline muted>
+    
+                    <source src="{{ article.metafields.custom.video_thumbnail  | metafield_tag }}" type="video/mp4">
+                    Your browser does not support the video tag.
+                  </video>
+                  {% elsif article.metafields.custom.slider_thumbnail != blank %}
+                  <div class="slider">
+                    {% for image in article.metafields.custom.slider_thumbnail.value %}
+                      <img src="{{ image | img_url: '1000x' }}" alt="{{ article.title | escape }}" style="display: none;">
+                    {% endfor %}
+                    <button class="prev"><h3>←</h3></button>
+                    <button class="next"><h3>→</h3></button>
+                  </div>
+                  
+                {% elsif article.image %}
+                  <img src="{{ article.image.src |image_url: width: 1000 }}" alt="{{ article.image.alt | escape }}">
+                {% endif %}
+                  <a href="{{ article.url }}">{{ article.title }}</a>
+                </h3>
+              </a>
+              </div>
+          {% endif %}
+        {% endfor %}
+        {% unless tagged_articles_found %}
+          <p>No articles found with the tag '{{ current_tag }}'</p>
+        {% endunless %}
+      {% endif %}
     </div>
-  {% endfor %}
+  </div>
 </div>
+<style>
+.grid-blog{
+  padding: 8rem 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+ 
+}
+.grid-blog .grid{
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  column-gap: 4rem;
+  row-gap: 8rem;
+}
+.grid-item a{ 
+  flex-direction: column;
+display: flex;
+justify-content: flex-end;
+height: 100%;
+}
+.grid-item h2{
+  margin: 0;
+}
+.grid-item a{
+text-decoration: none }
+.grid-item.Events{
+  grid-column: 1/11;
+}
+.grid-item.Editorial{
+  grid-column: span 5;
+}
+.grid-item.Collabs{
+  grid-column: span 6;
+}
+.grid-item.Lookbook{
+  grid-column: span 7;
+}
+.grid-item img{
+  width: 100%;
+}
+.grid-item video{
+width: 100%;
+height: auto;
+}
+.slider {
+  position: relative;
+}
+.flex{
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+column-gap: 1rem;
+padding-bottom: 1rem;
+}
+/* Slider Navigation Buttons */
+.slider .prev, .slider .next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255, 0.5);
+  color: white;
+  border: none;
+  padding: 5px 15px;
+  cursor: pointer;
+  color: black;
+  transition: background-color 0.3s;
+  z-index: 2; /* Ensure buttons are above the image */
+}
+
+.slider .prev { left: 10px; }
+.slider .next { right: 10px; }
+
+.slider .prev:hover, .slider .next:hover {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* Slider Images */
+.slider img {
+  width: 100%;
+  display: none;
+  position: relative; /* Ensure images stay below the buttons */
+}
+@media screen and (max-width: 750px) {
+  .grid-blog .grid{
+    display: flex;
+  }
+}
+</style>
 {% schema %}
 {
   "name": "Grid All Blogs",
@@ -41,3 +200,53 @@
   ]
 }
 {% endschema %}
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var sliders = document.querySelectorAll('.slider');
+
+  sliders.forEach(function(slider) {
+    let currentSlide = 0;
+    const images = slider.querySelectorAll('img');
+    const totalSlides = images.length;
+
+    function updateSlider() {
+      images.forEach((img, index) => {
+        img.style.display = index === currentSlide ? 'block' : 'none';
+      });
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateSlider();
+    }
+
+    function previousSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateSlider();
+    }
+
+    // Attaching click event to next button
+    const nextButton = slider.querySelector('.next');
+    if (nextButton) {
+      nextButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default action
+        event.stopPropagation(); // Stop event from bubbling up
+        nextSlide();
+      });
+    }
+
+    // Attaching click event to previous button
+    const prevButton = slider.querySelector('.prev');
+    if (prevButton) {
+      prevButton.addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default action
+        event.stopPropagation(); // Stop event from bubbling up
+        previousSlide();
+      });
+    }
+
+    updateSlider(); // Initialize slider
+  });
+});
+
+</script>

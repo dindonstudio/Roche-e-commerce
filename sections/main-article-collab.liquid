@@ -1,7 +1,7 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
 
-<div class="article-container lookbook">
-  <article class="article-template lookbook " itemscope itemtype="http://schema.org/BlogPosting">
+<div class="article-container collab">
+  <article class="article-template collab " itemscope itemtype="http://schema.org/BlogPosting">
     {% comment %}
       <div class="article-title">
         <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
@@ -89,8 +89,8 @@
 </script>
 {% schema %}
 {
-  "name": "Main Article lookbook",
-  "class": "main-article-lookbook",
+  "name": "Main Article collab",
+  "class": "main-article-collab",
   "settings": [
     {
       "type": "checkbox",
@@ -101,7 +101,7 @@
   ],
   "presets": [
     {
-      "name": "Main Article Lookbook",
+      "name": "Main Article collab",
       "category": "Article"
     }
   ]
