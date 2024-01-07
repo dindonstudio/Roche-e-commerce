@@ -53,6 +53,13 @@ h3 {
 nav.header__inline-menu #HeaderMenu-shop.shop-active span {
   color: white;
 }
+#HeaderMenu-lifestyle.blog-active {
+  background-color: var(--green);
+  color: white;
+}
+nav.header__inline-menu #HeaderMenu-lifestyle.blog-active span {
+  color: white;
+}
 .sticky-header {
   margin: 0;
 }

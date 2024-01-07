@@ -1,11 +1,45 @@
 {% if linklists['blog-navigation'] %}
   <div class="blog-menu">
     {% for link in linklists['blog-navigation'].links %}
-      <a href="{{ link.url }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
+      <a href="{{ link.url }}" class="{% if link.active %}active{% endif %}"> <h3>
+        {{ link.title }}
+      </h3></a>
     {% endfor %}
   </div>
 {% endif %}
 
+<!-- Add some basic styles for the section -->
+<style>
+  .blog-menu{
+    display: flex;
+    justify-content: space-between;
+  } 
+  .blog-menu a{
+    z-index: 2;
+flex: 1;
+display: flex;
+align-items: center;
+justify-content: center;
+border-right: 1px solid black;
+border-left: 1px solid black;
+border-bottom: 1px solid black;
+text-align: center;
+background-color: var(--green);
+height: 8rem;
+
+  } 
+  .blog-menu a.active{
+    transform: scale(1.5);
+    z-index: 0;
+    background-color: black;
+align-items: flex-end;
+  } 
+  .blog-menu a h3{
+color: #FFF5E6;
+
+  } 
+  </style>
+  
 {% schema %}
 {
   "name": "Blog Navigation Menu",
