@@ -1,5 +1,10 @@
 {
   "sections": {
+    "567d9ca1-9905-4abc-9180-16fb6f53571c": {
+      "type": "custom-blog-navigation",
+      "settings": {
+      }
+    },
     "main": {
       "type": "main-blog",
       "settings": {
@@ -14,6 +19,7 @@
     }
   },
   "order": [
+    "567d9ca1-9905-4abc-9180-16fb6f53571c",
     "main"
   ]
 }
