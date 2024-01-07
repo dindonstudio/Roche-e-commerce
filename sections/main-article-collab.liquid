@@ -2,16 +2,9 @@
 
 <div class="article-container collab">
   <article class="article-template collab " itemscope itemtype="http://schema.org/BlogPosting">
-    {% comment %}
-      <div class="article-title">
-        <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
-        {% if section.settings.show_publish_date %}
-          <p class="publish-date" itemprop="datePublished" datetime="{{ article.published_at | date: '%Y-%m-%d' }}">
-            {{ article.published_at | date: '%B %d, %Y' }}
-          </p>
-        {% endif %}
-      </div>
-    {% endcomment %}
+    <div class="article-title">
+      <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
+    </div>
 
     <div class="article-template__content rte" itemprop="articleBody">
       {{ article.content }}

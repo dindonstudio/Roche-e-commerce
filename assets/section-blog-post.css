@@ -56,11 +56,24 @@ table td img {
   display: flex;
   gap: 3rem;
   padding-bottom: 8rem;
+  height: auto !important;
 }
 .article-template.lookbook table tr {
   display: flex;
   gap: 2rem;
   padding-bottom: 0rem;
+}
+.article-template.collab table tr {
+  display: flex;
+  gap: 0rem;
+  padding-bottom: 0rem;
+}
+.article-template.collab H1 {
+  padding-bottom: 4rem;
+  text-align: center;
+}
+.article-template.collab .article-title {
+  justify-content: center;
 }
 .article-template.lookbook .rte table td {
   padding: 0;
@@ -195,9 +208,30 @@ s {
     margin-top: 2rem;
   }
   .featured-title {
-    font-size: 4rem;
+    font-size: 3rem;
     padding: 2rem 3rem;
     text-align: center;
+    line-height: 110%;
+  }
+  .article-template {
+    padding: 4rem 1rem;
+  }
+  .article-template table tr {
+    flex-direction: column;
+  }
+  .article-template table td {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    text-align: left !important;
+    height: 100%;
+    /* top: 3rem; */
+  }
+  .article-template h1,
+  .article-template h1 span,
+  .article-template h2,
+  .article-template h2 span {
+    font-size: 40px;
   }
 }
 
