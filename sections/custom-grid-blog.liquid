@@ -1,13 +1,6 @@
-{{ 'grid-all-blogs-section.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'grid-all-blogs-section.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
 <!-- Blog Menu -->
-{% if linklists['blog-navigation'] %}
-  <div class="blog-menu">
-    {% for link in linklists['blog-navigation'].links %}
-      <a href="{{ link.url }}">{{ link.title }}</a>
-    {% endfor %}
-  </div>
-{% endif %}
 
 <!-- Grid Section -->
 <div class="grid-all-section">
