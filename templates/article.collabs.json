@@ -1,7 +1,7 @@
 {
   "sections": {
-    "269fa893-70fa-48c2-9381-2f1ffdcf9d64": {
-      "type": "main-article-editorial",
+    "f0e26f81-aabd-4709-bf07-7cd060cef3a5": {
+      "type": "main-article-collab",
       "settings": {
         "show_publish_date": true
       }
@@ -14,7 +14,7 @@
     }
   },
   "order": [
-    "269fa893-70fa-48c2-9381-2f1ffdcf9d64",
+    "f0e26f81-aabd-4709-bf07-7cd060cef3a5",
     "main"
   ]
 }
