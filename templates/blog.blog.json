@@ -1,5 +1,10 @@
 {
   "sections": {
+    "55148c12-5690-46b7-a95d-78056af1c295": {
+      "type": "custom-grid-blog",
+      "settings": {
+      }
+    },
     "main": {
       "type": "main-blog",
       "settings": {
@@ -14,6 +19,7 @@
     }
   },
   "order": [
+    "55148c12-5690-46b7-a95d-78056af1c295",
     "main"
   ]
 }
