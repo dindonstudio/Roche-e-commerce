@@ -1,5 +1,10 @@
 {
   "sections": {
+    "65b4d5dd-6562-45b0-a443-f4bec8940232": {
+      "type": "custom-blog-navigation",
+      "settings": {
+      }
+    },
     "55148c12-5690-46b7-a95d-78056af1c295": {
       "type": "custom-grid-blog",
       "settings": {
@@ -7,6 +12,7 @@
     },
     "main": {
       "type": "main-blog",
+      "disabled": true,
       "settings": {
         "layout": "collage",
         "show_image": true,
@@ -19,6 +25,7 @@
     }
   },
   "order": [
+    "65b4d5dd-6562-45b0-a443-f4bec8940232",
     "55148c12-5690-46b7-a95d-78056af1c295",
     "main"
   ]
