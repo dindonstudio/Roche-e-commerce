@@ -1,0 +1,21 @@
+{% if linklists['blog-navigation'] %}
+  <div class="blog-menu">
+    {% for link in linklists['blog-navigation'].links %}
+      <a href="{{ link.url }}" class="{% if link.active %}active{% endif %}">{{ link.title }}</a>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Blog Navigation Menu",
+  "class": "blog-navigation-menu",
+  "settings": [],
+  "presets": [
+    {
+      "name": "Blog Navigation Menu",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
