@@ -1,0 +1,58 @@
+{{ 'blog-article-selection-section.css' | asset_url | stylesheet_tag }}
+
+<div class="blog-article-selection-section">
+  {% assign selected_blog = blogs[section.settings.blog_handle] %}
+  {% if selected_blog %}
+    <div class="selected-articles">
+      {% for block in section.blocks %}
+        {% assign article = selected_blog.articles[block.settings.article_id] %}
+        {% if article %}
+          <div class="article-block">
+            <h3>
+              <a href="{{ article.url }}">{{ article.title }}</a>
+            </h3>
+            {% if article.image %}
+              <img src="{{ article.image.src | img_url: '300x300' }}" alt="{{ article.title }}">
+            {% endif %}
+            <p>{{ article.excerpt | truncate: 150, '...' }}</p>
+          </div>
+        {% endif %}
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Blog Article Selection",
+  "class": "blog-article-selection",
+  "settings": [
+    {
+      "type": "select",
+      "id": "blog_handle",
+      "label": "Select Blog",
+      "options": [{ "value": "{{ blog.handle }}", "label": "{{ blog.title }}" }]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "article",
+      "name": "Article",
+      "settings": [
+        {
+          "type": "number",
+          "id": "article_id",
+          "label": "Article ID",
+          "default": 0
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Blog Article Selection",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
