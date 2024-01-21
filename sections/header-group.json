@@ -2,36 +2,11 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
-    "custom_marquee_section_UdkbWN": {
-      "type": "custom-marquee-section",
+    "custom_marquee_section_top_DLBUYi": {
+      "type": "custom-marquee-section-top",
       "settings": {
-        "marquee_text": "NEW COLLECTION - 50% OFF FIRST CLIENTS ! -  NEW COLLECTION - 50% OFF FIRST CLIENTS ! - NEW COLLECTION",
+        "marquee_text": "NEW COLLECTION - 50% OFF FIRST CLIENTS ! -",
         "background_color": "#000000"
-      }
-    },
-    "announcement-bar": {
-      "type": "announcement-bar",
-      "blocks": {
-        "announcement-bar-0": {
-          "type": "announcement",
-          "settings": {
-            "text": "Welcome to our store",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "announcement-bar-0"
-      ],
-      "disabled": true,
-      "settings": {
-        "color_scheme": "",
-        "show_line_separator": true,
-        "show_social": false,
-        "auto_rotate": false,
-        "change_slides_speed": 5,
-        "enable_country_selector": false,
-        "enable_language_selector": false
       }
     },
     "header": {
@@ -54,8 +29,7 @@
     }
   },
   "order": [
-    "custom_marquee_section_UdkbWN",
-    "announcement-bar",
+    "custom_marquee_section_top_DLBUYi",
     "header"
   ]
 }
