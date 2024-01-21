@@ -2,6 +2,13 @@
   "name": "t:sections.header.name",
   "type": "header",
   "sections": {
+    "custom_marquee_section_UdkbWN": {
+      "type": "custom-marquee-section",
+      "settings": {
+        "marquee_text": "NEW COLLECTION - 50% OFF FIRST CLIENTS ! -  NEW COLLECTION - 50% OFF FIRST CLIENTS ! - NEW COLLECTION - 50% OFF FIRST CLIENTS ! -",
+        "background_color": "#000000"
+      }
+    },
     "announcement-bar": {
       "type": "announcement-bar",
       "blocks": {
@@ -33,7 +40,7 @@
         "logo_position": "middle-left",
         "menu": "main-menu",
         "menu_type_desktop": "dropdown",
-        "sticky_header_type": "on-scroll-up",
+        "sticky_header_type": "always",
         "show_line_separator": true,
         "color_scheme": "scheme-1",
         "menu_color_scheme": "",
@@ -47,6 +54,7 @@
     }
   },
   "order": [
+    "custom_marquee_section_UdkbWN",
     "announcement-bar",
     "header"
   ]
