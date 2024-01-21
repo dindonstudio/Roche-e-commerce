@@ -120,14 +120,6 @@
             "limited_edition_text": "Limited Edition"
           }
         },
-        "478cee41-7053-40a2-9b0e-acfc3b158baa": {
-          "type": "blocks",
-          "settings": {
-            "product": "zimmer-zimmer-remixes-vinyl-12-ep",
-            "is_limited_edition": true,
-            "limited_edition_text": "Limited Edition"
-          }
-        },
         "243c9634-de31-42af-ab0f-87fe64423610": {
           "type": "blocks",
           "settings": {
@@ -149,7 +141,6 @@
         "8dfe0ee3-4427-4bc2-b3ef-0727bd46f6e7",
         "fb41f26c-08bf-4167-9e50-81e29867ab6e",
         "aa506f8f-73df-4258-ad1d-018c0cdeeb37",
-        "478cee41-7053-40a2-9b0e-acfc3b158baa",
         "243c9634-de31-42af-ab0f-87fe64423610",
         "02c34cf8-7796-46c8-bb63-0a4df8814451"
       ],
