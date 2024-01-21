@@ -29,15 +29,17 @@
 {% endschema %}
 
 <div class="marquee-container" style="background-color: {{ section.settings.background_color }};">
-  <div id="marquee" class="vanilla-marquee">{{ section.settings.marquee_text }}</div>
+  <div id="marqueeTop" class="vanilla-marquee">{{ section.settings.marquee_text }}</div>
 </div>
 
 <script type="module">
   import marquee from 'https://cdn.jsdelivr.net/npm/vanilla-marquee/dist/vanilla-marquee.js';
 
-  new marquee(document.getElementById('marquee'), {
+  new marquee(document.getElementById('marqueeTop'), {
     gap: 100,
-    speed: 100,
+    startVisible: false,
+    speed: 150,
+    delayBeforeStart: 0,
   });
 </script>
 
@@ -51,7 +53,9 @@
   }
 
   .vanilla-marquee div {
-    font-size: 4rem;
+    padding: 0.5rem 0;
+    font-size: 2rem;
+    font-style: italic;
   }
   @media screen and (max-width: 750px) {
     .vanilla-marquee div {

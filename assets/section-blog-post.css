@@ -1,8 +1,8 @@
 .article-container {
-  background-color: var(--creme);
+  background-color: white;
 }
 .article-template {
-  background-color: var(--creme);
+  background-color: white;
   padding: 4rem 4rem;
   max-width: 1400px;
   margin: 0 auto;

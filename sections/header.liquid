@@ -132,7 +132,7 @@ width: 100%;
 height: 100%;
 }
 nav.header__inline-menu ul li:nth-child(1){
-width:50%;
+  width: 33.33%;
 height: 100%;
 display: flex;
 align-items: center;
@@ -140,7 +140,7 @@ justify-content: center;
 border-right: 2px solid black;
 }
 nav.header__inline-menu ul li{
-width: 50%;
+width: 33.33%;
 height: 100%;
 display: flex;
 align-items: center;
@@ -150,7 +150,7 @@ border-right: 2px solid black;
 nav.header__inline-menu ul li a{
 font-family: "CustomFont-Bold";
 text-decoration: none;  
-font-size: 48px;
+font-size: 32px;
 }
 nav.header__inline-menu ul li span{
 color: black;
@@ -351,6 +351,16 @@ header-drawer{
     {%- endif -%}
 
     <div class="header__icons{% if section.settings.enable_country_selector or section.settings.enable_language_selector %} header__icons--localization header-localization{% endif %}">
+      <a href="mailto:shop@roche-musique.com" class=" contact header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
+        <div class="cart-container">
+          <img class="logo-search" src="{{ 'mail.png' | asset_url }}" alt="Roche Logo">
+  
+
+          
+        </div>
+  
+        </a>
+     
       {% comment %} <div class="desktop-localization-wrapper">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <noscript class="small-hide medium-hide">
@@ -433,7 +443,7 @@ header-drawer{
       {%- endfor -%}
 
       <a href="{{ routes.cart_url }}" class="header__icon header__icon--cart link focus-inset" id="cart-icon-bubble">
-      <div class="cart-container">
+      <div class="cart-container cart">
         <img class="logo-search" src="{{ 'shopping-bag.png' | asset_url }}" alt="Roche Logo">
 
         <span class="visually-hidden">{{ 'templates.cart.cart' | t }}</span>
@@ -449,7 +459,62 @@ header-drawer{
 
       </a>
     </div>
+    {% assign main_menu = linklists.main-menu %} <!-- Accessing the main menu -->
+{% if main_menu %}
+  {% assign first_item = main_menu.links.first %} <!-- Getting the first item of the main menu -->
+  
+  <!-- Display the first item -->
+
+  {% if first_item.links %}
+    <div class="container-sub-menu-nav">
+      {% for link in first_item.links %}
+        <div class="sub-menu-nav">
+          <a href="{{ link.url }}"> <h2>{{ link.title }}</h2></a>
+          <!-- Check for subsublinks -->
+          {% if link.links %}
+          {% assign sublinks_count = link.links.size %}
+          {% for sublink in link.links %}
+            <div><a href="{{ sublink.url }}"> <h3>{{ sublink.title }} </h3></a></div>
+          {% endfor %}
+          {% if sublinks_count < 5 %}
+            <div class="sublinks"> <!-- Empty div if there are less than 5 sublinks -->
+              <!-- You can put any additional content here if needed -->
+            </div>
+          {% endif %}
+        {% endif %}
+        
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+{% endif %}
+
   </header>
+
+  <script>
+
+const containerSubMenuNav = document.querySelector('.container-sub-menu-nav');
+const headerMenuShop = document.getElementById('HeaderMenu-shop');
+const headerMenuLifestyle = document.getElementById('HeaderMenu-lifestyle');
+const header = document.querySelector('header'); // Select the <header> element
+
+headerMenuShop.addEventListener('mouseenter', () => {
+  containerSubMenuNav.style.display = 'block';
+});
+
+containerSubMenuNav.addEventListener('mouseleave', () => {
+  containerSubMenuNav.style.display = 'none';
+});
+
+headerMenuLifestyle.addEventListener('mouseenter', () => {
+  containerSubMenuNav.style.display = 'none';
+});
+
+header.addEventListener('mouseleave', () => {
+  containerSubMenuNav.style.display = 'none';
+});
+
+  </script>
 </{% if section.settings.sticky_header_type != 'none' %}sticky-header{% else %}div{% endif %}>
 
 {%- if settings.cart_type == "notification" -%}
@@ -457,6 +522,8 @@ header-drawer{
 {%- endif -%}
 
 {% javascript %}
+
+
   class StickyHeader extends HTMLElement {
     constructor() {
       super();
@@ -566,6 +633,7 @@ header-drawer{
   }
 
   customElements.define('sticky-header', StickyHeader);
+
 {% endjavascript %}
 
 <script type="application/ld+json">
