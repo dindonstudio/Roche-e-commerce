@@ -11,7 +11,7 @@ header {
   background-color: white;
 }
 body {
-  background-color: #fcf9f5;
+  background-color: white;
 }
 .button.blueButton {
   background-color: #1e1e1e;
@@ -192,7 +192,7 @@ product-info {
   font-family: 'CustomFont-Light';
 }
 quantity-input {
-  background-color: #fcf9f5;
+  background-color: white;
 }
 
 .product-image-container {
@@ -232,7 +232,7 @@ button.thumbnail {
 }
 .field,
 .field input {
-  background-color: #fcf9f5;
+  background-color: white;
 }
 
 /* ARTICLE */
