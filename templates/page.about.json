@@ -2,13 +2,33 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
       }
+    },
+    "custom_about_section_t6VAV9": {
+      "type": "custom-about-section",
+      "blocks": {
+        "about_block_LeARnU": {
+          "type": "about_block",
+          "settings": {
+            "title": "ROCHE MUSIQUE, WHO ARE WE ?",
+            "text": "Roche Musique, a vibrant French label, distinguishes itself through its unique blend of electronic and nu-disco sounds, presenting a fresh wave of artistic innovation. Embracing a diverse roster of talented artists, the label is renowned for its dynamic releases and electrifying events that resonate with music enthusiasts worldwide. As a trendsetter in the music industry, Roche Musique seamlessly blends contemporary styles with a distinct French touch, creating an immersive audio-visual experience. Dive into the world of Roche Musique and explore a realm where music transcends boundaries and ignites the senses.",
+            "image": "shopify:\/\/shop_images\/IMG_2646_1.jpg"
+          }
+        }
+      },
+      "block_order": [
+        "about_block_LeARnU"
+      ],
+      "settings": {
+      }
     }
   },
   "order": [
-    "main"
+    "main",
+    "custom_about_section_t6VAV9"
   ]
 }
