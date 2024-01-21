@@ -35,9 +35,9 @@
                 {% endif %}
               >
               <div class="flex">
-                <h2>{{- sublink.title -}}</h2>
+                <h3>{{- sublink.title -}}</h3>
                 {% if sublink.links != blank %}
-                <h2 class="plus">+</h2>
+                <h3 class="plus">+</h3>
                 {% endif %}
               </div>
            
@@ -93,14 +93,15 @@
     margin-bottom: 10px;
   }
 .submenu{
+
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
  
 }
   .custom-menu-with-submenu .submenu {
     list-style: none;
-    padding: 0;
+    padding: 2rem 0;
  
   }
 
@@ -124,7 +125,7 @@
   position: absolute;
   top: 6rem;
   left: 0%;
-  background-color: #fcf9f5;
+  background-color: white;
   border: 1px solid black;
   z-index: 200;
   width: 100%;
@@ -154,7 +155,7 @@ list-style: disc;
   position: relative;
   top: 0rem;
   left: 0%;
-  background-color: #fcf9f5;
+  background-color: white;
   border: none;
   z-index: 200;
   width: 100%;

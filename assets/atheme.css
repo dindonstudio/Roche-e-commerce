@@ -14,19 +14,19 @@ body {
   background-color: #fcf9f5;
 }
 .button.blueButton {
-  background-color: var(--blue);
+  background-color: #1e1e1e;
   color: white;
   font-weight: 600;
-  border: 1px solid var(--blue);
+  border: 1px solid #1e1e1e;
   transition: 0.3s ease all;
   line-height: normal;
   border-radius: 4px;
 }
 .button.blueButton:hover {
+  color: black;
   background-color: white;
-  color: var(--blue);
   font-weight: 600;
-  border: 1px solid var(--blue);
+  border: 1px solid #1e1e1e;
   transition: 0.3s ease all;
   border-radius: 4px;
 }
@@ -47,14 +47,14 @@ h3 {
   width: 26px;
 }
 #HeaderMenu-shop.shop-active {
-  background-color: var(--red);
+  background-color: #1e1e1e;
   color: white;
 }
 nav.header__inline-menu #HeaderMenu-shop.shop-active span {
   color: white;
 }
 #HeaderMenu-lifestyle.blog-active {
-  background-color: var(--green);
+  background-color: #1e1e1e;
   color: white;
 }
 nav.header__inline-menu #HeaderMenu-lifestyle.blog-active span {
@@ -151,7 +151,7 @@ shopify-buy-it-now-button {
   display: none;
 }
 .product-form__buttons button {
-  background-color: black;
+  background-color: #1e1e1e;
   color: var(--creme);
   font-size: 3rem;
   transition: 0.3s ease;

@@ -1,0 +1,93 @@
+{% schema %}
+{
+  "name": "About",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "about_block",
+      "name": "About Block",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Title",
+          "id": "title",
+          "default": "About Us"
+        },
+        {
+          "type": "textarea",
+          "label": "Text",
+          "id": "text",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
+        },
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "About Section",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}
+
+<div class="about-section">
+  <div class="container">
+    {% for block in section.blocks %}
+      <div class="about-block">
+        <h3>{{ block.settings.title }}</h3>
+        <div class="centered-text">
+          <p>{{ block.settings.text }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  <div class="full-width-image">
+    {% for block in section.blocks %}
+      <img src="{{ block.settings.image | img_url: 'large' }}" alt="{{ block.settings.title }}">
+    {% endfor %}
+  </div>
+</div>
+
+<style>
+  /* Add your custom CSS styles here */
+  .about-section {
+    padding: 2rem 0;
+    background-color: #f8f8f8;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+  }
+
+  .about-block {
+    margin-bottom: 2rem;
+  }
+
+  h3 {
+    font-size: 24px;
+    font-weight: bold;
+  }
+
+  .centered-text {
+    text-align: center;
+  }
+
+  p {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .full-width-image img {
+    width: 100%;
+    height: auto;
+  }
+</style>
