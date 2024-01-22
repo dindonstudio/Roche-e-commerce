@@ -16,6 +16,8 @@
             shop-active
           {% elsif template contains 'blog' or template contains 'article' %}
             blog-active
+          {% elsif template contains 'about' %}
+            about-active
           {% endif %}
         "
       >
@@ -28,6 +30,8 @@
               shop-active
             {% elsif template contains 'blog' or template contains 'article' %}
               blog-active
+            {% elsif template contains 'blog' or template contains 'article' %}
+              about-active
             {% endif %}
           "
           {% if link.current %}
@@ -36,7 +40,7 @@
         >
           <span
             {%- if link.current %}
-              class="header__active-menu-item"
+              class="header__active-menu-item about active"
             {% endif %}
           >
             {{- link.title | escape -}}

@@ -50,6 +50,13 @@ h3 {
   background-color: #1e1e1e;
   color: white;
 }
+#HeaderMenu-about.about-active {
+  background-color: #1e1e1e;
+  color: white;
+}
+#HeaderMenu-about.about-active span {
+  color: white;
+}
 nav.header__inline-menu #HeaderMenu-shop.shop-active span {
   color: white;
 }
