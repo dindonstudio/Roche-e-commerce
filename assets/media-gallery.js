@@ -117,32 +117,32 @@ if (!customElements.get('media-gallery')) {
 }
 // JavaScript Example
 
-function synchronizeGalleries(selectedMediaId) {
-  const galleries = document.querySelectorAll('media-gallery');
+// function synchronizeGalleries(selectedMediaId) {
+//   const galleries = document.querySelectorAll('media-gallery');
 
-  galleries.forEach((gallery) => {
-    const mainImage = gallery.querySelector(`[data-media-id="${selectedMediaId}"]`);
-    const thumbnails = gallery.querySelectorAll('.thumbnail');
+//   galleries.forEach((gallery) => {
+//     const mainImage = gallery.querySelector(`[data-media-id="${selectedMediaId}"]`);
+//     const thumbnails = gallery.querySelectorAll('.thumbnail');
 
-    // Update main image display
-    mainImage.classList.add('is-active');
+//     // Update main image display
+//     mainImage.classList.add('is-active');
 
-    // Update thumbnails
-    thumbnails.forEach((thumb) => {
-      if (thumb.dataset.mediaId === selectedMediaId) {
-        thumb.classList.add('is-active');
-      } else {
-        thumb.classList.remove('is-active');
-      }
-    });
-  });
-}
+//     // Update thumbnails
+//     thumbnails.forEach((thumb) => {
+//       if (thumb.dataset.mediaId === selectedMediaId) {
+//         thumb.classList.add('is-active');
+//       } else {
+//         thumb.classList.remove('is-active');
+//       }
+//     });
+//   });
+// }
 
-document.querySelectorAll('media-gallery').forEach((gallery) => {
-  gallery.querySelectorAll('.thumbnail').forEach((thumbnail) => {
-    thumbnail.addEventListener('click', () => {
-      const selectedMediaId = thumbnail.getAttribute('data-media-id');
-      synchronizeGalleries(selectedMediaId);
-    });
-  });
-});
+// document.querySelectorAll('media-gallery').forEach((gallery) => {
+//   gallery.querySelectorAll('.thumbnail').forEach((thumbnail) => {
+//     thumbnail.addEventListener('click', () => {
+//       const selectedMediaId = thumbnail.getAttribute('data-media-id');
+//       synchronizeGalleries(selectedMediaId);
+//     });
+//   });
+// });
