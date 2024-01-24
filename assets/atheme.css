@@ -252,18 +252,20 @@ button.thumbnail {
 .sub-menu-nav {
   border-top: 1px solid;
   display: grid;
-  grid-template-columns: repeat(12, 1fr);
+  grid-template-columns: repeat(8, 1fr);
   gap: 0rem;
   justify-content: space-between;
   width: 100%;
 }
 .sub-menu-nav a,
 .sub-menu-nav div {
-  grid-column: span 2;
+  grid-column: span 1;
   text-align: center;
 }
 .sub-menu-nav div h3 {
   color: black;
+  text-transform: uppercase;
+  font-size: 1.3rem;
 }
 .sub-menu-nav h2 {
   margin: 0 !important;
@@ -276,9 +278,9 @@ button.thumbnail {
   align-items: center;
   justify-content: center;
 }
-.sub-menu-nav div:nth-child(-n + 6) {
+/* .sub-menu-nav div:nth-child(-n + 6) {
   border-bottom: 1px solid black;
-}
+} */
 #HeaderMenu-shop span::after {
   content: '⌄';
   padding-left: 0.2rem;
