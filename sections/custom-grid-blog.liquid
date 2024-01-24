@@ -14,7 +14,7 @@
       {% if current_tag == 'all-blogs' or current_tag == 'tagged' %}
         <!-- Show all articles -->
         {% for article in blog.articles limit: 50 %}
-        <div  data-aos-duration="800"    data-aos="fade-up" class="grid-item {{ article.tags}}">
+        <div  data-aos-duration="800"    data-aos="fade-in" class="grid-item {{ article.tags}}">
           <a href="{{ article.url }}">
 
        <div class="flex title-border">
@@ -62,7 +62,7 @@
         {% for article in blog.articles %}
           {% if article.tags contains capitalized_tag %}
             {% assign tagged_articles_found = true %}
-            <div  data-aos-duration="800"     data-aos="fade-up"  class="grid-item {{ article.tags}}">
+            <div  data-aos-duration="800"     data-aos="fade-in"  class="grid-item {{ article.tags}}">
               <a href="{{ article.url }}">
     
                 <div class="flex title-border">
@@ -243,11 +243,11 @@ var gridItems = document.querySelectorAll('.grid-item');
 gridItems.forEach(function(item, index) {
   // Calculate delay: (index % 3 + 1) * 50
   // This will give 50ms for the 1st item, 100ms for the 2nd, 150ms for the 3rd, then reset
-  var delay = ((index % 3) ) * 350;
+  var delay = ((index % 3) ) * 150;
 
   // Set the AOS attributes
   item.setAttribute('data-aos-delay', delay);
-  item.setAttribute('data-aos', 'fade-up');
+  item.setAttribute('data-aos', 'fade-in');
 });
 // Initialize AOS
 AOS.init({
