@@ -34,14 +34,14 @@
               {% elsif article.metafields.custom.slider_thumbnail != blank %}
               <div class="slider">
                 {% for image in article.metafields.custom.slider_thumbnail.value %}
-                  <img src="{{ image | img_url: '1000x' }}" alt="{{ article.title | escape }}" style="display: none;">
+                  <img src="{{ image | img_url: '600x' }}" alt="{{ article.title | escape }}" style="display: none;">
                 {% endfor %}
                 <button class="prev"><h3>←</h3></button>
                 <button class="next"><h3>→</h3></button>
               </div>
               
             {% elsif article.image %}
-              <img src="{{ article.image.src |image_url: width: 1000 }}" alt="{{ article.image.alt | escape }}">
+              <img src="{{ article.image.src |image_url: width: 600 }}" alt="{{ article.image.alt | escape }}">
             {% endif %}
             {% if article.excerpt.size > 0 %}
             <div class="excerpt-container">

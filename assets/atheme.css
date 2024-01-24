@@ -284,7 +284,7 @@ button.thumbnail {
 #HeaderMenu-shop span::after {
   content: '⌄';
   padding-left: 0.2rem;
-  font-size: 30px;
+  font-size: 28px;
   position: absolute;
   top: -1rem;
 }
