@@ -14,7 +14,7 @@
       {% if current_tag == 'all-blogs' or current_tag == 'tagged' %}
         <!-- Show all articles -->
         {% for article in blog.articles limit: 50 %}
-        <div class="grid-item {{ article.tags}}">
+        <div  data-aos-duration="600"    data-aos-delay="50" data-aos="fade-up" class="grid-item {{ article.tags}}">
           <a href="{{ article.url }}">
 
        <div class="flex title-border">
@@ -62,7 +62,7 @@
         {% for article in blog.articles %}
           {% if article.tags contains capitalized_tag %}
             {% assign tagged_articles_found = true %}
-            <div class="grid-item {{ article.tags}}">
+            <div  data-aos-duration="600"    data-aos-delay="50" data-aos="fade-up"  class="grid-item {{ article.tags}}">
               <a href="{{ article.url }}">
     
                 <div class="flex title-border">
@@ -90,6 +90,12 @@
                   
                 {% elsif article.image %}
                   <img src="{{ article.image.src |image_url: width: 1000 }}" alt="{{ article.image.alt | escape }}">
+                {% endif %}
+                {% if article.excerpt.size > 0 %}
+                <div class="excerpt-container">
+                  <p class="article-excerpt">{{ article.excerpt }}</p>
+                </div>
+    
                 {% endif %}
                   <a href="{{ article.url }}">{{ article.title }}</a>
                 </h3>
@@ -228,7 +234,26 @@ line-height: 1.1;
   ]
 }
 {% endschema %}
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 <script>
+var gridItems = document.querySelectorAll('.grid-item');
+
+// Iterate over the grid items
+gridItems.forEach(function(item, index) {
+  // Calculate delay: (index % 3 + 1) * 50
+  // This will give 50ms for the 1st item, 100ms for the 2nd, 150ms for the 3rd, then reset
+  var delay = ((index % 3) + 1) * 50;
+
+  // Set the AOS attributes
+  item.setAttribute('data-aos-delay', delay);
+  item.setAttribute('data-aos', 'fade-up');
+});
+// Initialize AOS
+AOS.init();
+</script>
+<script>
+  
 document.addEventListener('DOMContentLoaded', function() {
   var sliders = document.querySelectorAll('.slider');
 

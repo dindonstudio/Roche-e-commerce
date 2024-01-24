@@ -271,7 +271,7 @@ button.thumbnail {
   margin: 0 !important;
 }
 .sub-menu-nav div {
-  border-right: 1px solid black;
+  border-right: 2px solid black;
   /* border-bottom: 1px solid black; */
   padding: 0.5rem 0;
   display: flex;
