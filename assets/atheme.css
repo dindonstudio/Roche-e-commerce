@@ -265,11 +265,19 @@ button.thumbnail {
 .sub-menu-nav div h3 {
   color: black;
 }
+.sub-menu-nav h2 {
+  margin: 0 !important;
+}
 .sub-menu-nav div {
-  border-left: 1px solid black;
+  border-right: 1px solid black;
+  /* border-bottom: 1px solid black; */
+  padding: 0.5rem 0;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.sub-menu-nav div:nth-child(-n + 6) {
+  border-bottom: 1px solid black;
 }
 #HeaderMenu-shop span::after {
   content: '⌄';

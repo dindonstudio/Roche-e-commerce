@@ -94,7 +94,7 @@ margin: 0;
   width:100%;
   border-right: 2px solid black;
 height: 100%;
-padding: 10px 0 10px 2rem;
+padding: 0px 0 0px 1rem;
 display: flex;
 align-items: center;
 }
@@ -466,26 +466,20 @@ header-drawer{
   <!-- Display the first item -->
 
   {% if first_item.links %}
-    <div class="container-sub-menu-nav">
+  <div class="container-sub-menu-nav">
+    <div class="sub-menu-nav">
       {% for link in first_item.links %}
-        <div class="sub-menu-nav">
-          <a href="{{ link.url }}"> <h2>{{ link.title }}</h2></a>
-          <!-- Check for subsublinks -->
-          {% if link.links %}
-          {% assign sublinks_count = link.links.size %}
+        <!-- Check for subsublinks -->
+        {% if link.links %}
           {% for sublink in link.links %}
-            <div><a href="{{ sublink.url }}"> <h3>{{ sublink.title }} </h3></a></div>
+            <div><a href="{{ sublink.url }}"><h3>{{ sublink.title }}</h3></a></div>
           {% endfor %}
-          {% if sublinks_count < 5 %}
-            <div class="sublinks"> <!-- Empty div if there are less than 5 sublinks -->
-              <!-- You can put any additional content here if needed -->
-            </div>
-          {% endif %}
         {% endif %}
-        
-        </div>
       {% endfor %}
     </div>
+  </div>
+  
+  
   {% endif %}
 {% endif %}
 
