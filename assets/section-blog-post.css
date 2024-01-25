@@ -29,6 +29,12 @@
   aspect-ratio: 16 / 9;
   height: 100%;
 }
+.article-container iframe.instagram-media {
+  margin: 4rem 0;
+  width: 100%;
+  aspect-ratio: none;
+  height: 100%;
+}
 
 table td {
   width: 50% !important;
