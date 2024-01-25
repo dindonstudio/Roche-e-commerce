@@ -2,13 +2,13 @@
   "sections": {
     "269fa893-70fa-48c2-9381-2f1ffdcf9d64": {
       "type": "main-article-editorial",
+      "disabled": true,
       "settings": {
         "show_publish_date": true
       }
     },
     "main": {
       "type": "main-article",
-      "disabled": true,
       "settings": {
       }
     }

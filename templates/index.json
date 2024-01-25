@@ -90,7 +90,7 @@
       "type": "custom-marquee-section",
       "settings": {
         "marquee_text": "CHRISTMAS OFFER !! Free Shipping until 24th of DECEMBER",
-        "background_color": "#264a99"
+        "background_color": "#5e3f32"
       }
     },
     "a0f31116-f917-4b18-92fc-51e466a025b1": {
@@ -152,7 +152,7 @@
       "type": "custom-image-and-text",
       "settings": {
         "image": "shopify:\/\/shop_images\/BANNER-ROCHEVARSITY-1-copie_1.jpg",
-        "text": "Aeroclub si ispira agli sport dell’aria per creare una comunità forte e un lifestyle dinamico e coinvolgente che, attraverso stimoli creativi, abbatte gli stereotipi odierni per volare alto.",
+        "text": "The \"Roche Varsity\" collection around the streets of Paris.",
         "button_url": "shopify:\/\/pages\/contact",
         "button_text": "LOOKBOOK",
         "invert_layout": false
@@ -161,9 +161,10 @@
     "4f8f3966-4c6c-4937-b15f-adb43d5ea6f1": {
       "type": "custom-image-and-text",
       "settings": {
-        "text": "Your custom text here",
+        "image": "shopify:\/\/shop_images\/B054671-R1-31-4A.jpg",
+        "text": "Discover how our community is styling our collections !",
         "button_url": "shopify:\/\/pages\/contact",
-        "button_text": "discover this",
+        "button_text": "LIFESTYLE",
         "invert_layout": true
       }
     }
