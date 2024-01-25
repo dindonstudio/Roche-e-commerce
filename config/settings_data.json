@@ -119,7 +119,7 @@
     "checkout_input_background_color_mode": "white",
     "checkout_sidebar_background_color": "#242833",
     "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
-    "checkout_accent_color": "#066e24",
+    "checkout_accent_color": "#334fb4",
     "checkout_button_color": "#ffffff",
     "sections": {
       "main-password-header": {
