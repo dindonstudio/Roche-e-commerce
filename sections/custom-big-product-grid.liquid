@@ -1,170 +1,181 @@
-    {% schema %}
+{% schema %}
+{
+  "name": "Big Custom Product Grid",
+  "settings": [],
+  "blocks": [],
+  "presets": [
     {
-    "name": "Big Custom Product Grid",
-    "settings": [],
-    "blocks": [],
-    "presets": [
-        {
-        "name": "Big Custom Product Grid - Collection Page",
-        "category": "Collection Page"
-        }
-    ]
+      "name": "Big Custom Product Grid - Collection Page",
+      "category": "Collection Page"
     }
-    {% endschema %}
-    <div class="big-custom-product-grid-section">
-        <div class="container">
-          <div class="product-grid">
-            {% for product in collection.products %}
-              {% assign mod_result = forloop.index0 | modulo: 5 %}
-              {% if mod_result == 0 %}
-                {% unless forloop.first %}
-                  </div><!-- Close the small products wrapper div -->
-                  </div><!-- Close the row-grid div -->
-                {% endunless %}
-                <div class="row-grid"><!-- Open a new row-grid div for every 1st product in the set of 5 -->
-                  <a href="{{ product.url }}" class="big-product product">
-                    <!-- Big product layout -->
-                    <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}" class="first-image">
-                    {% if product.images[1] %}
-                      <img src="{{ product.images[1] | img_url: 'master' }}" alt="{{ product.title }}" class="second-image">
-                    {% else %}
-                      <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}" class="second-image">
-                    {% endif %}
-                                     <div class="product-details">
-                        <h3>{{ product.title }}</h3>
-                        <h3 class="price">{{ product.price | money }}</h3>
-                      </div>
-                  </a>
-                  <div class="small-products-wrapper"><!-- Open a new div for small products -->
+  ]
+}
+{% endschema %}
+<div class="big-custom-product-grid-section">
+  <div class="container">
+    <div class="product-grid">
+      {% for product in collection.products %}
+        {% assign mod_result = forloop.index0 | modulo: 5 %}
+        {% if mod_result == 0 %}
+          {% unless forloop.first %}
+            </div>
+            <!-- Close the small products wrapper div -->
+            </div>
+            <!-- Close the row-grid div -->
+          {% endunless %}
+          <div class="row-grid">
+            <!-- Open a new row-grid div for every 1st product in the set of 5 -->
+            <a href="{{ product.url }}" class="big-product product">
+              <!-- Big product layout -->
+              <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}" class="first-image">
+              {% if product.images[1] %}
+                <img src="{{ product.images[1] | img_url: 'master' }}" alt="{{ product.title }}" class="second-image">
               {% else %}
-                <a href="{{ product.url }}" class="small-product product">
-                  <!-- Small product layout -->
-                  <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}" class="first-image">
-                  {% if product.images[1] %}
-                    <img src="{{ product.images[1] | img_url: 'master' }}" alt="{{ product.title }}" class="second-image">
-                  {% else %}
-                    <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}" class="second-image">
-                  {% endif %}                 <div class="product-details">
-                    <h3>{{ product.title }}</h3>
-                    <h3 class="price">{{ product.price | money }}</h3>
-                  </div>
-                
-                </a>
+                <img
+                  src="{{ product.featured_image | img_url: 'master' }}"
+                  alt="{{ product.title }}"
+                  class="second-image"
+                >
               {% endif %}
-              
-              {% if forloop.last %}
-                  </div><!-- Close the small products wrapper div -->
-                </div><!-- Close the last row-grid div -->
-              {% endif %}
-            {% endfor %}
+              <div class="product-details">
+                <h3>{{ product.title }}</h3>
+                <h3 class="price">{{ product.price | money }}</h3>
+              </div>
+            </a>
+            <div class="small-products-wrapper"><!-- Open a new div for small products -->
+        {% else %}
+          <a href="{{ product.url }}" class="small-product product">
+            <!-- Small product layout -->
+            <img src="{{ product.featured_image | img_url: 'master' }}" alt="{{ product.title }}" class="first-image">
+            {% if product.images[1] %}
+              <img src="{{ product.images[1] | img_url: 'master' }}" alt="{{ product.title }}" class="second-image">
+            {% else %}
+              <img
+                src="{{ product.featured_image | img_url: 'master' }}"
+                alt="{{ product.title }}"
+                class="second-image"
+              >
+            {% endif %}
+            <div class="product-details">
+              <h3>{{ product.title }}</h3>
+              <h3 class="price">{{ product.price | money }}</h3>
+            </div>
+          </a>
+        {% endif %}
+
+        {% if forloop.last %}
           </div>
-        </div>
-      </div>
-    
+          <!-- Close the small products wrapper div -->
+          </div>
+          <!-- Close the last row-grid div -->
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
 
-    <style>
-    .big-custom-product-grid-section {
-        width: 100%;
-     
-    }
+<style>
+  .big-custom-product-grid-section {
+    width: 100%;
+  }
 
-    .container {
-    
-        margin: 0 auto;
-        padding: 0 15px;
-    }
+  .container {
+    margin: 0 auto;
+    padding: 0 15px;
+  }
 
-    .product-grid {
-        display: flex;
-        flex-wrap: wrap;
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+  }
 
-    }
+  .product {
+    border: 1px solid black;
 
-    .product {
-        border: 1px solid black;
-     
-        box-sizing: border-box;
-    }
-.product-details{
+    box-sizing: border-box;
+  }
+  .product-details {
     display: flex;
     align-items: center;
     justify-content: space-between;
     border-top: 1px solid black;
-    
+
     padding: 1rem 1rem;
+  }
+  .big-product {
+    flex: 1;
+  }
 
-}
-    .big-product {
-   flex: 1;
-    }
+  .small-product {
+    flex: 1;
+  }
 
-    .small-product {
-        flex: 1;
-
-    }
-
-    .product img {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 0.75;
+  .product img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 0.75;
     object-fit: cover;
-    }
+  }
 
-    .price {
+  .price {
+  }
+  .row-grid {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: start;
+  }
+  .product-grid .row-grid:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  .product-grid .row-grid:nth-child(even) .small-products-wrapper {
+    display: grid;
+    flex: 1.01;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .small-products-wrapper {
+    display: grid;
+    flex: 1;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+  }
+  .product:hover .first-image {
+    display: none;
+  }
 
-    }
+  .product:hover .second-image {
+    display: block;
+  }
+  .product .first-image {
+    display: block;
+  }
+
+  .product .second-image {
+    display: none;
+  }
+  @media (max-width: 768px) {
     .row-grid {
-        display: flex;
-        flex-wrap: nowrap;
-        justify-content: start;
-
+      flex-direction: column;
     }
-    .product-grid .row-grid:nth-child(even){
-      flex-direction: row-reverse;
+    .row-grid h3 {
+      font-size: 1.3rem;
     }
-    .small-products-wrapper{
-        display: grid;
-        flex: 1;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
+    .product-details {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.5rem;
     }
-    .product:hover .first-image {
-  display: none;
-}
-
-.product:hover .second-image {
-  display: block;
-}
-    .product .first-image {
-  display: block;
-}
-
-.product .second-image {
-  display: none;
-}
-    @media (max-width: 768px) {
-        .row-grid {
-            flex-direction: column;
-        } 
-        .row-grid h3{
-            font-size: 1.3rem;
-        }
-        .product-details {
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 0.5rem;
-        }
-        .collection-link-block h2{
-            font-size: 2rem;
-        }
-        .product-grid .row-grid:nth-child(even){
+    .collection-link-block h2 {
+      font-size: 2rem;
+    }
+    .product-grid .row-grid:nth-child(even) {
       flex-direction: column;
     }
     .product:hover .second-image {
-  display: none;
-}
-    .product:hover .first-image {
-  display: block;
-}
+      display: none;
     }
-    </style>
+    .product:hover .first-image {
+      display: block;
+    }
+  }
+</style>

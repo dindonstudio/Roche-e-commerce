@@ -109,7 +109,7 @@ table img {
 }
 .flex-container {
   display: flex;
-
+  max-width: 1200px;
   justify-content: center;
   gap: 2rem;
   padding-bottom: 8rem;
@@ -127,7 +127,10 @@ table img {
 }
 .flex-container li img {
   max-width: 100%;
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  aspect-ratio: 0.75;
 }
 
 .flex-container li a {
@@ -164,9 +167,11 @@ table img {
   align-items: flex-start;
   padding: 1rem 1rem;
 }
-
+.product-details h3 {
+  text-align: left;
+}
 .discounted-item {
-  border: 2px solid #e55041; /* Example styling for discounted items */
+  border: 2px solid black; /* Example styling for discounted items */
 }
 .featured-title {
   font-size: 5rem;

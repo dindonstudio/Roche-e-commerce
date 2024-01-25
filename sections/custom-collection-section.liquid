@@ -67,19 +67,19 @@
 <div class="custom-collection-section">
   <div class="container__collection">
     <div class="container__title">
-        <div class="section-title">
-            <div class="collection__section__title">{{ section.settings.title | rich_text }}</div>
-          </div>
+      <div class="section-title">
+        <div class="collection__section__title">{{ section.settings.title | rich_text }}</div>
+      </div>
     </div>
-  
 
     <div class="collection-blocks">
       {% for block in section.blocks %}
-      {% assign collection = collections[block.settings.collection] %}
+        {% assign collection = collections[block.settings.collection] %}
 
-      <a href="{{ collection.url }}" class="collection-block">
+        <a href="{{ collection.url }}" class="collection-block">
           <img src="{{ block.settings.image | image_url: height: 1400 }}" alt="{{ block.settings.title }}">
-          <div class="  collection-title "
+          <div
+            class="  collection-title "
             style="
               color:
               {% if block.settings.title_color == 'white' %}
@@ -108,12 +108,11 @@
     display: flex;
     justify-content: center;
   }
-.container__collection{
+  .container__collection {
     max-width: 1400px;
-}
+  }
   .section-title {
     /* Define title styles */
-    
   }
 
   .collection-blocks {
@@ -129,24 +128,24 @@
     flex: 1;
     flex: 1;
     position: relative;
-  /* max-width: 700px ; */
+    /* max-width: 700px ; */
   }
-  .collection-block img{
+  .collection-block:hover div {
+    text-decoration: underline;
+    /* max-width: 700px ; */
+  }
+  .collection-block img {
     width: 100%;
     height: auto;
     z-index: 0;
   }
-  .collection-blocks .collection-block:nth-child(1)   .collection-title {
-  
-  background-color: white;
-  border: 1px solid;
-  
+  .collection-blocks .collection-block:nth-child(1) .collection-title {
+    background-color: white;
+    border: 1px solid;
   }
-  .collection-blocks .collection-block:nth-child(2)   .collection-title {
-  
-  background-color: #1E1E1E;
-  border: 1px solid ;
-  
+  .collection-blocks .collection-block:nth-child(2) .collection-title {
+    background-color: #1e1e1e;
+    border: 1px solid;
   }
   .collection-title {
     position: absolute;
@@ -160,46 +159,43 @@
     font-size: 5.6rem;
     font-weight: bold;
   }
-   .section-title{
+  .section-title {
     display: flex;
     justify-content: flex-end;
-
-   }
-   .collection__section__title{
+  }
+  .collection__section__title {
     text-align: right;
     max-width: 20ch;
     font-size: 35px;
     line-height: 100%;
     color: black;
     text-transform: uppercase;
-   }
-   .collection__section__title strong{
-font-weight: 600;
-font-size: 35px;
+  }
+  .collection__section__title strong {
+    font-weight: 600;
+    font-size: 35px;
     line-height: 100%;
     color: black;
     text-transform: uppercase;
-   }
-   @media screen and (max-width: 750px) {
-    .collection__section__title{
-    text-align: right;
-    max-width: 20ch;
-    font-size: 30px;
-    line-height: 100%;
-    color: black;
-    text-transform: uppercase;
-   }
-   .collection__section__title strong{
-font-weight: 600;
-    font-size: 30px;
-    line-height: 100%;
-    color: black;
-    text-transform: uppercase;
-   }
-   .collection-title {
- 
-    font-size: 3rem;
-
-}
-   }
+  }
+  @media screen and (max-width: 750px) {
+    .collection__section__title {
+      text-align: right;
+      max-width: 20ch;
+      font-size: 30px;
+      line-height: 100%;
+      color: black;
+      text-transform: uppercase;
+    }
+    .collection__section__title strong {
+      font-weight: 600;
+      font-size: 30px;
+      line-height: 100%;
+      color: black;
+      text-transform: uppercase;
+    }
+    .collection-title {
+      font-size: 3rem;
+    }
+  }
 </style>
