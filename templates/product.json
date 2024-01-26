@@ -110,7 +110,7 @@
       "type": "custom-marquee-section",
       "settings": {
         "marquee_text": "CHRISTMAS OFFER !! Free Shipping until 24th of DECEMBER",
-        "background_color": "#e55041"
+        "background_color": "#1e1e1e"
       }
     }
   },
