@@ -5,6 +5,7 @@
       "blocks": {
         "heading": {
           "type": "heading",
+          "disabled": true,
           "settings": {
             "heading": "VARSITY COLLEGE COLLEGE NOW AVAILABLE",
             "heading_size": "h0"
@@ -31,6 +32,7 @@
         },
         "d0339237-51ed-4951-a011-96d0f12acfc2": {
           "type": "big_logo",
+          "disabled": true,
           "settings": {
             "big_logo_image": "shopify:\/\/shop_images\/roche.png"
           }
