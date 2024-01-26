@@ -155,8 +155,8 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/HOMEPAGE-LOOKBOOK.jpg",
         "text": "Roche Varsity 2024, new apparel line shot at studio QDS in Paris.",
-        "button_url": "shopify:\/\/pages\/contact",
-        "button_text": "LOOKBOOK",
+        "button_url": "shopify:\/\/blogs\/lookbook",
+        "button_text": "SEE MORE",
         "invert_layout": false
       }
     },
@@ -165,8 +165,8 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/HOMEPAGE-EVENT-DOFORLOVE.jpg",
         "text": "\"Do For Love\" our new event series : the desire to showcase the club scene as a whole. Recap of the first edition at Club Carbone Paris w\/ K LE MAESTRO, Cezaire, Broodoo Ramses, WarrenKo & Mel V.",
-        "button_url": "shopify:\/\/pages\/contact",
-        "button_text": "LIFESTYLE",
+        "button_url": "shopify:\/\/blogs\/events",
+        "button_text": "EVENTS",
         "invert_layout": true
       }
     }
