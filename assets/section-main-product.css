@@ -1606,7 +1606,7 @@ a.product__text {
   gap: 1rem;
   background-color: white;
   margin: 0;
-  border-top: 1px solid black;
+  /* border-top: 1px solid black; */
 }
 .breadcrumb-list {
   text-transform: uppercase;

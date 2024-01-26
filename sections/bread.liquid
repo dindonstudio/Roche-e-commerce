@@ -14,7 +14,7 @@
 <nav aria-label="Breadcrumb" class="breadcrumbs-apparel">
   <ol class="breadcrumb-list">
     <li class="breadcrumb-item">
-      <a href="/collections/all"> <h3>Tous les produits</h3></a>
+      <a href="/collections/all"><h3>Tous les produits</h3></a>
     </li>
     {% if collection.handle == 'apparel' %}
       <li class="breadcrumb-item">
@@ -22,7 +22,7 @@
       </li>
     {% elsif collection %}
       <li class="breadcrumb-item">
-        <a href="/collections/apparel"><h3> > Apparel</h3></a>
+        <a href="/collections/apparel"><h3>> Apparel</h3></a>
       </li>
       <li class="breadcrumb-item">
         <h3>> {{ collection.title }}</h3>
@@ -41,7 +41,7 @@
     gap: 1rem;
     background-color: white;
     margin: 0;
-    border-top: 1px solid black;
+    {% comment %} border-top: 1px solid black; {% endcomment %}
   }
   .breadcrumb-list{
     text-transform: uppercase;
@@ -54,7 +54,6 @@
     .breadcrumbs-apparel .breadcrumb-list {
       flex-wrap: wrap;
     }
-    
-  }
 
+  }
 </style>

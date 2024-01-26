@@ -252,6 +252,9 @@ s {
   .article-template h2 span {
     font-size: 40px;
   }
+  .article-container iframe.instagram-media {
+    max-width: 300px;
+  }
 }
 
 @media (max-width: 768px) {
