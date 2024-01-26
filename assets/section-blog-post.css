@@ -19,7 +19,11 @@
   line-height: 110%;
 }
 .article-template p,
-.article-template span {
+.article-template span,
+.article-template h5,
+.article-template strong,
+.article-template em,
+.article-template h4 {
   font-size: 18px;
   line-height: 120%;
 }
