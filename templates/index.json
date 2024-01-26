@@ -43,7 +43,7 @@
         "d0339237-51ed-4951-a011-96d0f12acfc2"
       ],
       "settings": {
-        "video": "shopify:\/\/files\/videos\/Video exemple 1280 10MG.mp4",
+        "video": "shopify:\/\/files\/videos\/VIDEO-HOOMEPAGE.mp4",
         "image_overlay_opacity": 40,
         "image_height": "adapt",
         "desktop_content_position": "bottom-center",
@@ -62,7 +62,7 @@
         "27d3b5f9-6eea-491e-867f-6b4de0893e12": {
           "type": "collection_block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/KIROUCOOL-CCOCT19-4_1.jpg",
+            "image": "shopify:\/\/shop_images\/HOMEPAGE-APPAREL.jpg",
             "title": "APPAREL",
             "title_color": "black",
             "collection": "apparel"
@@ -151,7 +151,7 @@
     "4d0b19e1-9024-41bd-af3c-abd7b080a519": {
       "type": "custom-image-and-text",
       "settings": {
-        "image": "shopify:\/\/shop_images\/HOMEPAGE-LOOKBOOK_40ead724-5252-4894-95e8-f6b7e4031bd6.jpg",
+        "image": "shopify:\/\/shop_images\/HOMEPAGE-LOOKBOOK.jpg",
         "text": "Roche Varsity 2024, new apparel line shot at studio QDS in Paris.",
         "button_url": "shopify:\/\/pages\/contact",
         "button_text": "LOOKBOOK",
@@ -161,7 +161,7 @@
     "4f8f3966-4c6c-4937-b15f-adb43d5ea6f1": {
       "type": "custom-image-and-text",
       "settings": {
-        "image": "shopify:\/\/shop_images\/HOMEPAGE-EVENT-DOFORLOVE_446122f0-ec6f-40aa-a5b0-e35f243d32b3.jpg",
+        "image": "shopify:\/\/shop_images\/HOMEPAGE-EVENT-DOFORLOVE.jpg",
         "text": "\"Do For Love\" our new event series : the desire to showcase the club scene as a whole. Recap of the first edition at Club Carbone Paris w\/ K LE MAESTRO, Cezaire, Broodoo Ramses, WarrenKo & Mel V.",
         "button_url": "shopify:\/\/pages\/contact",
         "button_text": "LIFESTYLE",
