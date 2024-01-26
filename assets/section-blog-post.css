@@ -122,9 +122,10 @@ table img {
 }
 .flex-container {
   display: flex;
-  max-width: 1200px;
+  max-width: 1000px;
   justify-content: center;
   gap: 2rem;
+  margin: 0 auto;
   padding-bottom: 8rem;
 }
 
