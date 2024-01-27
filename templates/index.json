@@ -154,9 +154,9 @@
       "type": "custom-image-and-text",
       "settings": {
         "image": "shopify:\/\/shop_images\/HOMEPAGE-LOOKBOOK_1158bbb6-5613-4897-9451-26b67f197ea7.jpg",
-        "text": "Roche Varsity 2024, new apparel line shot at studio QDS in Paris.",
-        "button_url": "shopify:\/\/blogs\/lookbook",
-        "button_text": "SEE MORE",
+        "text": "Roche Varsity 2024, new apparel line shot at studio QDS in Paris. Now available.",
+        "button_url": "shopify:\/\/products\/copy-of-hoodie-roche-varsity",
+        "button_text": "SHOP NOW",
         "invert_layout": false
       }
     },
