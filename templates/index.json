@@ -167,7 +167,7 @@
         "text": "\"Do for love\" our new event series. Recap of the first edition at Club Carbone, Paris.",
         "button_url": "shopify:\/\/blogs\/events",
         "button_text": "EVENTS",
-        "invert_layout": true
+        "invert_layout": false
       }
     }
   },
