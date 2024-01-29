@@ -347,5 +347,9 @@
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
     {%- endif -%}
+    <script>
+    	window.productCollectionItem = ".row-grid a.product";
+    	window.productCollectionHref = ".row-grid a.product";
+    </script>
   </body>
 </html>
