@@ -163,11 +163,11 @@
     "4f8f3966-4c6c-4937-b15f-adb43d5ea6f1": {
       "type": "custom-image-and-text",
       "settings": {
-        "image": "shopify:\/\/shop_images\/landing22.jpg",
+        "image": "shopify:\/\/shop_images\/Copie_de_Do_for_love_FEED_9915abd6-2dd3-4c1e-a2fd-95bef49d4d1f.jpg",
         "text": "\"DO FOR LOVE\" PARTY!",
         "button_url": "shopify:\/\/blogs\/events",
         "button_text": "EVENTS",
-        "invert_layout": false
+        "invert_layout": true
       }
     }
   },
