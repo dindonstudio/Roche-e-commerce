@@ -101,7 +101,7 @@
         "8dfe0ee3-4427-4bc2-b3ef-0727bd46f6e7": {
           "type": "blocks",
           "settings": {
-            "product": "candle-roche",
+            "product": "cap-roche-varsity",
             "is_limited_edition": false,
             "limited_edition_text": "Limited Edition"
           }
@@ -109,7 +109,7 @@
         "fb41f26c-08bf-4167-9e50-81e29867ab6e": {
           "type": "blocks",
           "settings": {
-            "product": "copy-of-hoodie-roche-varsity",
+            "product": "cezaire-seize-the-day-vinyl-12-ep",
             "is_limited_edition": false,
             "limited_edition_text": "Limited Edition"
           }
@@ -153,7 +153,7 @@
     "4d0b19e1-9024-41bd-af3c-abd7b080a519": {
       "type": "custom-image-and-text",
       "settings": {
-        "image": "shopify:\/\/shop_images\/landin1.jpg",
+        "image": "shopify:\/\/shop_images\/landiin.jpg",
         "text": "VARSITY 24' NEW COLLECTION",
         "button_url": "shopify:\/\/products\/copy-of-hoodie-roche-varsity",
         "button_text": "SHOP NOW",
@@ -163,7 +163,7 @@
     "4f8f3966-4c6c-4937-b15f-adb43d5ea6f1": {
       "type": "custom-image-and-text",
       "settings": {
-        "image": "shopify:\/\/shop_images\/HOMEPAGE-EVENT-DOFORLOVE_457c752e-606b-4cb8-9e5e-840f9a2e504d.jpg",
+        "image": "shopify:\/\/shop_images\/landing22.jpg",
         "text": "\"DO FOR LOVE\" PARTY!",
         "button_url": "shopify:\/\/blogs\/events",
         "button_text": "EVENTS",
