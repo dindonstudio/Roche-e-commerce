@@ -101,7 +101,7 @@
         "8dfe0ee3-4427-4bc2-b3ef-0727bd46f6e7": {
           "type": "blocks",
           "settings": {
-            "product": "cap-roche-varsity",
+            "product": "candle-roche",
             "is_limited_edition": false,
             "limited_edition_text": "Limited Edition"
           }
@@ -109,7 +109,7 @@
         "fb41f26c-08bf-4167-9e50-81e29867ab6e": {
           "type": "blocks",
           "settings": {
-            "product": "cezaire-seize-the-day-vinyl-12-ep",
+            "product": "copy-of-hoodie-roche-varsity",
             "is_limited_edition": false,
             "limited_edition_text": "Limited Edition"
           }
