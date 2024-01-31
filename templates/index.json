@@ -165,7 +165,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/encore.jpg",
         "text": "\"DO FOR LOVE\" PARTY!",
-        "button_url": "shopify:\/\/blogs\/events",
+        "button_url": "shopify:\/\/blogs\/all-blogs",
         "button_text": "EVENTS",
         "invert_layout": true
       }
