@@ -155,7 +155,7 @@
       "settings": {
         "image": "shopify:\/\/shop_images\/landiin.jpg",
         "text": "VARSITY 24' NEW COLLECTION",
-        "button_url": "shopify:\/\/products\/copy-of-hoodie-roche-varsity",
+        "button_url": "shopify:\/\/collections\/apparel",
         "button_text": "SHOP NOW",
         "invert_layout": false
       }
