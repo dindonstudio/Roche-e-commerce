@@ -42,7 +42,7 @@
 
 <div class="custom-section{% if section.settings.invert_layout %} row-reverse{% endif %}">
   <div class="custom-section-image">
-    <img src="{{ section.settings.image | img_url: 'large' }}" alt="">
+    <img src="{{ section.settings.image | img_url: 'master' }}" alt="">
   </div>
   <div class="custom-section-content">
     <p>{{ section.settings.text }}</p>
@@ -74,51 +74,46 @@
 
   .custom-section-content {
     flex-basis: 50%;
- padding: 0 2rem;
+    padding: 0 2rem;
     height: 100%;
-
   }
-  .custom-section-content p{
+  .custom-section-content p {
     font-size: 26px;
     line-height: 100%;
-}
+  }
   .custom-button {
-
-
     background-color: #007bff;
     color: white;
     text-decoration: none;
     border-radius: 5px;
   }
-.custom-section-image img{
+  .custom-section-image img {
     width: 100%;
     height: auto;
-}
+  }
   @media (max-width: 768px) {
     .custom-section {
       flex-direction: column;
     }
-
-
+    .custom-section.row-reverse {
+      flex-direction: column;
+      align-items: flex-start;
+    }
     .custom-section-content {
       flex-basis: 100%;
       padding: 0 2rem 2rem;
       max-width: 100%;
     }
-    .custom-section-image
- {
+    .custom-section-image {
       flex-basis: 100%;
 
       max-width: 100%;
     }
     .custom-section {
-
-   height: auto;
-
-}
-.custom-section-content p{
-    font-size: 22px;
-}
+      height: auto;
+    }
+    .custom-section-content p {
+      font-size: 22px;
+    }
   }
-  
 </style>
