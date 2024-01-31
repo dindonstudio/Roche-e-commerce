@@ -22,57 +22,53 @@
   {% assign selected_menu = linklists[section.settings.menu] %}
 
   {% if selected_menu.links != blank %}
-  <ul class="menu">
-    {% for link in selected_menu.links %}
-      {% if link.links != blank %}
-        <div class="submenu">
-          {% for sublink in link.links %}
-            <li class="submenu-item{% if sublink.active %} active{% endif %}">
-              <a
-                href="{{ sublink.url }}"
-                {% if sublink.active %}
-                  aria-current="page"
-                {% endif %}
-              >
-              <div class="flex">
-                <h3>{{- sublink.title -}}</h3>
+    <ul class="menu">
+      {% for link in selected_menu.links %}
+        {% if link.links != blank %}
+          <div class="submenu">
+            {% for sublink in link.links %}
+              <li class="submenu-item{% if sublink.active %} active{% endif %}">
+                <a
+                  href="{{ sublink.url }}"
+                  {% if sublink.active %}
+                    aria-current="page"
+                  {% endif %}
+                >
+                  <div class="flex">
+                    <h3>{{- sublink.title -}}</h3>
+                    {% if sublink.links != blank %}
+                      <h3 class="plus">+</h3>
+                    {% endif %}
+                  </div>
+                </a>
+
                 {% if sublink.links != blank %}
-                <h3 class="plus">+</h3>
+                  <div class="third-level-submenu">
+                    <ul>
+                      {% for third_level_sublink in sublink.links %}
+                        <li class="third-level-submenu-item{% if third_level_sublink.active %} active{% endif %}">
+                          <a
+                            href="{{ third_level_sublink.url }}"
+                            {% if third_level_sublink.active %}
+                              aria-current="page"
+                            {% endif %}
+                          >
+                            <h3>
+                              -&nbsp;
+                              {{- third_level_sublink.title -}}
+                            </h3>
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </div>
                 {% endif %}
-              </div>
-           
-              </a>
-  
-              {% if sublink.links != blank %}
-                <div class="third-level-submenu">
-                  <ul>
-               
-                    {% for third_level_sublink in sublink.links %}
-                      <li class="third-level-submenu-item{% if third_level_sublink.active %} active{% endif %}">
-                        <a
-                          href="{{ third_level_sublink.url }}"
-                          {% if third_level_sublink.active %}
-                            aria-current="page"
-                          {% endif %}
-                        >
-                        <h3>
-                         -&nbsp;{{- third_level_sublink.title -}}
-                        </h3>
-                   
-                        </a>
-                      </li>
-                    {% endfor %}
-                  </ul>
-                </div>
-              {% endif %}
-  
-            </li>
-          {% endfor %}
-        </div>
-      {% endif %}
-    {% endfor %}
-  </ul>
-  
+              </li>
+            {% endfor %}
+          </div>
+        {% endif %}
+      {% endfor %}
+    </ul>
   {% endif %}
 </nav>
 
@@ -80,89 +76,85 @@
   .custom-menu-with-submenu .menu {
     list-style: none;
     padding: 0 2rem;
+    position: relative;
+    z-index: 0;
     border-bottom: 1px solid black;
     border-top: 1px solid black;
     margin: 0;
     margin-bottom: 2rem;
-    
   }
-.submenu li{
-  position: relative;
-}
+  .submenu li {
+    position: relative;
+  }
   .custom-menu-with-submenu .menu-item {
     margin-bottom: 10px;
   }
-.submenu{
-
+  .submenu {
     display: flex;
     justify-content: space-around;
     width: 100%;
- 
-}
+  }
   .custom-menu-with-submenu .submenu {
     list-style: none;
     padding: 2rem 0;
- 
   }
 
   .custom-menu-with-submenu .menu-item.active > a,
   .custom-menu-with-submenu .submenu-item.active > a h2 {
     font-family: 'CustomFont-Bold';
-    
-
   }
-  .flex{
-  display: flex;
-  align-items: center;
-}
-.plus{
-  position: relative;
-  top: -0.2rem;
-  padding-left: 0.5rem;
-}
+  .flex {
+    display: flex;
+    align-items: center;
+  }
+  .plus {
+    position: relative;
+    top: -0.2rem;
+    padding-left: 0.5rem;
+  }
   .custom-menu-with-submenu .third-level-submenu {
-  display: none;
-  position: absolute;
-  top: 6rem;
-  left: 0%;
-  background-color: white;
-  border: 1px solid black;
-  z-index: 200;
-  width: 100%;
-  /* height: 20%; */
-}
+    display: none;
+    position: absolute;
+    top: 6rem;
+    left: 0%;
+    background-color: white;
+    border: 1px solid black;
+    z-index: 200;
+    width: 100%;
+    /* height: 20%; */
+  }
 
- .submenu-item:hover .third-level-submenu {
-  display: block;
-} 
- .submenu-item:hover .third-level-submenu ul {
-padding: 2rem;
-} 
- .submenu-item:hover .third-level-submenu ul li {
-list-style: disc;
-} 
+  .submenu-item:hover .third-level-submenu {
+    display: block;
+  }
+  .submenu-item:hover .third-level-submenu ul {
+    padding: 2rem;
+  }
+  .submenu-item:hover .third-level-submenu ul li {
+    list-style: disc;
+  }
   @media (max-width: 768px) {
-    .custom-menu-with-submenu .submenu{
-        flex-direction: column;
-        padding-top: 1rem;
-        padding-bottom: 1rem;
+    .custom-menu-with-submenu .submenu {
+      flex-direction: column;
+      padding-top: 1rem;
+      padding-bottom: 1rem;
     }
-    .custom-menu-with-submenu .submenu h2{
-        margin: 0.4Rem 0;
+    .custom-menu-with-submenu .submenu h2 {
+      margin: 0.4rem 0;
     }
     .custom-menu-with-submenu .third-level-submenu {
-  display: block;
-  position: relative;
-  top: 0rem;
-  left: 0%;
-  background-color: white;
-  border: none;
-  z-index: 200;
-  width: 100%;
-  /* height: 20%; */
-}
- .third-level-submenu ul {
-padding: 0em 1rem;
-} 
+      display: block;
+      position: relative;
+      top: 0rem;
+      left: 0%;
+      background-color: white;
+      border: none;
+      z-index: 200;
+      width: 100%;
+      /* height: 20%; */
+    }
+    .third-level-submenu ul {
+      padding: 0em 1rem;
+    }
   }
 </style>
