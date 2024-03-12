@@ -98,6 +98,22 @@
     "a0f31116-f917-4b18-92fc-51e466a025b1": {
       "type": "custom-selected-products",
       "blocks": {
+        "blocks_xcUGBU": {
+          "type": "blocks",
+          "settings": {
+            "product": "roche-musique-house-of-groove-vinyl-12-ep-1",
+            "is_limited_edition": false,
+            "limited_edition_text": "Limited Edition"
+          }
+        },
+        "blocks_JE74zV": {
+          "type": "blocks",
+          "settings": {
+            "product": "tee-shirt-10th-anniversary-white-brown",
+            "is_limited_edition": false,
+            "limited_edition_text": "Limited Edition"
+          }
+        },
         "8dfe0ee3-4427-4bc2-b3ef-0727bd46f6e7": {
           "type": "blocks",
           "settings": {
@@ -140,6 +156,8 @@
         }
       },
       "block_order": [
+        "blocks_xcUGBU",
+        "blocks_JE74zV",
         "8dfe0ee3-4427-4bc2-b3ef-0727bd46f6e7",
         "fb41f26c-08bf-4167-9e50-81e29867ab6e",
         "aa506f8f-73df-4258-ad1d-018c0cdeeb37",
