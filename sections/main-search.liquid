@@ -271,8 +271,16 @@
                           <!-- Big product layout -->
                           <img src="{{ result.featured_image | img_url: '1024x1024' }}" alt="{{ result.title }}">
                           <div class="product-details">
-                            <h3>{{ result.title }}</h3>
-                            <h3 class="price">{{ result.price | money }}</h3>
+                            <h3>{{ product.title }}</h3>
+                            
+                            {% if product.compare_at_price > product.price %}
+                              <h3 class="price">
+                                <h3 class="compare-at price">{{ product.compare_at_price | money }}</h3>
+                                <h3 class="sale-price price">{{ product.price | money }}</h3>
+                              </h3>
+                            {% else %}
+                              <h3 class="price">{{ product.price | money }}</h3>
+                            {% endif %}
                           </div>
                         </a>
                         <div class="small-products-wrapper"><!-- Open a new div for small products -->
@@ -281,8 +289,16 @@
                         <!-- Small product layout -->
                         <img src="{{ result.featured_image | img_url: 'master' }}" alt="{{ result.title }}">
                         <div class="product-details">
-                          <h3>{{ result.title }}</h3>
-                          <h3 class="price">{{ result.price | money }}</h3>
+                          <h3>{{ product.title }}</h3>
+                          
+                          {% if product.compare_at_price > product.price %}
+                            <h3 class="price">
+                              <h3 class="compare-at price">{{ product.compare_at_price | money }}</h3>
+                              <h3 class="sale-price price">{{ product.price | money }}</h3>
+                            </h3>
+                          {% else %}
+                            <h3 class="price">{{ product.price | money }}</h3>
+                          {% endif %}
                         </div>
                       </a>
                     {% endif %}
