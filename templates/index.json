@@ -182,7 +182,7 @@
       "type": "custom-image-and-text",
       "settings": {
         "image": "shopify://shop_images/3x24.2.jpg",
-        "text": "VARSITY 24' NEW COLLECTION",
+        "text": "VARSITY COLLECTION",
         "button_url": "shopify://collections/apparel",
         "button_text": "SHOP NOW",
         "invert_layout": false
