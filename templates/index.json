@@ -1,3 +1,12 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
 {
   "sections": {
     "image_banner": {
@@ -22,8 +31,8 @@
         "button": {
           "type": "buttons",
           "settings": {
-            "button_label_1": "SHOP NOW",
-            "button_link_1": "shopify:\/\/collections\/all",
+            "button_label_1": "CHRISTMAS SALE",
+            "button_link_1": "shopify://collections/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -34,7 +43,7 @@
           "type": "big_logo",
           "disabled": true,
           "settings": {
-            "big_logo_image": "shopify:\/\/shop_images\/roche.png"
+            "big_logo_image": "shopify://shop_images/roche.png"
           }
         }
       },
@@ -45,9 +54,10 @@
         "d0339237-51ed-4951-a011-96d0f12acfc2"
       ],
       "settings": {
-        "video": "shopify:\/\/files\/videos\/VIDEO-HOOMEPAGE.mp4",
+        "video": "shopify://files/videos/VIDEO-HOOMEPAGE.mp4",
+        "image": "shopify://shop_images/HEADER-CHRISTMASSALES-2_551d1e20-86b5-454a-9407-5995067dfd12.png",
         "image_overlay_opacity": 40,
-        "image_height": "adapt",
+        "image_height": "medium",
         "desktop_content_position": "bottom-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
@@ -64,7 +74,7 @@
         "27d3b5f9-6eea-491e-867f-6b4de0893e12": {
           "type": "collection_block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/testet2.jpg",
+            "image": "shopify://shop_images/testet2.jpg",
             "title": "APPAREL",
             "title_color": "black",
             "collection": "apparel"
@@ -73,7 +83,7 @@
         "d6fb94ec-5853-4494-949e-ab22d5cffdcf": {
           "type": "collection_block",
           "settings": {
-            "image": "shopify:\/\/shop_images\/testet.jpg",
+            "image": "shopify://shop_images/testet.jpg",
             "title": "MUSIC",
             "title_color": "white",
             "collection": "musique"
@@ -85,7 +95,7 @@
         "d6fb94ec-5853-4494-949e-ab22d5cffdcf"
       ],
       "settings": {
-        "title": "Shop our <em><strong>latest products<\/strong><\/em>"
+        "title": "Shop our <em><strong>latest products</strong></em>"
       }
     },
     "c5005365-9569-4932-9a0a-f9f67ac49eed": {
@@ -171,9 +181,9 @@
     "4d0b19e1-9024-41bd-af3c-abd7b080a519": {
       "type": "custom-image-and-text",
       "settings": {
-        "image": "shopify:\/\/shop_images\/3x24.2.jpg",
+        "image": "shopify://shop_images/3x24.2.jpg",
         "text": "VARSITY 24' NEW COLLECTION",
-        "button_url": "shopify:\/\/collections\/apparel",
+        "button_url": "shopify://collections/apparel",
         "button_text": "SHOP NOW",
         "invert_layout": false
       }
@@ -181,9 +191,9 @@
     "4f8f3966-4c6c-4937-b15f-adb43d5ea6f1": {
       "type": "custom-image-and-text",
       "settings": {
-        "image": "shopify:\/\/shop_images\/3x24.jpg",
+        "image": "shopify://shop_images/3x24.jpg",
         "text": "\"DO FOR LOVE\" PARTY!",
-        "button_url": "shopify:\/\/blogs\/all-blogs",
+        "button_url": "shopify://blogs/all-blogs",
         "button_text": "EVENTS",
         "invert_layout": true
       }
