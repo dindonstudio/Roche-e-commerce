@@ -187,16 +187,6 @@
         "button_text": "SHOP NOW",
         "invert_layout": false
       }
-    },
-    "4f8f3966-4c6c-4937-b15f-adb43d5ea6f1": {
-      "type": "custom-image-and-text",
-      "settings": {
-        "image": "shopify://shop_images/3x24.jpg",
-        "text": "\"DO FOR LOVE\" PARTY!",
-        "button_url": "shopify://blogs/all-blogs",
-        "button_text": "EVENTS",
-        "invert_layout": true
-      }
     }
   },
   "order": [
@@ -204,7 +194,6 @@
     "b423c175-ca80-4069-9d4b-6363035339f9",
     "c5005365-9569-4932-9a0a-f9f67ac49eed",
     "a0f31116-f917-4b18-92fc-51e466a025b1",
-    "4d0b19e1-9024-41bd-af3c-abd7b080a519",
-    "4f8f3966-4c6c-4937-b15f-adb43d5ea6f1"
+    "4d0b19e1-9024-41bd-af3c-abd7b080a519"
   ]
 }
