@@ -14,7 +14,7 @@
     "custom_marquee_section_top_DLBUYi": {
       "type": "custom-marquee-section-top",
       "settings": {
-        "marquee_text": "ORDERS PLACED FROM DEC 20–28 WILL SHIP ON DEC 29.",
+        "marquee_text": "ORDERS PLACED FROM DEC 20–28 WILL SHIP ON DEC 29 <3",
         "background_color": "#1e1e1e"
       }
     },
