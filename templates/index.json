@@ -55,9 +55,9 @@
       ],
       "settings": {
         "video": "shopify://files/videos/VIDEO-HOOMEPAGE.mp4",
-        "image": "shopify://shop_images/HEADER-CHRISTMASSALES-2_551d1e20-86b5-454a-9407-5995067dfd12.png",
+        "image": "shopify://shop_images/DSC00575_1.jpg",
         "image_overlay_opacity": 40,
-        "image_height": "medium",
+        "image_height": "adapt",
         "desktop_content_position": "bottom-center",
         "show_text_box": false,
         "desktop_content_alignment": "center",
