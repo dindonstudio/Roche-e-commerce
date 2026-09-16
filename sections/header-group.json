@@ -14,7 +14,7 @@
     "custom_marquee_section_top_DLBUYi": {
       "type": "custom-marquee-section-top",
       "settings": {
-        "marquee_text": "Summer Break : August orders will ship starting in September. Thanks for your patience!",
+        "marquee_text": "",
         "background_color": "#1e1e1e"
       }
     },
