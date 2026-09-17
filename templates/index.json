@@ -108,10 +108,42 @@
     "a0f31116-f917-4b18-92fc-51e466a025b1": {
       "type": "custom-selected-products",
       "blocks": {
-        "blocks_fwLpKX": {
+        "blocks_QLtnbN": {
           "type": "blocks",
           "settings": {
-            "product": "lossapardo-if-i-were-to-paint-it-vinyl-lp",
+            "product": "darius-oasis-vinyl-12-lp2",
+            "is_limited_edition": false,
+            "limited_edition_text": "Limited Edition"
+          }
+        },
+        "blocks_imwzTn": {
+          "type": "blocks",
+          "settings": {
+            "product": "roche-musique-house-of-groove-vinyl-12-ep-copy",
+            "is_limited_edition": false,
+            "limited_edition_text": "Limited Edition"
+          }
+        },
+        "blocks_9CeGqT": {
+          "type": "blocks",
+          "settings": {
+            "product": "tee-shirt-darius-oasis",
+            "is_limited_edition": false,
+            "limited_edition_text": "Limited Edition"
+          }
+        },
+        "blocks_rKPQHy": {
+          "type": "blocks",
+          "settings": {
+            "product": "fkj-tyber-white-vinyl-lp",
+            "is_limited_edition": false,
+            "limited_edition_text": "Limited Edition"
+          }
+        },
+        "blocks_bTmPnt": {
+          "type": "blocks",
+          "settings": {
+            "product": "kartell-everything-is-here-vinyl-2-12-lp",
             "is_limited_edition": false,
             "limited_edition_text": "Limited Edition"
           }
@@ -123,75 +155,17 @@
             "is_limited_edition": false,
             "limited_edition_text": "Limited Edition"
           }
-        },
-        "blocks_Cgz9hw": {
-          "type": "blocks",
-          "settings": {
-            "product": "cap-roche-x-praline-ade-limited-edition",
-            "is_limited_edition": true,
-            "limited_edition_text": "Limited Edition"
-          }
-        },
-        "blocks_xcUGBU": {
-          "type": "blocks",
-          "settings": {
-            "product": "roche-musique-house-of-groove-vinyl-12-ep-1",
-            "is_limited_edition": false,
-            "limited_edition_text": "Limited Edition"
-          }
-        },
-        "blocks_JE74zV": {
-          "type": "blocks",
-          "settings": {
-            "product": "tee-shirt-10th-anniversary-white-brown",
-            "is_limited_edition": false,
-            "limited_edition_text": "Limited Edition"
-          }
-        },
-        "8dfe0ee3-4427-4bc2-b3ef-0727bd46f6e7": {
-          "type": "blocks",
-          "settings": {
-            "product": "cap-roche-varsity",
-            "is_limited_edition": false,
-            "limited_edition_text": "Limited Edition"
-          }
-        },
-        "fb41f26c-08bf-4167-9e50-81e29867ab6e": {
-          "type": "blocks",
-          "settings": {
-            "product": "copy-of-katuchat-still-life-vinyl-12-lp",
-            "is_limited_edition": false,
-            "limited_edition_text": "Limited Edition"
-          }
-        },
-        "243c9634-de31-42af-ab0f-87fe64423610": {
-          "type": "blocks",
-          "settings": {
-            "product": "hoodie-roche-varsity",
-            "is_limited_edition": false,
-            "limited_edition_text": "Limited Edition"
-          }
-        },
-        "02c34cf8-7796-46c8-bb63-0a4df8814451": {
-          "type": "blocks",
-          "settings": {
-            "product": "tote-bag-roche",
-            "is_limited_edition": false,
-            "limited_edition_text": "Limited Edition"
-          }
         }
       },
       "block_order": [
-        "blocks_fwLpKX",
-        "blocks_3MGQxJ",
-        "blocks_Cgz9hw",
-        "blocks_xcUGBU",
-        "blocks_JE74zV",
-        "8dfe0ee3-4427-4bc2-b3ef-0727bd46f6e7",
-        "fb41f26c-08bf-4167-9e50-81e29867ab6e",
-        "243c9634-de31-42af-ab0f-87fe64423610",
-        "02c34cf8-7796-46c8-bb63-0a4df8814451"
+        "blocks_QLtnbN",
+        "blocks_imwzTn",
+        "blocks_9CeGqT",
+        "blocks_rKPQHy",
+        "blocks_bTmPnt",
+        "blocks_3MGQxJ"
       ],
+      "custom_css": [],
       "settings": {
         "section_text": "BEST SELLERS"
       }
